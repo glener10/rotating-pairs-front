@@ -11,9 +11,11 @@
 
 - Implementar o visual de uma forma melhor
 
+- Implementar exportação CSV, TXT
 - Ideia para o rodapé
 
 - Implementar TODOS os testes
 
-- Implementar testes
 - Tornar internacional o projeto (usar alguma biblioteca do Node)
+
+- Subir o projeto e vincular com o Git Actions os pipeas
