@@ -15,30 +15,19 @@ export const ButtonCombinations = (props: ButtonCombinationsProps) => {
     const numberOfSprint = returnNumberOfSprints(numberOfNamesIsOdd);
     const numberOfCombinationPerSprint = returnNumberOfCombinationPerSprintRoundeddown(numberOfNamesIsOdd);
 
-    const combinations: ISprint[] = [];
-    const allInputsValues = props.inputNamesInArray.map((input) => { return input });
+    const allInputsValues = copyInputNamesInArray();
     
     let lastInputValue = null;
 
-    if (numberOfCombinationPerSprint > 1 && !numberOfNamesIsOdd) {
+    if (!numberOfNamesIsOdd && allInputsValues.length > 2) {
       lastInputValue = allInputsValues.pop();
     }
 
-    for (let indexA = 0; indexA < Number(numberOfSprint); indexA++){
-      const comb: ICombination[] = [];
-      for (let indexB = 0; indexB < Number(numberOfCombinationPerSprint); indexB++) {
-        if (numberOfCombinationPerSprint > 1 && indexB == numberOfCombinationPerSprint - 1) {
-          comb.push({ pairOne: allInputsValues.pop()!, pairTwo: "EMPTY" });
-        } else {
-          comb.push({ pairOne: "", pairTwo: "" });
-        }
-      }
-      combinations.push({ combinations:comb });
-    }
+    const combinations: ISprint[] = constructEmptySprintsCombinations(numberOfSprint, numberOfCombinationPerSprint, allInputsValues);
 
     const allCombinationsPossible = generateAllCombinationsPossible();
 
-    const sizeOfLoop = lastInputValue != null ? Number(numberOfCombinationPerSprint) - 1 : numberOfNamesIsOdd ? Number(numberOfCombinationPerSprint) -1 : Number(numberOfCombinationPerSprint);
+    const sizeOfLoop = lastInputValue != null  ? numberOfCombinationPerSprint - 1 : numberOfCombinationPerSprint;
 
     combinations.map((combination, index) => {
         for (let indexA = 0; indexA < sizeOfLoop; indexA++){
@@ -71,6 +60,7 @@ export const ButtonCombinations = (props: ButtonCombinationsProps) => {
       }
     })
     
+    //TODO: Separating this
     if (lastInputValue != null) {
       combinations.map((combination) => { 
         combination.combinations[numberOfCombinationPerSprint - 1].pairTwo = lastInputValue!;
@@ -83,20 +73,19 @@ export const ButtonCombinations = (props: ButtonCombinationsProps) => {
   const generateAllCombinationsPossible = () => {
     const allCombinationsPossible: ICombination[] = [];
 
-    const numberOfNamesIsOdd = props.inputNamesInArray.length % 2 == 0 ? false : true;
+    const numberOfNamesIsOdd = checkIfArrayIsOdd();
 
-    props.inputNamesInArray.map((inputInArrayA,indexA) => {
-      props.inputNamesInArray.map((inputInArrayB,indexB) => {
-        if (!numberOfNamesIsOdd && props.inputNamesInArray.length > 3) {
-          if (inputInArrayA != inputInArrayB && (indexA < props.inputNamesInArray.length-1 && indexB < props.inputNamesInArray.length-1)) {
-            allCombinationsPossible.push({ pairOne: inputInArrayA, pairTwo: inputInArrayB })
-          }
-        } else {
-          if (inputInArrayA != inputInArrayB) {
-            allCombinationsPossible.push({ pairOne: inputInArrayA, pairTwo: inputInArrayB })
-          }
+    const allInputsValues = copyInputNamesInArray();
+
+    if (!numberOfNamesIsOdd && allInputsValues.length > 2) {
+      allInputsValues.pop();
+    }
+
+    allInputsValues.map((inputInArrayA,indexA) => {
+      allInputsValues.map((inputInArrayB, indexB) => {
+        if (indexA != indexB) {
+          allCombinationsPossible.push({ pairOne: inputInArrayA, pairTwo: inputInArrayB });
         }
-        
       })
     });
 
@@ -141,7 +130,30 @@ export const ButtonCombinations = (props: ButtonCombinationsProps) => {
       numberOfCombinationPerSprint += 1;
     }
 
-    return numberOfCombinationPerSprint;
+    return Math.floor(numberOfCombinationPerSprint);
+  }
+
+  const copyInputNamesInArray = (): string[] => {
+    const allInputsValues = props.inputNamesInArray.map((input) => { return input });
+    return allInputsValues;
+  }
+
+  const constructEmptySprintsCombinations = (numberOfSprint:number, numberOfCombinationPerSprint:number, allInputsValues: string[]): ISprint[] => {
+    const combinations: ISprint[] = [];
+
+    for (let indexA = 0; indexA < Number(numberOfSprint); indexA++){
+      const comb: ICombination[] = [];
+      for (let indexB = 0; indexB < Number(numberOfCombinationPerSprint); indexB++) {
+        if (numberOfCombinationPerSprint > 1 && indexB == numberOfCombinationPerSprint - 1) {
+          comb.push({ pairOne: allInputsValues.pop()!, pairTwo: "EMPTY" });
+        } else {
+          comb.push({ pairOne: "", pairTwo: "" });
+        }
+      }
+      combinations.push({ combinations:comb });
+    }
+
+    return combinations;
   }
 
 

@@ -1,5 +1,4 @@
-- Separar em outro componente o sorteio
-- Criar hook para realizar o sorteio?
+- Fix all console log errors
 
 - Refatorar lógica de modo que funcione
 - Resolver lógica para entrada com N nomes (Número grande)
