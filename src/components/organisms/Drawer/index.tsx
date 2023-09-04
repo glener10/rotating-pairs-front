@@ -10,10 +10,10 @@ export const Drawer = () => {
   const [boxInputNames, setBoxInputNames] = useState(''); 
   const [inputNamesInArray, setInputNamesInArray] = useState([]);
 
-  const [sprints, setSprints] = useState<ISprint[]>([]);
-
   const [numberOfSprints, setNumberOfSprints] = useState<Number>();
   const [numberOfCombinationPerSprint, setNumberOfCombinationPerSprint] = useState<Number>();
+
+  const [sprints, setSprints] = useState<ISprint[]>([]);
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setBoxInputNames(event.target.value);
@@ -65,8 +65,8 @@ export const Drawer = () => {
         let index = 0;
         while (fix == false) {
           const combX = allComb[index];
-          if (!checkIfCombinationExistis(combX?.pairOne!, combX?.pairTwo!, combinations)) {
-            if (!checkIfCombinationExistisInOne(combX?.pairOne!, combX?.pairTwo!, combination.combinations)) {
+          if (!checkIfEntryExistsInAtLeastOneCombinationInSprints(combX?.pairOne!, combX?.pairTwo!, combinations)) {
+            if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combX?.pairOne!, combX?.pairTwo!, combination.combinations)) {
               comb.pairOne = combX?.pairOne!;
               comb.pairTwo = combX?.pairTwo!;
               allComb.splice(0, 1);
@@ -81,27 +81,26 @@ export const Drawer = () => {
     setSprints(combinations);
   }
 
-  function checkIfCombinationExistis(pairOne: string, pairTwo: string, combinations: ISprint[]) {
-    let b = false;
+  function checkIfEntryExistsInAtLeastOneCombinationInSprints(pairOne: string, pairTwo: string, combinations: ISprint[]) {
+    let combinationInputExistingAtLeastOneCombinationInSprints = false;
     combinations.map((combination) => {
       combination.combinations.map((comb) => {
         if ((comb.pairOne == pairOne || comb.pairOne == pairTwo) && (comb.pairTwo == pairOne || comb.pairTwo == pairTwo)) {
-          b= true;
+          combinationInputExistingAtLeastOneCombinationInSprints = true;
         }
       });
     });
-    return b;
+    return combinationInputExistingAtLeastOneCombinationInSprints;
   }
 
-  function checkIfCombinationExistisInOne(pairOne: string, pairTwo: string, combinations: ICombination[]) { 
-    let b = false;
+  function checkIfAnyEntriesExistingInACurrentSprintCombination(pairOne: string, pairTwo: string, combinations: ICombination[]) { 
+    let entriesExistingInACombination = false;
     combinations.map((comb) => {
       if (comb.pairOne == pairOne || comb.pairOne == pairTwo || comb.pairTwo == pairOne || comb.pairTwo == pairTwo) {
-        b = true;
+        entriesExistingInACombination = true;
       }
     });
-    return b;
-
+    return entriesExistingInACombination;
   }
 
   const generate = () => {
