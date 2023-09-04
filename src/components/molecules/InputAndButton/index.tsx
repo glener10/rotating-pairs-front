@@ -42,11 +42,18 @@ export const InputAndButton = (props: InputAndButtonProps) => {
     })
     return valuesWithSignage;
   }
+
+  const clearAll = () => {
+    props.setInputNamesInArray([]);
+  };
   
   return (
     <>
       <Input boxInputNames={boxInputNames} handleInputChange={handleInputChange} />
-      <Button onClick={handleAddValues} title={"Save Inputs"} />
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Button onClick={handleAddValues} title={"Save Inputs"} />
+        <Button onClick={clearAll} title={"Clear All"} />
+      </div>
     </>
   );
 };
