@@ -29,38 +29,8 @@ export const ButtonCombinations = (props: ButtonCombinationsProps) => {
 
     const sizeOfLoop = lastInputValue != null  ? numberOfCombinationPerSprint - 1 : numberOfCombinationPerSprint;
 
-    combinations.map((combination, index) => {
-        for (let indexA = 0; indexA < sizeOfLoop; indexA++){
-          let fix = false;
-          let indexAllCombinationsPossible = 0;
-          while (fix == false && indexAllCombinationsPossible < allCombinationsPossible.length) {
-            const combinationOfAllCombinationsPossible = allCombinationsPossible[indexAllCombinationsPossible];
-              if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combinationOfAllCombinationsPossible?.pairOne!, combinationOfAllCombinationsPossible?.pairTwo!, combination.combinations)) {
-                combination.combinations[indexA].pairOne = combinationOfAllCombinationsPossible?.pairOne!;
-                combination.combinations[indexA].pairTwo = combinationOfAllCombinationsPossible?.pairTwo!;
-                allCombinationsPossible.splice(indexAllCombinationsPossible, 1);
-                fix = true;
-              }
-            indexAllCombinationsPossible += 1;
-          }
+    searchCombinations(combinations, sizeOfLoop, allCombinationsPossible);
 
-          if (fix == false) {
-            const lastCombination = combination.combinations.pop();
-            combination.combinations.sort(() => Math.random() - 0.5);
-            combination.combinations.push(lastCombination!);
-            for (let indexCleanCombinations = 0; indexCleanCombinations < sizeOfLoop; indexCleanCombinations++) {
-              if (combination.combinations[indexCleanCombinations].pairOne != "" && combination.combinations[indexCleanCombinations].pairTwo != "") {
-                allCombinationsPossible.push({ pairOne: combination.combinations[indexCleanCombinations].pairOne, pairTwo: combination.combinations[indexCleanCombinations].pairTwo });
-                combination.combinations[indexCleanCombinations].pairOne = "";
-                combination.combinations[indexCleanCombinations].pairTwo = "";
-              }
-            }
-            indexA = -1;
-          }
-      }
-    })
-    
-    //TODO: Separating this
     if (lastInputValue != null) {
       combinations.map((combination) => { 
         combination.combinations[numberOfCombinationPerSprint - 1].pairTwo = lastInputValue!;
@@ -68,6 +38,44 @@ export const ButtonCombinations = (props: ButtonCombinationsProps) => {
     }
 
     props.setSprints(combinations);
+  }
+
+  const searchCombinations = (combinations: ISprint[], sizeOfLoop: number, allCombinationsPossible: ICombination[]) => {
+    combinations.map((combination) => {
+      for (let indexA = 0; indexA < sizeOfLoop; indexA++) {
+        let fix = false;
+        let indexAllCombinationsPossible = 0;
+
+        while (fix == false && indexAllCombinationsPossible < allCombinationsPossible.length) {
+          const combinationOfAllCombinationsPossible = allCombinationsPossible[indexAllCombinationsPossible];
+          if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combinationOfAllCombinationsPossible?.pairOne!, combinationOfAllCombinationsPossible?.pairTwo!, combination.combinations)) {
+            combination.combinations[indexA].pairOne = combinationOfAllCombinationsPossible?.pairOne!;
+            combination.combinations[indexA].pairTwo = combinationOfAllCombinationsPossible?.pairTwo!;
+            allCombinationsPossible.splice(indexAllCombinationsPossible, 1);
+            fix = true;
+          }
+          indexAllCombinationsPossible += 1;
+        }
+
+        if (fix == false) {
+          reSortingCombinationsOfTheSprint(combination, sizeOfLoop, allCombinationsPossible);
+          indexA = -1;
+        }
+      }
+    });
+  }
+
+  const reSortingCombinationsOfTheSprint = (combination: ISprint, sizeOfLoop: number, allCombinationsPossible: ICombination[]) => {
+    const lastCombination = combination.combinations.pop();
+    combination.combinations.sort(() => Math.random() - 0.5);
+    combination.combinations.push(lastCombination!);
+    for (let indexCleanCombinations = 0; indexCleanCombinations < sizeOfLoop; indexCleanCombinations++) {
+      if (combination.combinations[indexCleanCombinations].pairOne != "" && combination.combinations[indexCleanCombinations].pairTwo != "") {
+        allCombinationsPossible.push({ pairOne: combination.combinations[indexCleanCombinations].pairOne, pairTwo: combination.combinations[indexCleanCombinations].pairTwo });
+        combination.combinations[indexCleanCombinations].pairOne = "";
+        combination.combinations[indexCleanCombinations].pairTwo = "";
+      }
+    }
   }
 
   const generateAllCombinationsPossible = () => {
