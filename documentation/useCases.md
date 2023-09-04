@@ -16,6 +16,7 @@
 
 - Implementar TODOS os testes
 
+- Criar ícone, sugestão dois bonecos e algo que relacione randorização, como por exemplo um dado...
 - Tornar internacional o projeto (usar alguma biblioteca do Node)
 
 - Subir o projeto e vincular com o Git Actions os pipeas
