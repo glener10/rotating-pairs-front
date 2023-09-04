@@ -59,12 +59,16 @@ export const Drawer = () => {
 
     const allComb = generateAllCombinationsPossible(numberOfNamesIsOdd);
 
-    combinations.map((combination) => {
-      combination.combinations.map((comb) => {
+    combinations.map((combination, combinationIndex) => {
+      combination.combinations.map((comb,index) => {
         let fix = false;
-        let index = 0;
+        let indexX = 0;
         while (fix == false) {
-          const combX = allComb[index];
+          const combX = allComb[indexX];
+          if (!combX) {
+            console.log("AQUI");
+          }
+          
           if (!checkIfEntryExistsInAtLeastOneCombinationInSprints(combX?.pairOne!, combX?.pairTwo!, combinations)) {
             if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combX?.pairOne!, combX?.pairTwo!, combination.combinations)) {
               comb.pairOne = combX?.pairOne!;
@@ -73,7 +77,7 @@ export const Drawer = () => {
               fix = true;
             }
           }
-          index += 1;
+          indexX += 1;
         }
       })
     })
