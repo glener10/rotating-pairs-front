@@ -1,6 +1,6 @@
+- Separar em outro componente o sorteio
 
 - Refatorar lógica de modo que funcione
-
 - Resolver lógica para entrada com N nomes (Número grande)
 
 - Diferenciar quando tiver nomes iguais, por exemplo dois Breno colocar 'Breno [1]' e 'Breno [2]'
