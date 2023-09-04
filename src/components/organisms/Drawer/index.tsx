@@ -2,26 +2,17 @@
 import EnteredNames from '@/components/molecules/EnteredNames';
 import Input, { InputAndButton } from '@/components/molecules/InputAndButton';
 import ResultOfCombinations from '@/components/molecules/ResultOfCombinations';
-import React, { useEffect, useState } from 'react';
-
-export interface ISprint{
-  combinations: ICombination[];
-}
-
-export interface ICombination{
-  pairOne: string;
-  pairTwo: string;
-}
+import { ICombination } from '@/interfaces/ICombination';
+import { ISprint } from '@/interfaces/ISprint';
+import React, { useState } from 'react';
 
 export const Drawer = () => {
   const [inputValue, setInputValue] = useState(''); 
   const [valuesArray, setValuesArray] = useState([]);
 
-
   const [sprints, setSprints] = useState<ISprint[]>([]);
   const [numberOfSprints, setNumberOfSprints] = useState<Number>();
   const [numberOfCombinationPerSprint, setNumberOfCombinationPerSprint] = useState<Number>();
-  const [allCombinationsPossible, setAllCombinationsPossible] = useState<ICombination[]>([]);
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setInputValue(event.target.value);
@@ -39,7 +30,6 @@ export const Drawer = () => {
   };
 
   const generateAllCombinationsPossible = (numberOfNamesIsOdd: boolean) => {
-    setAllCombinationsPossible([]);
     const allCombinationsPossible: ICombination[] = [];
     valuesArray.map((A) => {
       valuesArray.map((B) => {
@@ -53,7 +43,6 @@ export const Drawer = () => {
           allCombinationsPossible.push({pairOne: A, pairTwo:"EMPTY"})
       })
     }
-    setAllCombinationsPossible(() => allCombinationsPossible);
     return allCombinationsPossible;
   }
 

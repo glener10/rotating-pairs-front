@@ -1,4 +1,5 @@
-import { ICombination, ISprint } from "@/components/organisms/Drawer";
+import { ICombination } from "@/interfaces/ICombination";
+import { ISprint } from "@/interfaces/ISprint";
 
 
 interface ListResultOfCombinationsProps{
