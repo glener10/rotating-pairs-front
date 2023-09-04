@@ -7,25 +7,10 @@ import { ISprint } from '@/interfaces/ISprint';
 import React, { useState } from 'react';
 
 export const Drawer = () => {
-  const [boxInputNames, setBoxInputNames] = useState(''); 
   const [inputNamesInArray, setInputNamesInArray] = useState<string[]>([]);
 
   const [sprints, setSprints] = useState<ISprint[]>([]);
 
-  const handleInputChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setBoxInputNames(event.target.value);
-  };
-
-  const handleAddValues = () => {
-    const newValues = boxInputNames.split('\n').map((value) => value.trim());
-    const nonEmptyValues = newValues.filter((value) => value !== '');
-
-    if (nonEmptyValues.length > 0) {
-      //@ts-ignore
-      setInputNamesInArray((prevArray) => [...prevArray, ...nonEmptyValues]);
-      setBoxInputNames('');
-    }
-  };
 
   const generateCombinations = (numberOfSprint:number, numberOfCombinationPerSprint:number, numberOfNamesIsOdd:boolean) => {
     const combinations: ISprint[] = [];
@@ -152,8 +137,8 @@ export const Drawer = () => {
 
   return (
     <div style={{ zIndex: 1 }}>
-      <InputAndButton inputValue={boxInputNames} handleInputChange={handleInputChange} handleAddValues={handleAddValues} />
-      <EnteredNames valuesArray={inputNamesInArray} />
+      <InputAndButton setInputNamesInArray={setInputNamesInArray} />
+      {inputNamesInArray && inputNamesInArray.length > 0 && <EnteredNames valuesArray={inputNamesInArray} />}
 
       <button onClick={() => {
         const names = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s"];
