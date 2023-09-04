@@ -1,5 +1,3 @@
-- Quando for número Impar, é lógico que uma vez por sprint um de cada nome da entrada ficará sozinho (diminuir processamento)
-- Limpar as possibilidades repetidas (A - B e B - A) são iguais...
 
 - Refatorar lógica de modo que funcione
 
@@ -21,6 +19,7 @@
 - Implementar exportação CSV, TXT
 - Ideia para o rodapé
 - Implementar 'Donate' com paypal - pix
+- Limite de membro para sortear, exemplo equipe de 15 pessoas.
 
 - Implementar TODOS os testes
 

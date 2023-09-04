@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 
 export const Drawer = () => {
   const [boxInputNames, setBoxInputNames] = useState(''); 
-  const [inputNamesInArray, setInputNamesInArray] = useState([]);
+  const [inputNamesInArray, setInputNamesInArray] = useState<string[]>([]);
 
   const [numberOfSprints, setNumberOfSprints] = useState<Number>();
   const [numberOfCombinationPerSprint, setNumberOfCombinationPerSprint] = useState<Number>();
@@ -92,18 +92,23 @@ export const Drawer = () => {
           let indexAllCombinationsPossible = 0;
           while (fix == false && indexAllCombinationsPossible < allCombinationsPossible.length) {
             const combinationOfAllCombinationsPossible = allCombinationsPossible[indexAllCombinationsPossible];
-            if (!checkIfEntryExistsInAtLeastOneCombinationInSprints(combinationOfAllCombinationsPossible?.pairOne!, combinationOfAllCombinationsPossible?.pairTwo!, combinations)) {
+            //TODO: Esse if é necessário?
+            /* if (!checkIfEntryExistsInAtLeastOneCombinationInSprints(combinationOfAllCombinationsPossible?.pairOne!, combinationOfAllCombinationsPossible?.pairTwo!, combinations)) { */
               if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combinationOfAllCombinationsPossible?.pairOne!, combinationOfAllCombinationsPossible?.pairTwo!, combination.combinations)) {
                 combination.combinations[indexA].pairOne = combinationOfAllCombinationsPossible?.pairOne!;
                 combination.combinations[indexA].pairTwo = combinationOfAllCombinationsPossible?.pairTwo!;
                 allCombinationsPossible.splice(indexAllCombinationsPossible, 1);
                 fix = true;
               }
-            }
+           // }
             indexAllCombinationsPossible += 1;
           }
 
           if (fix == false) {
+            //TODO: Guardar de volta numa ordem aleatória e não push!
+            const lastCombination = combination.combinations.pop();
+            combination.combinations.sort(() => Math.random() - 0.5);
+            combination.combinations.push(lastCombination!);
             for (let indexCleanCombinations = 0; indexCleanCombinations < sizeOfLoop; indexCleanCombinations++) {
               if (combination.combinations[indexCleanCombinations].pairOne != "" && combination.combinations[indexCleanCombinations].pairTwo != "") {
                 allCombinationsPossible.push({ pairOne: combination.combinations[indexCleanCombinations].pairOne, pairTwo: combination.combinations[indexCleanCombinations].pairTwo });
@@ -170,7 +175,10 @@ export const Drawer = () => {
     <div style={{ zIndex: 1 }}>
       <InputAndButton inputValue={boxInputNames} handleInputChange={handleInputChange} handleAddValues={handleAddValues} />
       <EnteredNames valuesArray={inputNamesInArray} />
-      
+      <button onClick={() => {
+        const names = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"];
+        setInputNamesInArray(names);
+      }}>SetEnteredNames</button>
       <div>
         <button onClick={() => generate()}>Generate Combinations</button>
         <ResultOfCombinations sprints={sprints} numberOfSprints={numberOfSprints} numberOfCombinationPerSprint={numberOfCombinationPerSprint} />
