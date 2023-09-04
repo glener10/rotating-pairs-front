@@ -66,7 +66,7 @@ export const Drawer = () => {
       combinations.push({ combinations:comb });
     }
 
-    const allComb = generateAllCombinationsPossible();
+    const allCombinationsPossible = generateAllCombinationsPossible();
 
     const sizeOfLoop = numberOfNamesIsOdd ? Number(numberOfCombinationPerSprint) - 1 : Number(numberOfCombinationPerSprint);
 
@@ -74,21 +74,29 @@ export const Drawer = () => {
         for (let indexA = 0; indexA < sizeOfLoop; indexA++){
           let fix = false;
           let indexAllCombinationsPossible = 0;
-          while (fix == false && indexAllCombinationsPossible < allComb.length) {
-            const combinationOfAllCombinationsPossible = allComb[indexAllCombinationsPossible];
+          while (fix == false && indexAllCombinationsPossible < allCombinationsPossible.length) {
+            const combinationOfAllCombinationsPossible = allCombinationsPossible[indexAllCombinationsPossible];
             if (!checkIfEntryExistsInAtLeastOneCombinationInSprints(combinationOfAllCombinationsPossible?.pairOne!, combinationOfAllCombinationsPossible?.pairTwo!, combinations)) {
               if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combinationOfAllCombinationsPossible?.pairOne!, combinationOfAllCombinationsPossible?.pairTwo!, combination.combinations)) {
                 combination.combinations[indexA].pairOne = combinationOfAllCombinationsPossible?.pairOne!;
                 combination.combinations[indexA].pairTwo = combinationOfAllCombinationsPossible?.pairTwo!;
-                allComb.splice(0, 1);
+                allCombinationsPossible.splice(indexAllCombinationsPossible, 1);
                 fix = true;
               }
             }
             indexAllCombinationsPossible += 1;
           }
 
+          //TODO: Ajustar verificação
           if (fix == false) {
-            console.log("Deu BO");
+            for (let indexCleanCombinations = 0; indexCleanCombinations < sizeOfLoop; indexCleanCombinations++) {
+              if (combination.combinations[indexCleanCombinations].pairOne != "" && combination.combinations[indexCleanCombinations].pairTwo != "") {
+                allCombinationsPossible.push({ pairOne: combination.combinations[indexCleanCombinations].pairOne, pairTwo: combination.combinations[indexCleanCombinations].pairTwo });
+                combination.combinations[indexCleanCombinations].pairOne = "";
+                combination.combinations[indexCleanCombinations].pairTwo = "";
+              }
+            }
+            indexA = 0;
           }
         }
       })
