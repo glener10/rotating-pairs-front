@@ -54,10 +54,10 @@ export const Drawer = () => {
     const combinations: ISprint[] = [];
     const allInputsValues = inputNamesInArray.map((input) =>{return input });
 
-    for (let a = 0; a < Number(numberOfSprint); a++){
+    for (let indexA = 0; indexA < Number(numberOfSprint); indexA++){
       const comb: ICombination[] = [];
-      for (let b = 0; b < Number(numberOfCombinationPerSprint); b++) {
-        if (numberOfNamesIsOdd && b == numberOfCombinationPerSprint - 1) {
+      for (let indexB = 0; indexB < Number(numberOfCombinationPerSprint); indexB++) {
+        if (numberOfNamesIsOdd && indexB == numberOfCombinationPerSprint - 1) {
           comb.push({ pairOne: allInputsValues.pop()!, pairTwo: "EMPTY" });
         } else {
           comb.push({ pairOne: "", pairTwo: "" });
@@ -68,30 +68,30 @@ export const Drawer = () => {
 
     const allComb = generateAllCombinationsPossible();
 
+    const sizeOfLoop = numberOfNamesIsOdd ? Number(numberOfCombinationPerSprint) - 1 : Number(numberOfCombinationPerSprint);
+
     combinations.map((combination) => {
-      combination.combinations.map((comb) => {
-        if (comb.pairTwo != "EMPTY") {
+        for (let indexA = 0; indexA < sizeOfLoop; indexA++){
           let fix = false;
-          let indexX = 0;
-          while (fix == false) {
-            const combX = allComb[indexX];
-            if (!combX) {
-              console.log("AQUI");
-            }
-            
-            if (!checkIfEntryExistsInAtLeastOneCombinationInSprints(combX?.pairOne!, combX?.pairTwo!, combinations)) {
-              if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combX?.pairOne!, combX?.pairTwo!, combination.combinations)) {
-                comb.pairOne = combX?.pairOne!;
-                comb.pairTwo = combX?.pairTwo!;
+          let indexAllCombinationsPossible = 0;
+          while (fix == false && indexAllCombinationsPossible < allComb.length) {
+            const combinationOfAllCombinationsPossible = allComb[indexAllCombinationsPossible];
+            if (!checkIfEntryExistsInAtLeastOneCombinationInSprints(combinationOfAllCombinationsPossible?.pairOne!, combinationOfAllCombinationsPossible?.pairTwo!, combinations)) {
+              if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combinationOfAllCombinationsPossible?.pairOne!, combinationOfAllCombinationsPossible?.pairTwo!, combination.combinations)) {
+                combination.combinations[indexA].pairOne = combinationOfAllCombinationsPossible?.pairOne!;
+                combination.combinations[indexA].pairTwo = combinationOfAllCombinationsPossible?.pairTwo!;
                 allComb.splice(0, 1);
                 fix = true;
               }
             }
-            indexX += 1;
+            indexAllCombinationsPossible += 1;
+          }
+
+          if (fix == false) {
+            console.log("Deu BO");
           }
         }
       })
-    })
 
     setSprints(combinations);
   }
