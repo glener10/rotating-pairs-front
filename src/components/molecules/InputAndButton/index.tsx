@@ -26,6 +26,13 @@ export const InputAndButton = (props: InputAndButtonProps) => {
 
   const putSignageOnEqualNames = (values: string[], newNonEmptyValues: string[]): string[] => {
     const valuesWithSignage = [...values, ...newNonEmptyValues];
+
+    valuesWithSignage.map((value, index) => {
+      if (value.includes("[") && value.includes("]")) {
+        valuesWithSignage[index] = value.split(" ")[0];
+      }
+    })
+
     valuesWithSignage.map((valueA, indexA) => {
       let contEqualValues = 2;
       let putDifferentialInValueA = false;
