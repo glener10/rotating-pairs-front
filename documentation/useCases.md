@@ -1,6 +1,14 @@
-- Fazer funcionar a lógica
+- Separar em outro componente o sorteio
+- Criar hook para realizar o sorteio?
+
+- Refatorar lógica de modo que funcione
+- Resolver lógica para entrada com N nomes (Número grande)
+
+- Componente Button usar o onClick e não uma propriedade que passa o método
+
 - Diferenciar quando tiver nomes iguais, por exemplo dois Breno colocar 'Breno [1]' e 'Breno [2]'
 - Implementar lógica para remover Entered Names :)
+- Implementar um 'Clear All'
 
 - Melhorar o possível no código, arquitetura, separações, etc...
 - Ver componentes que precisam ou não aparecer dependendo do estado da tela, por exemplo os Entered Names e Combinations não precisam aparecer até clicar em Salvar
@@ -11,9 +19,14 @@
 
 - Implementar o visual de uma forma melhor
 
+- Implementar exportação CSV, TXT
 - Ideia para o rodapé
+- Implementar 'Donate' com paypal - pix
+- Limite de membro para sortear, exemplo equipe de 15 pessoas.
 
 - Implementar TODOS os testes
 
-- Implementar testes
+- Criar ícone, sugestão dois bonecos e algo que relacione randorização, como por exemplo um dado...
 - Tornar internacional o projeto (usar alguma biblioteca do Node)
+
+- Subir o projeto e vincular com o Git Actions os pipeas

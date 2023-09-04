@@ -1,11 +1,10 @@
-interface ButtonProps{
-  value: string;
-  handleAddValues: () => void;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
+  title: string;
 }
 
 export const Button = (props: ButtonProps) => { 
   return (
-      <button onClick={props.handleAddValues}>{props.value}</button>
+    <button {...props}>{props.title}</button>
   );
 };
 
