@@ -9,7 +9,12 @@ interface ButtonCombinationsProps extends React.ButtonHTMLAttributes<HTMLButtonE
 
 export const ButtonCombinations = (props: ButtonCombinationsProps) => { 
 
-  const generateCombinations = (numberOfSprint:number, numberOfCombinationPerSprint:number, numberOfNamesIsOdd:boolean) => {
+  const generateCombinations = () => {
+    
+    const numberOfNamesIsOdd = checkIfArrayIsOdd();
+    const numberOfSprint = returnNumberOfSprints(numberOfNamesIsOdd);
+    const numberOfCombinationPerSprint = returnNumberOfCombinationPerSprintRoundeddown(numberOfNamesIsOdd);
+
     const combinations: ISprint[] = [];
     const allInputsValues = props.inputNamesInArray.map((input) => { return input });
     
@@ -105,8 +110,6 @@ export const ButtonCombinations = (props: ButtonCombinationsProps) => {
     return allCombinationsPossible;
   }
 
-  
-
   function checkIfAnyEntriesExistingInACurrentSprintCombination(pairOne: string, pairTwo: string, combinations: ICombination[]) { 
     let entriesExistingInACombination = false;
     combinations.map((comb) => {
@@ -117,24 +120,33 @@ export const ButtonCombinations = (props: ButtonCombinationsProps) => {
     return entriesExistingInACombination;
   }
 
-  const generate = () => {
-    const numberOfNamesIsOdd = props.inputNamesInArray.length % 2 == 0 ? false : true;
+  const checkIfArrayIsOdd = (): boolean => {
+    return props.inputNamesInArray.length % 2 == 0 ? false : true;
+  }
+
+  const returnNumberOfSprints = (numberOfNamesIsOdd: boolean): number => {
     let numberOfSprints = props.inputNamesInArray.length - 1;
-    let numberOfCombinationPerSprint = props.inputNamesInArray.length / 2;
 
     if (numberOfNamesIsOdd) {
       numberOfSprints += 1;
+    }
+
+    return numberOfSprints;
+  }
+
+  const returnNumberOfCombinationPerSprintRoundeddown = (numberOfNamesIsOdd: boolean): number => {
+    let numberOfCombinationPerSprint = props.inputNamesInArray.length / 2;
+
+    if (numberOfNamesIsOdd) {
       numberOfCombinationPerSprint += 1;
     }
 
-    const numberOfCombinationPerSprintRoundeddown = Math.floor(numberOfCombinationPerSprint);
-
-    generateCombinations(numberOfSprints, numberOfCombinationPerSprintRoundeddown, numberOfNamesIsOdd);
-  };
+    return numberOfCombinationPerSprint;
+  }
 
 
   return (
-    <button onClick={() => generate()} {...props} disabled={props.inputNamesInArray.length > 1 ? false : true}>{props.title}</button>
+    <button onClick={() => generateCombinations()} {...props} disabled={props.inputNamesInArray.length > 1 ? false : true}>{props.title}</button>
   );
 };
 
