@@ -84,7 +84,7 @@ export const Drawer = () => {
 
     const allCombinationsPossible = generateAllCombinationsPossible();
 
-    const sizeOfLoop = lastInputValue != null ? Number(numberOfCombinationPerSprint) - 1 : Number(numberOfCombinationPerSprint);
+    const sizeOfLoop = lastInputValue != null ? Number(numberOfCombinationPerSprint) - 1 : numberOfNamesIsOdd ? Number(numberOfCombinationPerSprint) -1 : Number(numberOfCombinationPerSprint);
 
     combinations.map((combination) => {
         for (let indexA = 0; indexA < sizeOfLoop; indexA++){
