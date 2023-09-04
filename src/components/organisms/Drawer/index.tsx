@@ -32,11 +32,21 @@ export const Drawer = () => {
 
   const generateAllCombinationsPossible = () => {
     const allCombinationsPossible: ICombination[] = [];
-    inputNamesInArray.map((inputInArrayA) => {
-      inputNamesInArray.map((inputInArrayB) => {
-        if (inputInArrayA != inputInArrayB) {
-          allCombinationsPossible.push({ pairOne: inputInArrayA, pairTwo: inputInArrayB })
+
+    const numberOfNamesIsOdd = inputNamesInArray.length % 2 == 0 ? false : true;
+
+    inputNamesInArray.map((inputInArrayA,indexA) => {
+      inputNamesInArray.map((inputInArrayB,indexB) => {
+        if (!numberOfNamesIsOdd && inputNamesInArray.length > 3) {
+          if (inputInArrayA != inputInArrayB && (indexA < inputNamesInArray.length-1 && indexB < inputNamesInArray.length-1)) {
+            allCombinationsPossible.push({ pairOne: inputInArrayA, pairTwo: inputInArrayB })
+          }
+        } else {
+          if (inputInArrayA != inputInArrayB) {
+            allCombinationsPossible.push({ pairOne: inputInArrayA, pairTwo: inputInArrayB })
+          }
         }
+        
       })
     });
 
@@ -52,12 +62,18 @@ export const Drawer = () => {
 
   const generateCombinations = (numberOfSprint:number, numberOfCombinationPerSprint:number, numberOfNamesIsOdd:boolean) => {
     const combinations: ISprint[] = [];
-    const allInputsValues = inputNamesInArray.map((input) =>{return input });
+    const allInputsValues = inputNamesInArray.map((input) => { return input });
+    
+    let lastInputValue = null;
+
+    if (numberOfCombinationPerSprint > 1 && !numberOfNamesIsOdd) {
+      lastInputValue = allInputsValues.pop();
+    }
 
     for (let indexA = 0; indexA < Number(numberOfSprint); indexA++){
       const comb: ICombination[] = [];
       for (let indexB = 0; indexB < Number(numberOfCombinationPerSprint); indexB++) {
-        if (numberOfNamesIsOdd && indexB == numberOfCombinationPerSprint - 1) {
+        if (numberOfCombinationPerSprint > 1 && indexB == numberOfCombinationPerSprint - 1) {
           comb.push({ pairOne: allInputsValues.pop()!, pairTwo: "EMPTY" });
         } else {
           comb.push({ pairOne: "", pairTwo: "" });
@@ -68,7 +84,7 @@ export const Drawer = () => {
 
     const allCombinationsPossible = generateAllCombinationsPossible();
 
-    const sizeOfLoop = numberOfNamesIsOdd ? Number(numberOfCombinationPerSprint) - 1 : Number(numberOfCombinationPerSprint);
+    const sizeOfLoop = lastInputValue != null ? Number(numberOfCombinationPerSprint) - 1 : Number(numberOfCombinationPerSprint);
 
     combinations.map((combination) => {
         for (let indexA = 0; indexA < sizeOfLoop; indexA++){
@@ -98,7 +114,13 @@ export const Drawer = () => {
             indexA = -1;
           }
         }
-      })
+    })
+    
+    if (lastInputValue != null) {
+      combinations.map((combination) => { 
+        combination.combinations[numberOfCombinationPerSprint - 1].pairTwo = lastInputValue!;
+      });
+    }
 
     setSprints(combinations);
   }
