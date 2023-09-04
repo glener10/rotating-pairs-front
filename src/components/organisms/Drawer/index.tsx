@@ -47,7 +47,7 @@ export const Drawer = () => {
     return allCombinationsPossible;
   }
 
-  const generateCombinations = (numberOfSprint:number, numberOfCombinationPerSprin:number,allCombinations: ICombination[]) => {
+  const generateCombinations = (numberOfSprint:number, numberOfCombinationPerSprin:number, numberOfNamesIsOdd:boolean) => {
     const combinations: ISprint[] = [];
     for (let a = 0; a < Number(numberOfSprint); a++){
       const comb: ICombination[] = [];
@@ -57,7 +57,7 @@ export const Drawer = () => {
       combinations.push({ combinations:comb });
     }
 
-    const allComb = allCombinations;
+    const allComb = generateAllCombinationsPossible(numberOfNamesIsOdd);
 
     combinations.map((combination) => {
       combination.combinations.map((comb) => {
@@ -104,23 +104,23 @@ export const Drawer = () => {
 
   }
 
-  const gerarCombinacoes = () => {
+  const generate = () => {
+
     const numberOfNamesIsOdd = inputNamesInArray.length % 2 == 0 ? false : true;
-    let numeroDeSprints = inputNamesInArray.length - 1;
-  
+    let numberOfSprints = inputNamesInArray.length - 1;
     let numberOfCombinationPerSprint = inputNamesInArray.length / 2;
 
     if (numberOfNamesIsOdd) {
-      numeroDeSprints += 1;
+      numberOfSprints += 1;
       numberOfCombinationPerSprint += 1;
     }
 
-    const allComb = generateAllCombinationsPossible(numberOfNamesIsOdd);
+    const numberOfCombinationPerSprintRoundeddown = Math.floor(numberOfCombinationPerSprint);
 
-    setNumberOfCombinationPerSprint(Math.floor(numberOfCombinationPerSprint));
-    setNumberOfSprints(numeroDeSprints);
+    setNumberOfCombinationPerSprint(numberOfCombinationPerSprintRoundeddown);
+    setNumberOfSprints(numberOfSprints);
 
-    generateCombinations(numeroDeSprints,Math.floor(numberOfCombinationPerSprint),allComb);
+    generateCombinations(numberOfSprints, numberOfCombinationPerSprintRoundeddown, numberOfNamesIsOdd);
   };
 
   return (
@@ -129,7 +129,7 @@ export const Drawer = () => {
       <EnteredNames valuesArray={inputNamesInArray} />
       
       <div>
-        <button onClick={()=>gerarCombinacoes()}>Generate Combinations</button>
+        <button onClick={() => generate()}>Generate Combinations</button>
         <ResultOfCombinations sprints={sprints} numberOfSprints={numberOfSprints} numberOfCombinationPerSprint={numberOfCombinationPerSprint} />
       </div>
     </div>
