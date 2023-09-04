@@ -20,6 +20,7 @@
 
 - Implementar exportação CSV, TXT
 - Ideia para o rodapé
+- Implementar 'Donate' com paypal - pix
 
 - Implementar TODOS os testes
 
