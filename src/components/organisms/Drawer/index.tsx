@@ -30,54 +30,58 @@ export const Drawer = () => {
     }
   };
 
-  const generateAllCombinationsPossible = (numberOfNamesIsOdd: boolean) => {
+  const generateAllCombinationsPossible = () => {
     const allCombinationsPossible: ICombination[] = [];
     inputNamesInArray.map((A) => {
       inputNamesInArray.map((B) => {
         if (A != B) {
-          allCombinationsPossible.push({pairOne: A, pairTwo:B})
+          allCombinationsPossible.push({ pairOne: A, pairTwo: B })
         }
       })
-    })
-    if (numberOfNamesIsOdd) {
-      inputNamesInArray.map((A) => {
-          allCombinationsPossible.push({pairOne: A, pairTwo: "EMPTY"})
-      })
-    }
+    });
+
     return allCombinationsPossible;
   }
 
-  const generateCombinations = (numberOfSprint:number, numberOfCombinationPerSprin:number, numberOfNamesIsOdd:boolean) => {
+  const generateCombinations = (numberOfSprint:number, numberOfCombinationPerSprint:number, numberOfNamesIsOdd:boolean) => {
     const combinations: ISprint[] = [];
+    const allInputsValues = inputNamesInArray.map((input) =>{return input });
+
     for (let a = 0; a < Number(numberOfSprint); a++){
       const comb: ICombination[] = [];
-      for (let b = 0; b < Number(numberOfCombinationPerSprin); b++) { 
-        comb.push({ pairOne: "", pairTwo: "" });
+      for (let b = 0; b < Number(numberOfCombinationPerSprint); b++) {
+        if (numberOfNamesIsOdd && b == numberOfCombinationPerSprint - 1) {
+          comb.push({ pairOne: allInputsValues.pop()!, pairTwo: "EMPTY" });
+        } else {
+          comb.push({ pairOne: "", pairTwo: "" });
+        }
       }
       combinations.push({ combinations:comb });
     }
 
-    const allComb = generateAllCombinationsPossible(numberOfNamesIsOdd);
+    const allComb = generateAllCombinationsPossible();
 
-    combinations.map((combination, combinationIndex) => {
-      combination.combinations.map((comb,index) => {
-        let fix = false;
-        let indexX = 0;
-        while (fix == false) {
-          const combX = allComb[indexX];
-          if (!combX) {
-            console.log("AQUI");
-          }
-          
-          if (!checkIfEntryExistsInAtLeastOneCombinationInSprints(combX?.pairOne!, combX?.pairTwo!, combinations)) {
-            if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combX?.pairOne!, combX?.pairTwo!, combination.combinations)) {
-              comb.pairOne = combX?.pairOne!;
-              comb.pairTwo = combX?.pairTwo!;
-              allComb.splice(0, 1);
-              fix = true;
+    combinations.map((combination) => {
+      combination.combinations.map((comb) => {
+        if (comb.pairTwo != "EMPTY") {
+          let fix = false;
+          let indexX = 0;
+          while (fix == false) {
+            const combX = allComb[indexX];
+            if (!combX) {
+              console.log("AQUI");
             }
+            
+            if (!checkIfEntryExistsInAtLeastOneCombinationInSprints(combX?.pairOne!, combX?.pairTwo!, combinations)) {
+              if (!checkIfAnyEntriesExistingInACurrentSprintCombination(combX?.pairOne!, combX?.pairTwo!, combination.combinations)) {
+                comb.pairOne = combX?.pairOne!;
+                comb.pairTwo = combX?.pairTwo!;
+                allComb.splice(0, 1);
+                fix = true;
+              }
+            }
+            indexX += 1;
           }
-          indexX += 1;
         }
       })
     })

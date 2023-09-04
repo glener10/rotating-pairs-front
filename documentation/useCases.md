@@ -1,20 +1,9 @@
 - Quando for número Impar, é lógico que uma vez por sprint um de cada nome da entrada ficará sozinho (diminuir processamento)
-- Verificar o [index] do 'const combX = allComb[indexX];' quando tem 5 entradas, exemplo:
+- Limpar as possibilidades repetidas (A - B e B - A) são iguais...
 
-SPRINT 1
-1 - 2
-3 - 4
-5
+- Refatorar lógica de modo que funcione
 
-SPRINT 2
-2 - 3
-1 - 4
-5?????
-
-SPRINT 3
-1 - 3
-2 - 4
-5?????
+- Resolver lógica para entrada com N nomes (Número grande)
 
 - Diferenciar quando tiver nomes iguais, por exemplo dois Breno colocar 'Breno [1]' e 'Breno [2]'
 - Implementar lógica para remover Entered Names :)
