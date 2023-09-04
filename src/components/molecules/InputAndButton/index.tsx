@@ -1,17 +1,33 @@
 import Button from "@/components/atoms/Button";
 import Input from "@/components/atoms/Input";
+import { Dispatch, SetStateAction, useState } from "react";
 
 interface InputAndButtonProps{
-  inputValue: string;
-  handleInputChange: (event: { target: { value: React.SetStateAction<string>; }; })=>void;
-  handleAddValues: () => void;
+  setInputNamesInArray: Dispatch<SetStateAction<string[]>>;
 }
 
 export const InputAndButton = (props: InputAndButtonProps) => { 
+  const [boxInputNames, setBoxInputNames] = useState(''); 
+
+  const handleInputChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    setBoxInputNames(event.target.value);
+  };
+
+  const handleAddValues = () => {
+    const newValues = boxInputNames.split('\n').map((value) => value.trim());
+    const nonEmptyValues = newValues.filter((value) => value !== '');
+
+    if (nonEmptyValues.length > 0) {
+      //@ts-ignore
+      props.setInputNamesInArray((prevArray) => [...prevArray, ...nonEmptyValues]);
+      setBoxInputNames('');
+    }
+  };
+  
   return (
     <>
-      <Input inputValue={props.inputValue} handleInputChange={props.handleInputChange} />
-      <Button handleAddValues={props.handleAddValues} value={"Salvar"} />
+      <Input boxInputNames={boxInputNames} handleInputChange={handleInputChange} />
+      <Button onClick={handleAddValues} title={"Save Inputs"} />
     </>
   );
 };
