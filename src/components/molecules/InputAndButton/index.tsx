@@ -19,10 +19,29 @@ export const InputAndButton = (props: InputAndButtonProps) => {
 
     if (nonEmptyValues.length > 0) {
       //@ts-ignore
-      props.setInputNamesInArray((prevArray) => [...prevArray, ...nonEmptyValues]);
+      props.setInputNamesInArray((prevArray) => putSignageOnEqualNames(prevArray,nonEmptyValues));
       setBoxInputNames('');
     }
   };
+
+  const putSignageOnEqualNames = (values: string[], newNonEmptyValues: string[]): string[] => {
+    const valuesWithSignage = [...values, ...newNonEmptyValues];
+    valuesWithSignage.map((valueA, indexA) => {
+      let contEqualValues = 2;
+      let putDifferentialInValueA = false;
+      valuesWithSignage.map((valueB,indexB) => {
+        if (valueA == valueB && indexA != indexB) {
+          putDifferentialInValueA = true;
+          valuesWithSignage[indexB] = `${valueB} [${contEqualValues}]`;
+          contEqualValues += 1;
+        }
+      })
+      if (putDifferentialInValueA) {
+        valuesWithSignage[indexA] = `${valueA} [1]`;
+      }
+    })
+    return valuesWithSignage;
+  }
   
   return (
     <>

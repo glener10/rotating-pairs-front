@@ -1,11 +1,5 @@
-- Fix all console log errors
+- Resolver lógica para entrada com N nomes (Número grande), até o 'S'
 
-- Refatorar lógica de modo que funcione
-- Resolver lógica para entrada com N nomes (Número grande)
-
-- Componente Button usar o onClick e não uma propriedade que passa o método
-
-- Diferenciar quando tiver nomes iguais, por exemplo dois Breno colocar 'Breno [1]' e 'Breno [2]'
 - Implementar lógica para remover Entered Names :)
 - Implementar um 'Clear All'
 
@@ -15,6 +9,8 @@
 - Atualizar documentação
 - Colocar Typescript, lint e Prettier
 - Colocar commit lint e Husky
+
+- Fix all console log errors
 
 - Implementar o visual de uma forma melhor
 
