@@ -1,4 +1,4 @@
-import { ISprint } from "@/components/organisms/Drawer";
+import { ICombination, ISprint } from "@/components/organisms/Drawer";
 
 
 interface ListResultOfCombinationsProps{
@@ -7,14 +7,16 @@ interface ListResultOfCombinationsProps{
 
 export const ListResultOfCombinations = (props: ListResultOfCombinationsProps) => { 
   return (
-        <ul>
-          {props.sprints.map((value, index) => {
-            return (
-              <p key={index}>{`\nSprint: ${index + 1}\n`}</p>
-            );
-          }
-          )}
+  <>
+    {props.sprints.map((sprint: ISprint, index:number) => sprint.combinations.map((comb: ICombination) => {
+      return (
+        <ul key={index}>
+          <p>{`\nSPRINT (${index + 1}): ${comb.pairOne} - ${comb.pairTwo}`}</p>
         </ul>
+      );
+    }))
+      }
+    </>
   );
 };
 

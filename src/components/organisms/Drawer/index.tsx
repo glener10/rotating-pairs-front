@@ -134,14 +134,6 @@ export const Drawer = () => {
     generateCombinations(numeroDeSprints,Math.floor(numberOfCombinationPerSprint),allComb);
   };
 
-  useEffect(() => {
-    console.log(numberOfSprints);
-  }, [numberOfSprints, allCombinationsPossible])
-  
-  useEffect(() => {
-    console.log(sprints);
-  },[sprints])
-
   return (
     <div style={{ zIndex: 1 }}>
       <InputAndButton inputValue={inputValue} handleInputChange={handleInputChange} handleAddValues={handleAddValues} />
@@ -151,18 +143,7 @@ export const Drawer = () => {
         <button onClick={()=>gerarCombinacoes()}>Generate Combinations</button>
         <ResultOfCombinations sprints={sprints} numberOfSprints={numberOfSprints} numberOfCombinationPerSprint={numberOfCombinationPerSprint} />
       </div>
-
-      {sprints && sprints.length > 0 &&
-        sprints.map((sprint, index) => {
-          return sprint.combinations.map((comb) => {
-            return (<p key={index}>{`\nSPRINT (${index+1}): ${comb.pairOne} - ${comb.pairTwo}`}</p>)
-          })
-        })
-      }
-      
     </div>
-
-    
   );
 };
 
