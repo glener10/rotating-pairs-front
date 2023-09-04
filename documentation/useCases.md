@@ -1,7 +1,5 @@
 - Resolver lógica para entrada com N nomes (Número grande), até o 'S'
 
-- Implementar um 'Clear All'
-
 - Atualizar documentação
 - Colocar Typescript, lint e Prettier
 - Colocar commit lint e Husky
