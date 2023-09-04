@@ -1,6 +1,6 @@
-- Fazer funcionar a lógica
 - Diferenciar quando tiver nomes iguais, por exemplo dois Breno colocar 'Breno [1]' e 'Breno [2]'
 - Implementar lógica para remover Entered Names :)
+- Implementar um 'Clear All'
 
 - Melhorar o possível no código, arquitetura, separações, etc...
 - Ver componentes que precisam ou não aparecer dependendo do estado da tela, por exemplo os Entered Names e Combinations não precisam aparecer até clicar em Salvar
