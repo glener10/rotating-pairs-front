@@ -1,6 +1,6 @@
 "use client";
 import EnteredNames from '@/components/molecules/EnteredNames';
-import Input, { InputAndButton } from '@/components/molecules/InputAndButton';
+import { InputAndButton } from '@/components/molecules/InputAndButton';
 import ResultOfCombinations from '@/components/molecules/ResultOfCombinations';
 import { ICombination } from '@/interfaces/ICombination';
 import { ISprint } from '@/interfaces/ISprint';
@@ -87,7 +87,6 @@ export const Drawer = () => {
             indexAllCombinationsPossible += 1;
           }
 
-          //TODO: Ajustar verificação
           if (fix == false) {
             for (let indexCleanCombinations = 0; indexCleanCombinations < sizeOfLoop; indexCleanCombinations++) {
               if (combination.combinations[indexCleanCombinations].pairOne != "" && combination.combinations[indexCleanCombinations].pairTwo != "") {
@@ -96,7 +95,7 @@ export const Drawer = () => {
                 combination.combinations[indexCleanCombinations].pairTwo = "";
               }
             }
-            indexA = 0;
+            indexA = -1;
           }
         }
       })
