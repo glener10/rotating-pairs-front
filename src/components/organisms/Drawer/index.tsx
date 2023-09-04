@@ -32,14 +32,21 @@ export const Drawer = () => {
 
   const generateAllCombinationsPossible = () => {
     const allCombinationsPossible: ICombination[] = [];
-    inputNamesInArray.map((A) => {
-      inputNamesInArray.map((B) => {
-        if (A != B) {
-          allCombinationsPossible.push({ pairOne: A, pairTwo: B })
+    inputNamesInArray.map((inputInArrayA) => {
+      inputNamesInArray.map((inputInArrayB) => {
+        if (inputInArrayA != inputInArrayB) {
+          allCombinationsPossible.push({ pairOne: inputInArrayA, pairTwo: inputInArrayB })
         }
       })
     });
 
+    allCombinationsPossible.map((combinationA, indexA) => {
+        allCombinationsPossible.map((combinationB, indexB) => {
+          if (indexA != indexB && (combinationA.pairOne == combinationB.pairOne || combinationA.pairOne == combinationB.pairTwo) && (combinationA.pairTwo == combinationB.pairOne || combinationA.pairTwo == combinationB.pairTwo)) {
+            allCombinationsPossible.splice(indexB, 1); 
+          }
+        });
+    });
     return allCombinationsPossible;
   }
 
