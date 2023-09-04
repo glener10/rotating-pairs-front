@@ -27,7 +27,7 @@ export const InputAndButton = (props: InputAndButtonProps) => {
   return (
     <>
       <Input boxInputNames={boxInputNames} handleInputChange={handleInputChange} />
-      <Button handleAddValues={handleAddValues} value={"Salvar"} />
+      <Button onClick={handleAddValues} title={"Save Inputs"} />
     </>
   );
 };

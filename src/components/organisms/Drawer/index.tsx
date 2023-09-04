@@ -1,4 +1,5 @@
 "use client";
+import ButtonCombinations from '@/components/atoms/ButtonCombinations';
 import EnteredNames from '@/components/molecules/EnteredNames';
 import { InputAndButton } from '@/components/molecules/InputAndButton';
 import ResultOfCombinations from '@/components/molecules/ResultOfCombinations';
@@ -146,7 +147,7 @@ export const Drawer = () => {
       }}>SetEnteredNames</button>
       
       <div>
-        <button onClick={() => generate()}>Generate Combinations</button>
+        <ButtonCombinations onClick={() => generate()} title={'Generate Combinations'} inputNamesInArray={inputNamesInArray} />
         {sprints && sprints.length > 0 && <ResultOfCombinations sprints={sprints} />}
       </div>
     </div>
