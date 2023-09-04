@@ -1,6 +1,5 @@
 - Resolver lógica para entrada com N nomes (Número grande), até o 'S'
 
-- Implementar lógica para remover Entered Names :)
 - Implementar um 'Clear All'
 
 - Atualizar documentação
