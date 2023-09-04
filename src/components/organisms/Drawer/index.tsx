@@ -7,40 +7,41 @@ import { ISprint } from '@/interfaces/ISprint';
 import React, { useState } from 'react';
 
 export const Drawer = () => {
-  const [inputValue, setInputValue] = useState(''); 
-  const [valuesArray, setValuesArray] = useState([]);
+  const [boxInputNames, setBoxInputNames] = useState(''); 
+  const [inputNamesInArray, setInputNamesInArray] = useState([]);
 
   const [sprints, setSprints] = useState<ISprint[]>([]);
+
   const [numberOfSprints, setNumberOfSprints] = useState<Number>();
   const [numberOfCombinationPerSprint, setNumberOfCombinationPerSprint] = useState<Number>();
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setInputValue(event.target.value);
+    setBoxInputNames(event.target.value);
   };
 
   const handleAddValues = () => {
-    const newValues = inputValue.split('\n').map((value) => value.trim());
+    const newValues = boxInputNames.split('\n').map((value) => value.trim());
     const nonEmptyValues = newValues.filter((value) => value !== '');
 
     if (nonEmptyValues.length > 0) {
       //@ts-ignore
-      setValuesArray((prevArray) => [...prevArray, ...nonEmptyValues]);
-      setInputValue(''); // Limpa o input após adicionar os valores ao array
+      setInputNamesInArray((prevArray) => [...prevArray, ...nonEmptyValues]);
+      setBoxInputNames('');
     }
   };
 
   const generateAllCombinationsPossible = (numberOfNamesIsOdd: boolean) => {
     const allCombinationsPossible: ICombination[] = [];
-    valuesArray.map((A) => {
-      valuesArray.map((B) => {
+    inputNamesInArray.map((A) => {
+      inputNamesInArray.map((B) => {
         if (A != B) {
           allCombinationsPossible.push({pairOne: A, pairTwo:B})
         }
       })
     })
     if (numberOfNamesIsOdd) {
-      valuesArray.map((A) => {
-          allCombinationsPossible.push({pairOne: A, pairTwo:"EMPTY"})
+      inputNamesInArray.map((A) => {
+          allCombinationsPossible.push({pairOne: A, pairTwo: "EMPTY"})
       })
     }
     return allCombinationsPossible;
@@ -104,11 +105,10 @@ export const Drawer = () => {
   }
 
   const gerarCombinacoes = () => {
-    const numberOfNamesIsOdd = valuesArray.length % 2 == 0 ? false : true;
-    let numeroDeSprints = valuesArray.length - 1;
-    
-    
-    let numberOfCombinationPerSprint = valuesArray.length / 2;
+    const numberOfNamesIsOdd = inputNamesInArray.length % 2 == 0 ? false : true;
+    let numeroDeSprints = inputNamesInArray.length - 1;
+  
+    let numberOfCombinationPerSprint = inputNamesInArray.length / 2;
 
     if (numberOfNamesIsOdd) {
       numeroDeSprints += 1;
@@ -125,8 +125,8 @@ export const Drawer = () => {
 
   return (
     <div style={{ zIndex: 1 }}>
-      <InputAndButton inputValue={inputValue} handleInputChange={handleInputChange} handleAddValues={handleAddValues} />
-      <EnteredNames valuesArray={valuesArray} />
+      <InputAndButton inputValue={boxInputNames} handleInputChange={handleInputChange} handleAddValues={handleAddValues} />
+      <EnteredNames valuesArray={inputNamesInArray} />
       
       <div>
         <button onClick={()=>gerarCombinacoes()}>Generate Combinations</button>
