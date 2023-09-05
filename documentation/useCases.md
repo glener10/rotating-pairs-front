@@ -2,7 +2,6 @@
 
 - Fix all console log errors
 - Implement the look of site (css)
-- Create an icon, suggest two people and something related to randomization.
 - Make the project internacional, so many languages.
 
 ## New Features
