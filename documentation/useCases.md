@@ -1,6 +1,4 @@
-
-- Colocar Typescript, lint e Prettier
-- Colocar commit lint e Husky
+- Colocar commit lint
 - Atualizar documentação
 
 - Fix all console log errors
