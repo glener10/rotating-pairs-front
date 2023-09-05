@@ -19,15 +19,48 @@ export const InputAndButton = (props: InputAndButtonProps) => {
 
     if (nonEmptyValues.length > 0) {
       //@ts-ignore
-      props.setInputNamesInArray((prevArray) => [...prevArray, ...nonEmptyValues]);
+      props.setInputNamesInArray((prevArray) => putSignageOnEqualNames(prevArray,nonEmptyValues));
       setBoxInputNames('');
     }
+  };
+
+  const putSignageOnEqualNames = (values: string[], newNonEmptyValues: string[]): string[] => {
+    const valuesWithSignage = [...values, ...newNonEmptyValues];
+
+    valuesWithSignage.map((value, index) => {
+      if (value.includes("[") && value.includes("]")) {
+        valuesWithSignage[index] = value.split(" ")[0];
+      }
+    })
+
+    valuesWithSignage.map((valueA, indexA) => {
+      let contEqualValues = 2;
+      let putDifferentialInValueA = false;
+      valuesWithSignage.map((valueB,indexB) => {
+        if (valueA == valueB && indexA != indexB) {
+          putDifferentialInValueA = true;
+          valuesWithSignage[indexB] = `${valueB} [${contEqualValues}]`;
+          contEqualValues += 1;
+        }
+      })
+      if (putDifferentialInValueA) {
+        valuesWithSignage[indexA] = `${valueA} [1]`;
+      }
+    })
+    return valuesWithSignage;
+  }
+
+  const clearAll = () => {
+    props.setInputNamesInArray([]);
   };
   
   return (
     <>
       <Input boxInputNames={boxInputNames} handleInputChange={handleInputChange} />
-      <Button onClick={handleAddValues} title={"Save Inputs"} />
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Button onClick={handleAddValues} title={"Save Inputs"} />
+        <Button onClick={clearAll} title={"Clear All"} />
+      </div>
     </>
   );
 };

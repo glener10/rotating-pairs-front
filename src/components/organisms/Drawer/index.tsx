@@ -14,12 +14,7 @@ export const Drawer = () => {
   return (
     <div style={{ zIndex: 1 }}>
       <InputAndButton setInputNamesInArray={setInputNamesInArray} />
-      {inputNamesInArray && inputNamesInArray.length > 0 && <EnteredNames valuesArray={inputNamesInArray} />}
-
-      <button onClick={() => {
-        const names = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s"];
-        setInputNamesInArray(names);
-      }}>SetEnteredNames</button>
+      {inputNamesInArray && inputNamesInArray.length > 0 && <EnteredNames setInputNamesInArray={setInputNamesInArray} valuesArray={inputNamesInArray} />}
       
       <div>
         <ButtonCombinations title={'Generate Combinations'} inputNamesInArray={inputNamesInArray} setSprints={setSprints} />

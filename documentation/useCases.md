@@ -1,28 +1,16 @@
-- Separar em outro componente o sorteio
-- Criar hook para realizar o sorteio?
 
-- Refatorar lógica de modo que funcione
-- Resolver lógica para entrada com N nomes (Número grande)
-
-- Componente Button usar o onClick e não uma propriedade que passa o método
-
-- Diferenciar quando tiver nomes iguais, por exemplo dois Breno colocar 'Breno [1]' e 'Breno [2]'
-- Implementar lógica para remover Entered Names :)
-- Implementar um 'Clear All'
-
-- Melhorar o possível no código, arquitetura, separações, etc...
-- Ver componentes que precisam ou não aparecer dependendo do estado da tela, por exemplo os Entered Names e Combinations não precisam aparecer até clicar em Salvar
-
-- Atualizar documentação
 - Colocar Typescript, lint e Prettier
 - Colocar commit lint e Husky
+- Atualizar documentação
+
+- Fix all console log errors
 
 - Implementar o visual de uma forma melhor
 
 - Implementar exportação CSV, TXT
 - Ideia para o rodapé
 - Implementar 'Donate' com paypal - pix
-- Limite de membro para sortear, exemplo equipe de 15 pessoas.
+- Limite de membro para sortear, exemplo equipe de 10 pessoas. para liberar necessário doar 10 reais...
 
 - Implementar TODOS os testes
 
