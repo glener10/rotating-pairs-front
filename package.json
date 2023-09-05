@@ -13,6 +13,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "jest": "^29.6.4",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -31,6 +32,10 @@
     "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "ts-jest": "^29.1.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.2.2",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1"
   }
 }
