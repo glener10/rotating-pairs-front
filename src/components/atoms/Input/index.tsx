@@ -1,14 +1,11 @@
-interface InputProps {
-  boxInputNames: string;
-  handleInputChange: (event: { target: { value: React.SetStateAction<string> } }) => void;
-}
+interface InputProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 export const Input = (props: InputProps): JSX.Element => {
+  const { ...rest } = props;
   return (
     <textarea
       rows={5} // Número de linhas visíveis na caixa de texto
-      value={props.boxInputNames}
-      onChange={props.handleInputChange}
+      {...rest}
       placeholder="Digite os valores separados por quebra de linha"
     />
   );

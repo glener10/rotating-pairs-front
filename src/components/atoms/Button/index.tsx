@@ -3,7 +3,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = (props: ButtonProps): JSX.Element => {
-  return <button {...props}>{props.title}</button>;
+  const { title, ...rest } = props;
+  return <button {...rest}>{title}</button>;
 };
 
 export default Button;

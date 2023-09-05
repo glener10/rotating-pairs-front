@@ -7,6 +7,7 @@ interface InputAndButtonProps {
 }
 
 export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
+  const { setInputNamesInArray } = props;
   const [boxInputNames, setBoxInputNames] = useState('');
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string> } }): void => {
@@ -18,7 +19,7 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
     const nonEmptyValues = newValues.filter((value) => value !== '');
 
     if (nonEmptyValues.length > 0) {
-      props.setInputNamesInArray((prevArray) => putSignageOnEqualNames(prevArray, nonEmptyValues));
+      setInputNamesInArray((prevArray) => putSignageOnEqualNames(prevArray, nonEmptyValues));
       setBoxInputNames('');
     }
   };
@@ -50,12 +51,12 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   };
 
   const clearAll = (): void => {
-    props.setInputNamesInArray([]);
+    setInputNamesInArray([]);
   };
 
   return (
     <>
-      <Input boxInputNames={boxInputNames} handleInputChange={handleInputChange} />
+      <Input value={boxInputNames} onChange={handleInputChange} />
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Button onClick={handleAddValues} title={'Save Inputs'} />
         <Button onClick={clearAll} title={'Clear All'} />

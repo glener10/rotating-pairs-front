@@ -4,18 +4,19 @@ interface ListEnteredNamesProps {
 }
 
 export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
+  const { valuesArray, setInputNamesInArray } = props;
   const removingOneInput = (value: string): void => {
-    const index = props.valuesArray.indexOf(value);
+    const index = valuesArray.indexOf(value);
     if (index !== -1) {
-      const newArray = [...props.valuesArray];
+      const newArray = [...valuesArray];
       newArray.splice(index, 1);
-      props.setInputNamesInArray(newArray);
+      setInputNamesInArray(newArray);
     }
   };
 
   return (
     <ul>
-      {props.valuesArray.map((value, index) => (
+      {valuesArray.map((value, index) => (
         <div
           key={`div-${index}`}
           style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}

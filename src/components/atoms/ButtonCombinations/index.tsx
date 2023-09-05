@@ -8,9 +8,10 @@ interface ButtonCombinationsProps extends React.ButtonHTMLAttributes<HTMLButtonE
 }
 
 export const ButtonCombinations = (props: ButtonCombinationsProps): JSX.Element => {
+  const { title, inputNamesInArray, setSprints } = props;
   const generateCombinationsOfTheSprints = (): void => {
     const sprints = generateSprints();
-    props.setSprints(sprints);
+    setSprints(sprints);
   };
 
   function generateSprints(): ISprint[] {
@@ -39,24 +40,23 @@ export const ButtonCombinations = (props: ButtonCombinationsProps): JSX.Element 
   }
 
   const copyInputNamesInArray = (): string[] => {
-    const allInputsValues = props.inputNamesInArray.map((input) => {
+    const allInputsValues = inputNamesInArray.map((input) => {
       return input;
     });
     return allInputsValues;
   };
 
   const clearAllCombinations = (): void => {
-    props.setSprints([]);
+    setSprints([]);
   };
 
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <button
         onClick={(): void => generateCombinationsOfTheSprints()}
-        {...props}
-        disabled={props.inputNamesInArray.length > 1 ? false : true}
+        disabled={inputNamesInArray.length > 1 ? false : true}
       >
-        {props.title}
+        {title}
       </button>
       <button onClick={clearAllCombinations}>{'Clear All Combinations'}</button>
     </div>

@@ -6,9 +6,10 @@ interface ListResultOfCombinationsProps {
 }
 
 export const ListResultOfCombinations = (props: ListResultOfCombinationsProps): JSX.Element => {
+  const { sprints } = props;
   return (
     <>
-      {props.sprints.map((sprint: ISprint, index: number) =>
+      {sprints.map((sprint: ISprint, index: number) =>
         sprint.combinations.map((comb: ICombination) => {
           return (
             <ul key={index}>

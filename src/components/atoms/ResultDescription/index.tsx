@@ -3,7 +3,8 @@ interface ResultDescriptionProps {
 }
 
 export const ResultDescription = (props: ResultDescriptionProps): JSX.Element => {
-  return <p>{props.description}</p>;
+  const { description } = props;
+  return <p>{description}</p>;
 };
 
 export default ResultDescription;

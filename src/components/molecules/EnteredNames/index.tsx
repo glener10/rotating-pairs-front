@@ -7,13 +7,11 @@ interface EnteredNamesProps {
 }
 
 export const EnteredNames = (props: EnteredNamesProps): JSX.Element => {
+  const { valuesArray, setInputNamesInArray } = props;
   return (
     <div>
       <Title title={'Entered Names'} />
-      <ListEnteredNames
-        setInputNamesInArray={props.setInputNamesInArray}
-        valuesArray={props.valuesArray}
-      />
+      <ListEnteredNames setInputNamesInArray={setInputNamesInArray} valuesArray={valuesArray} />
     </div>
   );
 };
