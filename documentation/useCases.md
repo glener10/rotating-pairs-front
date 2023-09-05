@@ -1,5 +1,12 @@
+## Study
+
+- Responsivity
+- Dark and white mode
+- Three arqs in the pages folder
+
 ## Base Tasks
 
+- Change global base colors
 - Implement the look of site (css)
 - Make the project internacional, so many languages.
 - Implement dark and white mode
