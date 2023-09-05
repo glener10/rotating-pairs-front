@@ -1,6 +1,5 @@
 ## Base Tasks
 
-- Fix all console log errors
 - Implement the look of site (css)
 - Make the project internacional, so many languages.
 - Implement dark and white mode
