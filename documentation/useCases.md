@@ -1,15 +1,21 @@
+## Base Tasks
+
 - Fix all console log errors
+- Implement the look of site (css)
+- Create an icon, suggest two people and something related to randomization.
+- Make the project internacional, so many languages.
 
-- Implementar o visual de uma forma melhor
+## New Features
 
-- Implementar exportação CSV, TXT
-- Ideia para o rodapé
-- Implementar 'Donate' com paypal - pix
-- Limite de membro para sortear, exemplo equipe de 10 pessoas. para liberar necessário doar 10 reais...
+- Implementing exportation in CSV or TXT.
+- Implement the footer.
+- Implementing donate with paypal or pix.
+- Member limit to draw, example team of 10 people. to release it necessary to donate 10 reais...
 
-- Implementar TODOS os testes
+## Study about production, github action, pipelines and google ads
 
-- Criar ícone, sugestão dois bonecos e algo que relacione randorização, como por exemplo um dado...
-- Tornar internacional o projeto (usar alguma biblioteca do Node)
+## Testes
 
-- Subir o projeto e vincular com o Git Actions os pipeas
+- Implementing atoms tests
+- Implementing molecules tests
+- Implementing organism tests
