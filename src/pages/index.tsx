@@ -17,10 +17,6 @@ export default function Home(): JSX.Element {
         <div className={styles.center}>
           <Drawer />
         </div>
-
-        <div className={styles.grid}>
-          <p>Rodapé</p>
-        </div>
       </main>
     </>
   );
