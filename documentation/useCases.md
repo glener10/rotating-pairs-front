@@ -1,4 +1,4 @@
-- Resolver lógica para entrada com N nomes (Número grande), até o 'S'
+- (PRIORIDADE) Resolver lógica para entrada com N nomes (Número grande), até o 'S'
 
 - Atualizar documentação
 - Colocar Typescript, lint e Prettier
