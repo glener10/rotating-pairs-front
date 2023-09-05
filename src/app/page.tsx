@@ -1,16 +1,16 @@
-import Drawer from '@/components/organisms/Drawer'
-import styles from './page.module.css'
+import { Drawer } from '@/components/organisms/Drawer';
+import styles from './page.module.css';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <main className={styles.main}>
       <div className={styles.center}>
-        <Drawer/>
+        <Drawer />
       </div>
 
       <div className={styles.grid}>
         <p>Rodapé</p>
       </div>
     </main>
-  )
+  );
 }
