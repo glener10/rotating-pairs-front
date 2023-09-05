@@ -1,13 +1,9 @@
-
-interface TitleProps{
+interface TitleProps {
   title: string;
 }
 
-export const Title = (props: TitleProps) => { 
-  return (
-    <h2>{props.title}</h2>
-  );
+export const Title = (props: TitleProps): JSX.Element => {
+  return <h2>{props.title}</h2>;
 };
 
-
-export default Title
+export default Title;

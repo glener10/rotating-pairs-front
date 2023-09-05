@@ -3,8 +3,8 @@ interface ListEnteredNamesProps {
   setInputNamesInArray: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-export const ListEnteredNames = (props: ListEnteredNamesProps) => {
-  const removingOneInput = (value: string) => {
+export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
+  const removingOneInput = (value: string): void => {
     const index = props.valuesArray.indexOf(value);
     if (index !== -1) {
       const newArray = [...props.valuesArray];
@@ -16,9 +16,12 @@ export const ListEnteredNames = (props: ListEnteredNamesProps) => {
   return (
     <ul>
       {props.valuesArray.map((value, index) => (
-        <div key={`div-${index}`} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div
+          key={`div-${index}`}
+          style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+        >
           <li key={index}>{value}</li>
-          <button onClick={() => removingOneInput(value)}>X</button>
+          <button onClick={(): void => removingOneInput(value)}>X</button>
         </div>
       ))}
     </ul>

@@ -1,5 +1,5 @@
-import { ICombination } from "@/interfaces/ICombination";
+import { ICombination } from '@/interfaces/ICombination';
 
-export interface ISprint{
+export interface ISprint {
   combinations: ICombination[];
 }
