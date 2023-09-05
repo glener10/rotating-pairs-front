@@ -1,6 +1,3 @@
-- Colocar commit lint
-- Atualizar documentação
-
 - Fix all console log errors
 
 - Implementar o visual de uma forma melhor
