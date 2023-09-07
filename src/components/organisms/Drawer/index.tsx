@@ -5,7 +5,6 @@ import { InputAndButton } from '@/components/molecules/InputAndButton';
 import { ResultOfCombinations } from '@/components/molecules/ResultOfCombinations';
 import { ISprint } from '@/interfaces/ISprint';
 import { useState } from 'react';
-import classes from './Drawer.module.scss';
 
 export const Drawer = (): JSX.Element => {
   const [inputNamesInArray, setInputNamesInArray] = useState<string[]>([]);
@@ -13,7 +12,14 @@ export const Drawer = (): JSX.Element => {
   const [sprints, setSprints] = useState<ISprint[]>([]);
 
   return (
-    <div className={classes.div}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '40px',
+      }}
+    >
       <InputAndButton setInputNamesInArray={setInputNamesInArray} />
       {inputNamesInArray && inputNamesInArray.length > 0 && (
         <EnteredNames setInputNamesInArray={setInputNamesInArray} valuesArray={inputNamesInArray} />

@@ -1,15 +1,12 @@
-## Study
-
-- Responsivity
-- Dark and white mode
-- Three arqs in the pages folder
-
 ## Base Tasks
 
-- Change global base colors
-- Implement the look of site (css)
+- Fix errors ao exec 'npm run dev'(Excluir SASS e outras biblios?)
+- Create ThemeProviders, alternating in dark and white theme.
+- Decided whats lib use (bootstrap, chakra, etc).
+- Implement dark and white mode.
+
+- Implement the look of site (css).
 - Make the project internacional, so many languages.
-- Implement dark and white mode
 
 ## New Features
 
@@ -17,6 +14,7 @@
 - Implement the footer.
 - Implementing donate with paypal or pix.
 - Member limit to draw, example team of 10 people. to release it necessary to donate 10 reais...
+- Log of records of clicks on generate Combinations (how many entries, how many sprints, how many combinations, dth, localRequisition).
 
 ## Study about production, github action, pipelines and google ads
 
