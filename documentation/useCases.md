@@ -1,6 +1,5 @@
 ## Base Tasks
 
-- Fix errors ao exec 'npm run dev'(Excluir SASS e outras biblios?)
 - Create ThemeProviders, alternating in dark and white theme.
 - Decided whats lib use (bootstrap, chakra, etc).
 - Implement dark and white mode.
