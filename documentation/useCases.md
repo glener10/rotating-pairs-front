@@ -1,8 +1,8 @@
 ## Base Tasks
 
-- Create ThemeProviders, alternating in dark and white theme.
-- Decided whats lib use (bootstrap, chakra, etc).
-- Implement dark and white mode.
+- Install TailWind
+- Change components to components of the TailWind
+- Create ThemeProviders, alternating in dark and white theme. https://www.youtube.com/watch?v=8wtNt-wxF_0&ab_channel=LorenaPorphirio, https://www.youtube.com/watch?v=TavBrPEqkbY&ab_channel=SkiesDev
 
 - Implement the look of site (css).
 - Make the project internacional, so many languages.
