@@ -1,3 +1,5 @@
+import { Box, Button, Text } from '@radix-ui/themes';
+
 interface ListEnteredNamesProps {
   valuesArray: string[];
   setInputNamesInArray: React.Dispatch<React.SetStateAction<string[]>>;
@@ -17,13 +19,17 @@ export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
   return (
     <ul>
       {valuesArray.map((value, index) => (
-        <div
+        <Box
           key={`div-${index}`}
           style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
         >
-          <li key={index}>{value}</li>
-          <button onClick={(): void => removingOneInput(value)}>X</button>
-        </div>
+          <Text as="span" key={index}>
+            {value}
+          </Text>
+          <Button variant="soft" onClick={(): void => removingOneInput(value)}>
+            X
+          </Button>
+        </Box>
       ))}
     </ul>
   );
