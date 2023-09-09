@@ -1,7 +1,7 @@
 ## Base Tasks
 
+- Create a universal Header for any route
 - Install TailWind
-- Change components to components of the TailWind
 - Create ThemeProviders, alternating in dark and white theme. https://www.youtube.com/watch?v=8wtNt-wxF_0&ab_channel=LorenaPorphirio, https://www.youtube.com/watch?v=TavBrPEqkbY&ab_channel=SkiesDev
 
 - Implement the look of site (css).
