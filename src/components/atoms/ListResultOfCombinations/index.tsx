@@ -14,7 +14,6 @@ export const ListResultOfCombinations = (props: ListResultOfCombinationsProps): 
         sprint.combinations.map((comb: ICombination, indexCombination: number) => {
           return (
             <Text as="p" key={`${index}-${indexCombination}`}>
-              {' '}
               {`\nSPRINT (${index + 1}): ${comb.pairOne} - ${comb.pairTwo}`}
             </Text>
           );
