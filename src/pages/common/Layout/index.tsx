@@ -1,17 +1,22 @@
 import { Footer } from '@/components/common/Footer';
 import { Header } from '@/components/common/Header';
-import { ReactNode } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 
 type LayoutProps = {
-  children: ReactNode; // Tipagem explícita para children
+  theme: string;
+  setTheme: Dispatch<SetStateAction<string>>;
+  children: ReactNode;
 };
+export const Layout = (props: LayoutProps): JSX.Element => {
+  const { theme, setTheme, children } = props;
 
-export const Layout = ({ children }: LayoutProps): JSX.Element => (
-  <div>
-    <Header />
-    <main>{children}</main>
-    <Footer />
-  </div>
-);
+  return (
+    <div>
+      <Header theme={theme} setTheme={setTheme} />
+      <main>{children}</main>
+      <Footer />
+    </div>
+  );
+};
 
 export default Layout;
