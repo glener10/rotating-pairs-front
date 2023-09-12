@@ -56,17 +56,17 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   };
 
   return (
-    <>
+    <Box style={{ width: '50%' }}>
       <Input
         value={boxInputNames}
         onChange={handleInputChange}
         placeholder="Enter values separated by a line break..."
       />
-      <Box>
+      <Box style={{ display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
         <SimpleButton onClick={handleAddValues} title={'Save Inputs'} />
         <SimpleButton onClick={clearAll} title={'Clear All'} />
       </Box>
-    </>
+    </Box>
   );
 };
 

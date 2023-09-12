@@ -12,7 +12,15 @@ interface InputProps {
 
 export const Input = (props: InputProps): JSX.Element => {
   const { ...rest } = props;
-  return <TextArea {...rest} />;
+  return (
+    <TextArea
+      style={{
+        minHeight: '120px',
+        padding: '8px',
+      }}
+      {...rest}
+    />
+  );
 };
 
 export default Input;
