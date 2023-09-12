@@ -26,14 +26,12 @@ export const Drawer = (): JSX.Element => {
         <EnteredNames setInputNamesInArray={setInputNamesInArray} valuesArray={inputNamesInArray} />
       )}
 
-      <Box>
-        <ButtonCombinations
-          title={'Generate Combinations'}
-          inputNamesInArray={inputNamesInArray}
-          setSprints={setSprints}
-        />
-        {sprints && sprints.length > 0 && <ResultOfCombinations sprints={sprints} />}
-      </Box>
+      <ButtonCombinations
+        title={'Generate Combinations'}
+        inputNamesInArray={inputNamesInArray}
+        setSprints={setSprints}
+      />
+      {sprints && sprints.length > 0 && <ResultOfCombinations sprints={sprints} />}
     </Box>
   );
 };

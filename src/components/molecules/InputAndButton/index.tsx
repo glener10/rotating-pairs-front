@@ -56,7 +56,7 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   };
 
   return (
-    <Box style={{ width: '50%' }}>
+    <Box style={{ width: '60%' }}>
       <Input
         value={boxInputNames}
         onChange={handleInputChange}

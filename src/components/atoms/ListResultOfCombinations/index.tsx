@@ -9,9 +9,20 @@ interface ListResultOfCombinationsProps {
 export const ListResultOfCombinations = (props: ListResultOfCombinationsProps): JSX.Element => {
   const { sprints } = props;
   return (
-    <Grid columns="3" gap="3" width="auto">
+    <Grid
+      style={{
+        //display: 'grid',
+        //gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+        display: 'flex',
+        flexWrap: 'wrap',
+        width: '60%',
+        gap: '3px',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       {sprints.map((sprint: ISprint, index: number) => (
-        <Table.Root variant="surface" style={{ margin: '20px' }} key={index}>
+        <Table.Root variant="surface" style={{ margin: '15px' }} key={index}>
           <Table.Header>
             <Table.Row>
               <Table.ColumnHeaderCell>{'Sprint: '}</Table.ColumnHeaderCell>

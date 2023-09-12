@@ -1,7 +1,9 @@
+## Study about production, github action, pipelines and google ads
+
 ## Base Tasks
 
 - Revising CSS (all things).
-- Implement the look of site (css).
+- Revising responsiveness
 - Make the project internacional, so many languages.
 
 ## New Features
@@ -12,10 +14,7 @@
 - Implementing 'Sobre' https://www.invertexto.com/sobre
 
 - Implementing donate with paypal or pix.
-- Member limit to draw, example team of 10 people. to release it necessary to donate 10 reais...
 - Log of records of clicks on generate Combinations (how many entries, how many sprints, how many combinations, dth, localRequisition).
-
-## Study about production, github action, pipelines and google ads
 
 ## Testes
 

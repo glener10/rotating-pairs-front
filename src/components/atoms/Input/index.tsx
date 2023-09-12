@@ -15,7 +15,7 @@ export const Input = (props: InputProps): JSX.Element => {
   return (
     <TextArea
       style={{
-        minHeight: '120px',
+        minHeight: '130px',
         padding: '8px',
       }}
       {...rest}

@@ -51,7 +51,7 @@ export const ButtonCombinations = (props: ButtonCombinationsProps): JSX.Element 
   };
 
   return (
-    <Box style={{ width: '100%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
+    <Box style={{ width: '60%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
       <Button
         onClick={(): void => generateCombinationsOfTheSprints()}
         disabled={inputNamesInArray.length > 1 ? false : true}
