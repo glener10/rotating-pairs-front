@@ -11,6 +11,9 @@ export const generateCombinations = (inputNamesInArray: string[]): ISprint[] => 
 
   const allInputsValues = copyInputNamesInArray(inputNamesInArray);
 
+  const sizeOfLoop =
+    allInputsValues.length == 2 ? numberOfCombinationPerSprint : numberOfCombinationPerSprint - 1;
+
   let lastInputValue = null;
 
   if (!numberOfNamesIsOdd && allInputsValues.length > 2) {
@@ -24,9 +27,6 @@ export const generateCombinations = (inputNamesInArray: string[]): ISprint[] => 
   );
 
   const allCombinationsPossible = generateAllCombinationsPossible(inputNamesInArray);
-
-  const sizeOfLoop =
-    lastInputValue != null ? numberOfCombinationPerSprint - 1 : numberOfCombinationPerSprint;
 
   searchCombinations(combinations, sizeOfLoop, allCombinationsPossible);
 
