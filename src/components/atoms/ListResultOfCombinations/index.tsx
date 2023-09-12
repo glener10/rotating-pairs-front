@@ -24,7 +24,11 @@ export const ListResultOfCombinations = (props: ListResultOfCombinationsProps): 
             {sprint.combinations.map((comb: ICombination, indexCombination: number) => (
               <Table.Row key={indexCombination}>
                 <Table.Cell>{comb.pairOne}</Table.Cell>
-                <Table.Cell>{comb.pairTwo}</Table.Cell>
+                {comb.pairTwo == comb.pairOne ? (
+                  <Table.Cell></Table.Cell>
+                ) : (
+                  <Table.Cell>{comb.pairTwo}</Table.Cell>
+                )}
               </Table.Row>
             ))}
           </Table.Body>

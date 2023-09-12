@@ -1,4 +1,3 @@
-import { Footer } from '@/components/common/Footer';
 import { Header } from '@/components/common/Header';
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 
@@ -13,8 +12,7 @@ export const Layout = (props: LayoutProps): JSX.Element => {
   return (
     <div>
       <Header theme={theme} setTheme={setTheme} />
-      <main>{children}</main>
-      <Footer />
+      {children}
     </div>
   );
 };
