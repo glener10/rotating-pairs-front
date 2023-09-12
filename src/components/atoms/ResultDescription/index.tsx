@@ -6,7 +6,14 @@ interface ResultDescriptionProps {
 
 export const ResultDescription = (props: ResultDescriptionProps): JSX.Element => {
   const { description } = props;
-  return <Text as="p">{description}</Text>;
+
+  const descriptionSepareted = description.split(':');
+  return (
+    <Text as="p">
+      {`${descriptionSepareted[0]}: `}
+      <strong>{descriptionSepareted[1]}</strong>
+    </Text>
+  );
 };
 
 export default ResultDescription;

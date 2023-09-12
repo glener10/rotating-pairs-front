@@ -9,6 +9,7 @@
 ## New Features
 
 - Implementing exportation in CSV or TXT.
+- Implementing Sobre https://www.invertexto.com/sobre
 - Implement the footer.
 - Implementing donate with paypal or pix.
 - Member limit to draw, example team of 10 people. to release it necessary to donate 10 reais...

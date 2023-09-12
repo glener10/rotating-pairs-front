@@ -1,3 +1,4 @@
+import { Cross1Icon } from '@radix-ui/react-icons';
 import { Box, Button, Text } from '@radix-ui/themes';
 
 interface ListEnteredNamesProps {
@@ -21,13 +22,18 @@ export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
       {valuesArray.map((value, index) => (
         <Box
           key={`div-${index}`}
-          style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            margin: '6px',
+          }}
         >
           <Text as="span" key={index}>
             {value}
           </Text>
           <Button variant="soft" onClick={(): void => removingOneInput(value)}>
-            X
+            <Cross1Icon />
           </Button>
         </Box>
       ))}

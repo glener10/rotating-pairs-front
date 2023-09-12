@@ -6,7 +6,11 @@ interface TitleProps {
 
 export const Title = (props: TitleProps): JSX.Element => {
   const { title } = props;
-  return <Heading align="center">{title}</Heading>;
+  return (
+    <Heading style={{ margin: '8px' }} align="center">
+      {title}
+    </Heading>
+  );
 };
 
 export default Title;

@@ -10,7 +10,7 @@ interface EnteredNamesProps {
 export const EnteredNames = (props: EnteredNamesProps): JSX.Element => {
   const { valuesArray, setInputNamesInArray } = props;
   return (
-    <Box>
+    <Box style={{ display: 'flex', flexDirection: 'column', margin: '8px' }}>
       <Title title={'Entered Names'} />
       <ListEnteredNames setInputNamesInArray={setInputNamesInArray} valuesArray={valuesArray} />
     </Box>
