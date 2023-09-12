@@ -1,0 +1,62 @@
+{
+  "generateCombinations": [
+    {
+      "numberOfInputs": 2,
+      "numberOfSprints": 1,
+      "numberOfCombinationsPerSprint": 1,
+      "sprints": [
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numberOfInputs": 3,
+      "numberOfSprints": 3,
+      "numberOfCombinationsPerSprint": 2,
+      "sprints": [
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "1"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "2"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "1"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "1",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
