@@ -11,7 +11,7 @@ export const EnteredNames = (props: EnteredNamesProps): JSX.Element => {
   const { valuesArray, setInputNamesInArray } = props;
   return (
     <Box style={{ display: 'flex', flexDirection: 'column', margin: '8px' }}>
-      <Title title={'Entered Names'} />
+      <Title title={'Entered Names'} numberValues={valuesArray.length} />
       <ListEnteredNames setInputNamesInArray={setInputNamesInArray} valuesArray={valuesArray} />
     </Box>
   );

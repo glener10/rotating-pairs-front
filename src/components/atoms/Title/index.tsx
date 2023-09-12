@@ -2,13 +2,14 @@ import { Heading } from '@radix-ui/themes';
 
 interface TitleProps {
   title: string;
+  numberValues?: number;
 }
 
 export const Title = (props: TitleProps): JSX.Element => {
-  const { title } = props;
+  const { title, numberValues } = props;
   return (
     <Heading style={{ margin: '8px' }} align="center">
-      {title}
+      {numberValues ? title + ' [' + numberValues + ']' : title}
     </Heading>
   );
 };
