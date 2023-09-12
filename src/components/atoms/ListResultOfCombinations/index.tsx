@@ -11,8 +11,6 @@ export const ListResultOfCombinations = (props: ListResultOfCombinationsProps): 
   return (
     <Grid
       style={{
-        //display: 'grid',
-        //gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
         display: 'flex',
         flexWrap: 'wrap',
         width: '60%',
