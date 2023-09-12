@@ -4,6 +4,7 @@ import { EnteredNames } from '@/components/molecules/EnteredNames';
 import { InputAndButton } from '@/components/molecules/InputAndButton';
 import { ResultOfCombinations } from '@/components/molecules/ResultOfCombinations';
 import { ISprint } from '@/interfaces/ISprint';
+import { Box } from '@radix-ui/themes';
 import { useState } from 'react';
 
 export const Drawer = (): JSX.Element => {
@@ -12,7 +13,7 @@ export const Drawer = (): JSX.Element => {
   const [sprints, setSprints] = useState<ISprint[]>([]);
 
   return (
-    <div
+    <Box
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -25,15 +26,15 @@ export const Drawer = (): JSX.Element => {
         <EnteredNames setInputNamesInArray={setInputNamesInArray} valuesArray={inputNamesInArray} />
       )}
 
-      <div>
+      <Box>
         <ButtonCombinations
           title={'Generate Combinations'}
           inputNamesInArray={inputNamesInArray}
           setSprints={setSprints}
         />
         {sprints && sprints.length > 0 && <ResultOfCombinations sprints={sprints} />}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

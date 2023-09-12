@@ -1,14 +1,14 @@
 import { ICombination } from '@/interfaces/ICombination';
 import { ISprint } from '@/interfaces/ISprint';
+import { Box, Button } from '@radix-ui/themes';
 
 interface ButtonCombinationsProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  title: string;
   inputNamesInArray: string[];
   setSprints: React.Dispatch<React.SetStateAction<ISprint[]>>;
 }
 
 export const ButtonCombinations = (props: ButtonCombinationsProps): JSX.Element => {
-  const { title, inputNamesInArray, setSprints } = props;
+  const { inputNamesInArray, setSprints } = props;
   const generateCombinationsOfTheSprints = (): void => {
     const sprints = generateSprints();
     setSprints(sprints);
@@ -51,15 +51,15 @@ export const ButtonCombinations = (props: ButtonCombinationsProps): JSX.Element 
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <button
+    <Box style={{ width: '100%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
+      <Button
         onClick={(): void => generateCombinationsOfTheSprints()}
         disabled={inputNamesInArray.length > 1 ? false : true}
       >
-        {title}
-      </button>
-      <button onClick={clearAllCombinations}>{'Clear All Combinations'}</button>
-    </div>
+        {'Generate Combinations'}
+      </Button>
+      <Button onClick={clearAllCombinations}>{'Clear All Combinations'}</Button>
+    </Box>
   );
 };
 

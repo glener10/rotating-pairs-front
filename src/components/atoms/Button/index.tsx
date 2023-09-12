@@ -1,10 +1,17 @@
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+import { Button } from '@radix-ui/themes';
+
+interface ButtonProps {
   title: string;
+  onClick?: () => void;
 }
 
-export const Button = (props: ButtonProps): JSX.Element => {
+export const SimpleButton = (props: ButtonProps): JSX.Element => {
   const { title, ...rest } = props;
-  return <button {...rest}>{title}</button>;
+  return (
+    <Button variant="soft" {...rest}>
+      {title}
+    </Button>
+  );
 };
 
-export default Button;
+export default SimpleButton;

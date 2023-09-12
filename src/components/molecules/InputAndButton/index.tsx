@@ -1,5 +1,6 @@
-import { Button } from '@/components/atoms/Button';
+import { SimpleButton } from '@/components/atoms/Button';
 import { Input } from '@/components/atoms/Input';
+import { Box } from '@radix-ui/themes';
 import { Dispatch, SetStateAction, useState } from 'react';
 
 interface InputAndButtonProps {
@@ -55,18 +56,17 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   };
 
   return (
-    <>
+    <Box style={{ width: '50%' }}>
       <Input
         value={boxInputNames}
         onChange={handleInputChange}
-        placeholder="Enter values separated by a line break"
-        rows={5}
+        placeholder="Enter values separated by a line break..."
       />
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Button onClick={handleAddValues} title={'Save Inputs'} />
-        <Button onClick={clearAll} title={'Clear All'} />
-      </div>
-    </>
+      <Box style={{ display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
+        <SimpleButton onClick={handleAddValues} title={'Save Inputs'} />
+        <SimpleButton onClick={clearAll} title={'Clear All'} />
+      </Box>
+    </Box>
   );
 };
 
