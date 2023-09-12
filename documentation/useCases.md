@@ -1,15 +1,24 @@
-- Fix all console log errors
+## Base Tasks
 
-- Implementar o visual de uma forma melhor
+- Revising CSS (all things).
+- Implement the look of site (css).
+- Make the project internacional, so many languages.
 
-- Implementar exportação CSV, TXT
-- Ideia para o rodapé
-- Implementar 'Donate' com paypal - pix
-- Limite de membro para sortear, exemplo equipe de 10 pessoas. para liberar necessário doar 10 reais...
+## New Features
 
-- Implementar TODOS os testes
+- Implementing Popovers in the buttons how is disabled
+- Implementing exportation in CSV or TXT.
+- Implementing any forms to see the result of the combinations (tabs, tables)
+- Implementing 'Sobre' https://www.invertexto.com/sobre
 
-- Criar ícone, sugestão dois bonecos e algo que relacione randorização, como por exemplo um dado...
-- Tornar internacional o projeto (usar alguma biblioteca do Node)
+- Implementing donate with paypal or pix.
+- Member limit to draw, example team of 10 people. to release it necessary to donate 10 reais...
+- Log of records of clicks on generate Combinations (how many entries, how many sprints, how many combinations, dth, localRequisition).
 
-- Subir o projeto e vincular com o Git Actions os pipeas
+## Study about production, github action, pipelines and google ads
+
+## Testes
+
+- Implementing atoms tests
+- Implementing molecules tests
+- Implementing organism tests

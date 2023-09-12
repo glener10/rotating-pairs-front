@@ -1,5 +1,6 @@
-import { Button } from '@/components/atoms/Button';
+import { SimpleButton } from '@/components/atoms/Button';
 import { Input } from '@/components/atoms/Input';
+import { Box } from '@radix-ui/themes';
 import { Dispatch, SetStateAction, useState } from 'react';
 
 interface InputAndButtonProps {
@@ -7,6 +8,7 @@ interface InputAndButtonProps {
 }
 
 export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
+  const { setInputNamesInArray } = props;
   const [boxInputNames, setBoxInputNames] = useState('');
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string> } }): void => {
@@ -18,7 +20,7 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
     const nonEmptyValues = newValues.filter((value) => value !== '');
 
     if (nonEmptyValues.length > 0) {
-      props.setInputNamesInArray((prevArray) => putSignageOnEqualNames(prevArray, nonEmptyValues));
+      setInputNamesInArray((prevArray) => putSignageOnEqualNames(prevArray, nonEmptyValues));
       setBoxInputNames('');
     }
   };
@@ -50,17 +52,21 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   };
 
   const clearAll = (): void => {
-    props.setInputNamesInArray([]);
+    setInputNamesInArray([]);
   };
 
   return (
-    <>
-      <Input boxInputNames={boxInputNames} handleInputChange={handleInputChange} />
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Button onClick={handleAddValues} title={'Save Inputs'} />
-        <Button onClick={clearAll} title={'Clear All'} />
-      </div>
-    </>
+    <Box style={{ width: '50%' }}>
+      <Input
+        value={boxInputNames}
+        onChange={handleInputChange}
+        placeholder="Enter values separated by a line break..."
+      />
+      <Box style={{ display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
+        <SimpleButton onClick={handleAddValues} title={'Save Inputs'} />
+        <SimpleButton onClick={clearAll} title={'Clear All'} />
+      </Box>
+    </Box>
   );
 };
 

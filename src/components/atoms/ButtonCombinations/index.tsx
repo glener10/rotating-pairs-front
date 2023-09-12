@@ -1,16 +1,17 @@
 import { ICombination } from '@/interfaces/ICombination';
 import { ISprint } from '@/interfaces/ISprint';
+import { Box, Button } from '@radix-ui/themes';
 
 interface ButtonCombinationsProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  title: string;
   inputNamesInArray: string[];
   setSprints: React.Dispatch<React.SetStateAction<ISprint[]>>;
 }
 
 export const ButtonCombinations = (props: ButtonCombinationsProps): JSX.Element => {
+  const { inputNamesInArray, setSprints } = props;
   const generateCombinationsOfTheSprints = (): void => {
     const sprints = generateSprints();
-    props.setSprints(sprints);
+    setSprints(sprints);
   };
 
   function generateSprints(): ISprint[] {
@@ -39,27 +40,26 @@ export const ButtonCombinations = (props: ButtonCombinationsProps): JSX.Element 
   }
 
   const copyInputNamesInArray = (): string[] => {
-    const allInputsValues = props.inputNamesInArray.map((input) => {
+    const allInputsValues = inputNamesInArray.map((input) => {
       return input;
     });
     return allInputsValues;
   };
 
   const clearAllCombinations = (): void => {
-    props.setSprints([]);
+    setSprints([]);
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <button
+    <Box style={{ width: '100%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
+      <Button
         onClick={(): void => generateCombinationsOfTheSprints()}
-        {...props}
-        disabled={props.inputNamesInArray.length > 1 ? false : true}
+        disabled={inputNamesInArray.length > 1 ? false : true}
       >
-        {props.title}
-      </button>
-      <button onClick={clearAllCombinations}>{'Clear All Combinations'}</button>
-    </div>
+        {'Generate Combinations'}
+      </Button>
+      <Button onClick={clearAllCombinations}>{'Clear All Combinations'}</Button>
+    </Box>
   );
 };
 

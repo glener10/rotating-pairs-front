@@ -9,18 +9,19 @@ interface ResultOfCombinationsProps {
 }
 
 export const ResultOfCombinations = (props: ResultOfCombinationsProps): JSX.Element => {
+  const { sprints } = props;
   const [numberOfSprints, setNumberOfSprints] = useState<number>();
   const [numberOfCombinationPerSprint, setNumberOfCombinationPerSprint] = useState<number>();
 
   useEffect(() => {
-    if (props.sprints && props.sprints.length > 0) {
-      const numberOfSprints = props.sprints.length;
-      const numberOfCombinationPerSprint = props.sprints[0].combinations.length;
+    if (sprints && sprints.length > 0) {
+      const numberOfSprints = sprints.length;
+      const numberOfCombinationPerSprint = sprints[0].combinations.length;
 
       setNumberOfCombinationPerSprint(numberOfCombinationPerSprint);
       setNumberOfSprints(numberOfSprints);
     }
-  }, [props.sprints]);
+  }, [sprints]);
 
   return (
     <>
@@ -29,7 +30,7 @@ export const ResultOfCombinations = (props: ResultOfCombinationsProps): JSX.Elem
       <ResultDescription
         description={`Number of combinations per Sprint: ${numberOfCombinationPerSprint}`}
       />
-      <ListResultOfCombinations sprints={props.sprints} />
+      <ListResultOfCombinations sprints={sprints} />
     </>
   );
 };

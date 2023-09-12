@@ -1,5 +1,6 @@
 import { ListEnteredNames } from '@/components/atoms/ListEnteredNames';
 import { Title } from '@/components/atoms/Title';
+import { Box } from '@radix-ui/themes';
 
 interface EnteredNamesProps {
   valuesArray: string[];
@@ -7,14 +8,12 @@ interface EnteredNamesProps {
 }
 
 export const EnteredNames = (props: EnteredNamesProps): JSX.Element => {
+  const { valuesArray, setInputNamesInArray } = props;
   return (
-    <div>
+    <Box style={{ display: 'flex', flexDirection: 'column', margin: '8px' }}>
       <Title title={'Entered Names'} />
-      <ListEnteredNames
-        setInputNamesInArray={props.setInputNamesInArray}
-        valuesArray={props.valuesArray}
-      />
-    </div>
+      <ListEnteredNames setInputNamesInArray={setInputNamesInArray} valuesArray={valuesArray} />
+    </Box>
   );
 };
 

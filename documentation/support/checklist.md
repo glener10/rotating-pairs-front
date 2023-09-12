@@ -6,105 +6,21 @@
 
 <!--ts-->
 
-- 👉 [CheckList Projeto Inicial](#checklist)
+- ➡️ [Design System](#designSystem)
 
-  - ➡️ [CheckList Front-End](#checklist-frontend)
+- ➡️ [Theming](#designSystem-theming)
 
-    - ➡️ [Design System](#designSystem)
+- ➡️ [Wrappers](#designSystem-wrappers)
 
-      - ➡️ [Theming](#designSystem-theming)
-
-      - ➡️ [Wrappers](#designSystem-wrappers)
-
-- 👉 [CheckList do que seu Projeto DEVE ser](#checklist-deve)
-
-  - ➡️ [Front-End Deve ser](#checklist-deve-frontend)
+- ➡️ [Front-End Deve ser](#checklist-deve-frontend)
 
 <!--te-->
 
 ===================
 
-<div id="checklist"></div>
-
-## **CheckList Projeto Inicial**
-
-[ ] Cria um projeto o mais simples possível, e mesmo assim tire/limpe o que vem de "extra" caso inicie com um framework (Não recomendado).
-
-[ ] Adicione a documentação inicial, recomenda-se utilizar alguns arquivos padrões:
-
-- 'todo-list.md'
-- 'checklists.md' (Este arquivo para lembrar o que o projeto deve ser com o decorrer do tempo)
-- 'padroes.md' (Padrões como nomenclaturas ou ações em situações específicas que devem ser adotados pela equipe que pode ser acessado em caso de esquecimento)
-- 'changelog.md' (Este arquivo registra as principais alterações feitas em cada versão do projeto, listando os recursos adicionados, correções de bugs, alterações de API e outras modificações relevantes.)
-- 'notas.md' Contendo os _Good-Patterns_ e _Anti-Patterns_ (em [Anexo](#anexos))
-- Pasta CModel ou diagramas contendo documentação técnica do projeto, _dependencias.drawio_ e _fluxo.drawio_
-
-```js
-//changelog.md
-# [v0.6.3] - 22/08/2023
-
-- Configura auto import dos _pathMapping_ do Jest.
-```
-
-[ ] Crie um arquivo de _LICENÇA_
-
-[ ] Crie um arquivo de documentação geral _README_
-
-[ ] Inicialize e use um verificador de código (ex: _eslint_), necessário inicializar e deixar as regras bem restritas. Use o **.eslintignore** para tornar o verificador mais leve.
-
-[ ] Inicialize e use TypeScript sempre que possível. Sempre bem estrito (observação: usar o _strictNullChecks_ como **true**).
-
-[ ] Sincronize o _ESLint_ com o _Typescript_, adicionando plugins específicos no arquivo _eslintrc_ para utilizar as vantagens de detecção do _lint_ em problemas de _Typescript_.
-
-[ ] Inicialize e use um formatador de código para equipe seguir mesmo padrão, exemplo do _Prettier_ que disponibiliza criar um arquivo local para ter a mesma configuração para qualquer desenvolvedor.
-
-[ ] Sincronize o _ESLint_ com o _Prettier_. A integração do ESLint com o Prettier garante que a formatação seja aplicada de acordo com as regras do verificador de código, evitando conflitos entre as regras de formatação e as regras de linting.
-
-[ ] Configure a biblioteca que será utilizada para executar os testes, os arquivos de configuração separados para cada tipo de teste.
-
-[ ] Configurar o debug/depuração.
-
-[ ] Usar script para não deixar commit se houver erros nos code checkers e testes, validadores e build. No _Node_ existe a biblioteca _Husky_ para essa funcionalidade.
-
-[ ] Usar Biblioteca para padrão de _commits_, no _Node_ existe a [commitlint](https://github.com/conventional-changelog/commitlint/#what-is-commitlint)
-
-[ ] Configure o ambiente de banco de dados para os testes integração e E2E
-
-[ ] Defina a arquitetura e a organização de pastas que será utilizada em seu projeto de acordo com os requisitos. **Utilizar os princípios do Clean Arch é extremamente recomendado!**
-
-[ ] Use o protocole Git e configure o .gitignore
-
-[ ] Proteja as branchs principais do seu projeto no Git contra merges indesejáveis
-
-[ ] Configure um Logger para desenvolvimento local, no node aconselha-se utilizar o pacote 'nestjs-pino' para registrar informações sobre as solicitações HTTP recebidas pelo aplicativo, como método, URL, status de resposta, tempo de resposta, entre outros detalhes (nos imports do arquivo _app.module.ts_).
-
-[ ] Adicionar as extensões recomendadas do Projeto (arquivo dentro da pasta .vscode chamado **extensions**) e as configurações da IDE do VSCode padrão (arquivo dentro da pasta .vscode chamado **settings**).
-
-```json
-//Arquivo extensions.json
-{
-  "recommendations": [
-    "orta.vscode-jest",
-    "ms-azuretools.vscode-docker",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "prisma.prisma",
-    "humao.rest-client"
-  ]
-}
-```
-
-<div id="checklist-frontend"></div>
-
-### **CheckList Front-End**
-
-[ ] [redefinir css](https://www.alura.com.br/artigos/o-que-e-reset-css).
-
-[ ] adicionando normalize (node_modules).
-
 <div id="designSystem"></div>
 
-## **Design System**
+### **Design System**
 
 [ ] Use '.scss' e não somente '.css'.
 
@@ -118,8 +34,6 @@
 [ ] [Definir fonte global](https://fonts.google.com/)
 
 [ ] Defina um fundo global, cores primárias e secundárias: [ColorHunt](https://colorhunt.co/) || [Color Adobe](https://color.adobe.com/en/create/color-wheel)
-
-[ ] Utilize como arquitetura de pasta, a **arquitetura atômica** (sugestão). Dividir os compontens em átomos, moléculas (quando um componente possui mais de um átomo), organismos (quando um componente possui mais de uma molécula) e templates.
 
 [ ] Defina um tamanho de tela **máximo** e **mínimo** para que seu site 'funcione responsivo'
 
@@ -197,36 +111,12 @@ Os wrappers também são usados para criar componentes mais complexos a partir d
 
 Em resumo, um wrapper no front-end é um componente que adiciona funcionalidades adicionais a outro componente ou conteúdo, tornando-o mais poderoso e versátil.
 
-<div id="checklist-deve"></div>
-
-## **CheckList do que seu Projeto DEVE ser**
-
-[ ] Deve possuir testes e executá-los constantemente de forma automatizada.
-
-[ ] Autenticação e controle de acesso, recomendação é utilizar _JWT Authroziation_.
-
-[ ] Deve ser otimizado e escalável.
-
-[ ] Tem que ser legível, sustentável e organizado.
-
-[ ] Deve ser documentado, desde uma documentação para dar uma ideia geral como o CModel, quanto o _README.md_, _changelog.md_, _padroes.md_, dependências, _package.json_, etc (Para os componentes teremos tópicos exclusivos para back-end e front-end).
-
-[ ] Atualizado: Manutenção de dependências e atualização de versões, mantenha as dependências do projeto atualizadas, incluindo bibliotecas, frameworks e plugins utilizados. Isso é importante para manter a segurança e a compatibilidade
-
-[ ] Ser versionado: utilize o conceito de versionamento semântico em conjuntos com o releases/tags e mantenha um arquivo _changelog.md_ atualizado do projeto sobre as atualizações.
-
-[ ] Em casos que seja necessário mensageria implemente o conceito de filas e eventos
-
 <div id="checklist-deve-frontend"></div>
 
-## **Front-End Deve ser**
-
-[ ] Educação do usuário: É importante educar os usuários sobre boas práticas de segurança, como a importância de escolher senhas fortes, não reutilizar senhas em vários serviços e estar atento a tentativas de phishing.
+### **Front-End Deve ser**
 
 [ ] **Deve ser acessível e inclusivo para todos**.
 
 [ ] **Deve ser responsivo**.
-
-[ ] Deve ser documentado. Para a documentação de um componente (react) é recomendado usar a biblioteca StoryBook. O modelo CModel dá uma visão geral bem agradável ao projeto.
 
 [ ] Seu projeto deve ser internacionalizável (Exemplo react-i18next library).
