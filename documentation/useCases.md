@@ -1,10 +1,12 @@
 ## Base Tasks
 
+- Revising CSS (all things).
 - Implement the look of site (css).
 - Make the project internacional, so many languages.
 
 ## New Features
 
+- Implementing Popovers in the buttons how is disabled
 - Implementing exportation in CSV or TXT.
 - Implementing any forms to see the result of the combinations (tabs, tables)
 - Implementing 'Sobre' https://www.invertexto.com/sobre
