@@ -46,6 +46,9 @@ const searchCombinations = (
   allCombinationsPossible: ICombination[]
 ): void => {
   combinations.map((combination) => {
+    let maxTry = 0;
+    let changingSorting = false;
+
     for (let indexA = 0; indexA < sizeOfLoop; indexA++) {
       let fix = false;
       let indexAllCombinationsPossible = 0;
@@ -69,7 +72,17 @@ const searchCombinations = (
       }
 
       if (fix == false) {
-        reSortingCombinationsOfTheSprint(combination, sizeOfLoop, allCombinationsPossible);
+        maxTry += 1;
+        if (maxTry >= 10000) {
+          changingSorting = true;
+          console.log('MaxTry 10000 passed.');
+        }
+        reSortingCombinationsOfTheSprint(
+          combination,
+          sizeOfLoop,
+          allCombinationsPossible,
+          changingSorting
+        );
         indexA = -1;
       }
     }
@@ -79,12 +92,17 @@ const searchCombinations = (
 const reSortingCombinationsOfTheSprint = (
   combination: ISprint,
   sizeOfLoop: number,
-  allCombinationsPossible: ICombination[]
+  allCombinationsPossible: ICombination[],
+  changingSorting: boolean
 ): void => {
   const lastCombination = combination.combinations.pop();
   combination.combinations.sort(() => Math.random() - 0.5);
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  combination.combinations.push(lastCombination!);
+  if (lastCombination) {
+    combination.combinations.push(lastCombination);
+  }
+  if (changingSorting) {
+    allCombinationsPossible.sort(() => Math.random() - 0.5);
+  }
   for (
     let indexCleanCombinations = 0;
     indexCleanCombinations < sizeOfLoop;
