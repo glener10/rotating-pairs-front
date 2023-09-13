@@ -1,21 +1,12 @@
 import { TextArea } from '@radix-ui/themes';
+import { TextAreaProps } from '@radix-ui/themes/dist/cjs/components/text-area';
 
-interface InputProps {
-  value?: string;
-  onChange?: (event: {
-    target: {
-      value: React.SetStateAction<string>;
-    };
-  }) => void;
-  placeholder?: string;
-}
-
-export const Input = (props: InputProps): JSX.Element => {
+export const Input = (props: TextAreaProps): JSX.Element => {
   const { ...rest } = props;
   return (
     <TextArea
       style={{
-        minHeight: '120px',
+        minHeight: '130px',
         padding: '8px',
       }}
       {...rest}

@@ -1,14 +1,12 @@
-import { Layout } from '@/pages/common/Layout';
+import { Layout } from '@/pages/Layout';
 import '@/styles/globals.css';
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import type { AppProps } from 'next/app';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const [theme, setTheme] = useState('dark');
-
-  useEffect(() => {}, []);
 
   return (
     <Theme appearance={theme == 'light' ? 'light' : 'dark'}>
