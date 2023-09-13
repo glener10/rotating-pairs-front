@@ -45,11 +45,15 @@ const searchCombinations = (
   sizeOfLoop: number,
   allCombinationsPossible: ICombination[]
 ): void => {
+  let maxTry = 0;
   combinations.map((combination) => {
-    let maxTry = 0;
+    let maxTryChangingResorting = 0;
     let changingSorting = false;
 
     for (let indexA = 0; indexA < sizeOfLoop; indexA++) {
+      if (maxTry == 1000) {
+        throw 'Max try exceded.';
+      }
       let fix = false;
       let indexAllCombinationsPossible = 0;
 
@@ -72,8 +76,9 @@ const searchCombinations = (
       }
 
       if (fix == false) {
-        maxTry += 1;
-        if (maxTry >= 10000) {
+        maxTryChangingResorting += 1;
+        if (maxTryChangingResorting >= 10000) {
+          maxTry += 1;
           changingSorting = true;
           console.log('MaxTry 10000 passed.');
         }
