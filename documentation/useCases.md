@@ -2,8 +2,6 @@
   Combinations don't know [21,22]
 - Méthod to populate JSonCombinations
 
-- EnteredNames display flex horizontal
-
 - Preparing local for ads
 - Revising responsiveness
 - Implementing page 404
