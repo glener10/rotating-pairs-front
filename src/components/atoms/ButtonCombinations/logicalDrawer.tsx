@@ -56,7 +56,7 @@ const searchCombinations = (
     let changingSorting = false;
 
     for (let indexA = 0; indexA < sizeOfLoop; indexA++) {
-      if (maxTry == 1000) {
+      if (maxTry == 10000) {
         throw 'Max try of ressorting exceded (1.000)!';
       }
       let fix = false;
@@ -82,7 +82,7 @@ const searchCombinations = (
 
       if (fix == false) {
         maxTryChangingResorting += 1;
-        if (maxTryChangingResorting >= 10000) {
+        if (maxTryChangingResorting >= 30000) {
           maxTry += 1;
           changingSorting = true;
           console.log('Ressorting...\n');
