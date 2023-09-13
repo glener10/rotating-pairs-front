@@ -1,9 +1,7 @@
-- Fix logical, suggestion have pre processed index in positions
-
-Combinations don't know [21,22]
+- Fix logical, suggestion have pre processed index in positions. Method to mount when know, for example with 19 inputs names (odd) and twnty is unknow, we know in the place of 'EMPTY' is just '20'.
+  Combinations don't know [21,22]
 
 - EnteredNames display flex horizontal
-- Method to mount when know, for example with 19 inputs names (odd) and twnty is unknow, we know in the place of 'EMPTY' is just '20'.
 - Refactoring components (athomic architecture) Common inside components no
 
 - Preparing local for ads
