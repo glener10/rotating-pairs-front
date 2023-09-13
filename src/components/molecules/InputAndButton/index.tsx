@@ -30,7 +30,14 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
 
     valuesWithSignage.map((value, index) => {
       if (value.includes('[') && value.includes(']')) {
-        valuesWithSignage[index] = value.split(' ')[0];
+        let nameWithoutBrackets = '';
+        for (let index = 0; index < value.length; index++) {
+          if (value[index] == '[') {
+            break;
+          }
+          nameWithoutBrackets += value[index];
+        }
+        valuesWithSignage[index] = nameWithoutBrackets.trim();
       }
     });
 
