@@ -1,6 +1,6 @@
 import { SimpleButton } from '@/components/atoms/SimpleButton';
-import { staticLogicReadCombinations } from '@/components/molecules/ButtonsCombinations/staticLogicDrawerJSON';
 import { ISprint } from '@/interfaces/ISprint';
+import { staticLogicReadCombinations } from '@/useCases/staticLogicDrawerJSON';
 import { Box } from '@radix-ui/themes';
 
 interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

@@ -1,12 +1,12 @@
-import { generateCombinations } from '@/components/molecules/ButtonsCombinations/logicalDrawer';
+import jsonCombinations from '@/data/combinations.json';
 import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import { ISprint } from '@/interfaces/ISprint';
+import { generateCombinations } from '@/useCases/logicalDrawer';
 import {
   checkIfArrayIsOdd,
   returnNumberOfCombinationPerSprintRoundeddown,
   returnNumberOfSprints,
 } from '@/utils/functions';
-import jsonCombinations from '../../../data/combinations.json';
 
 export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprint[] => {
   const numberOfInputs = inputNamesInArray.length;
