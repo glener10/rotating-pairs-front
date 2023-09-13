@@ -1,4 +1,5 @@
 - Não ser no comprido entered Names
+- método para montar quando conhece, por exemplo com 19 que tem o EMPTY é só adicionar o 20 no lugar do EMPTY
 
 - Fix logical, suggestion have pre processed index in positions
 - Preparing local for ads

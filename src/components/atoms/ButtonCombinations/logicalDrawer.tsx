@@ -1,5 +1,10 @@
 import { ICombination } from '@/interfaces/ICombination';
 import { ISprint } from '@/interfaces/ISprint';
+import {
+  checkIfArrayIsOdd,
+  returnNumberOfCombinationPerSprintRoundeddown,
+  returnNumberOfSprints,
+} from '@/utils/functions';
 
 export const generateCombinations = (inputNamesInArray: string[]): ISprint[] => {
   const numberOfNamesIsOdd = checkIfArrayIsOdd(inputNamesInArray);
@@ -52,7 +57,7 @@ const searchCombinations = (
 
     for (let indexA = 0; indexA < sizeOfLoop; indexA++) {
       if (maxTry == 1000) {
-        throw 'Max try exceded.';
+        throw 'Max try of ressorting exceded (1.000)!';
       }
       let fix = false;
       let indexAllCombinationsPossible = 0;
@@ -80,7 +85,7 @@ const searchCombinations = (
         if (maxTryChangingResorting >= 10000) {
           maxTry += 1;
           changingSorting = true;
-          console.log('MaxTry 10000 passed.');
+          console.log('Ressorting...\n');
         }
         reSortingCombinationsOfTheSprint(
           combination,
@@ -180,36 +185,6 @@ function checkIfAnyEntriesExistingInACurrentSprintCombination(
   });
   return entriesExistingInACombination;
 }
-
-const checkIfArrayIsOdd = (inputNamesInArray: string[]): boolean => {
-  return inputNamesInArray.length % 2 == 0 ? false : true;
-};
-
-const returnNumberOfSprints = (
-  numberOfNamesIsOdd: boolean,
-  inputNamesInArray: string[]
-): number => {
-  let numberOfSprints = inputNamesInArray.length - 1;
-
-  if (numberOfNamesIsOdd) {
-    numberOfSprints += 1;
-  }
-
-  return numberOfSprints;
-};
-
-const returnNumberOfCombinationPerSprintRoundeddown = (
-  numberOfNamesIsOdd: boolean,
-  inputNamesInArray: string[]
-): number => {
-  let numberOfCombinationPerSprint = inputNamesInArray.length / 2;
-
-  if (numberOfNamesIsOdd) {
-    numberOfCombinationPerSprint += 1;
-  }
-
-  return Math.floor(numberOfCombinationPerSprint);
-};
 
 const copyInputNamesInArray = (inputNamesInArray: string[]): string[] => {
   const allInputsValues = inputNamesInArray.map((input) => {
