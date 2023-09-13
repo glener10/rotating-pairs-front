@@ -1,4 +1,6 @@
+import { Title } from '@/components/atoms/Title';
 import { Name } from '@/components/molecules/Name';
+import { Box } from '@radix-ui/themes';
 
 interface ListEnteredNamesProps {
   valuesArray: string[];
@@ -17,11 +19,12 @@ export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
   };
 
   return (
-    <>
+    <Box style={{ display: 'flex', flexDirection: 'column', margin: '8px' }}>
+      <Title title={'Entered Names'} numberValues={valuesArray.length} />
       {valuesArray.map((value, index) => (
         <Name value={value} onClick={removingOneInput} key={index} />
       ))}
-    </>
+    </Box>
   );
 };
 
