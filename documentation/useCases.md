@@ -2,7 +2,6 @@
   Combinations don't know [21,22]
 
 - EnteredNames display flex horizontal
-- Refactoring components (athomic architecture) Common inside components no
 
 - Preparing local for ads
 - Revising responsiveness
