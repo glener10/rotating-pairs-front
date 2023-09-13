@@ -20,7 +20,11 @@ export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
 
   return (
     <Box style={{ display: 'flex', flexDirection: 'column', margin: '8px' }}>
-      <Title title={'Entered Names'} numberValues={valuesArray.length} />
+      <Title>
+        {'Entered Names ['}
+        <strong>{valuesArray.length}</strong>
+        {']'}
+      </Title>
       {valuesArray.map((value, index) => (
         <Name value={value} onClick={removingOneInput} key={index} />
       ))}

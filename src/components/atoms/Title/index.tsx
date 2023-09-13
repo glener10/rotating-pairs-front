@@ -1,15 +1,11 @@
 import { Heading } from '@radix-ui/themes';
+import { HeadingProps } from '@radix-ui/themes/dist/cjs/components/heading';
 
-interface TitleProps {
-  title: string;
-  numberValues?: number;
-}
-
-export const Title = (props: TitleProps): JSX.Element => {
-  const { title, numberValues } = props;
+export const Title = (props: HeadingProps): JSX.Element => {
+  const { children } = props;
   return (
     <Heading style={{ margin: '8px' }} align="center">
-      {numberValues ? title + ' [' + numberValues + ']' : title}
+      {children}
     </Heading>
   );
 };
