@@ -1,6 +1,6 @@
 import { BasicText } from '@/components/atoms/BasicText';
-import { ListResultOfCombinations } from '@/components/atoms/ListResultOfCombinations';
 import { Title } from '@/components/atoms/Title';
+import { ListResultOfCombinations } from '@/components/molecules/ListResultOfCombinations';
 import { ISprint } from '@/interfaces/ISprint';
 import { Box } from '@radix-ui/themes';
 import { useEffect, useState } from 'react';
