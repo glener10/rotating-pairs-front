@@ -10,7 +10,7 @@ import {
   returnNumberOfCombinationPerSprintRoundeddown,
   returnNumberOfSprints,
 } from '@/utils/functions';
-import jsonCombinations from './combinations.json';
+import jsonCombinations from '../../../data/combinations.json';
 
 export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprint[] => {
   const numberOfInputs = inputNamesInArray.length;
