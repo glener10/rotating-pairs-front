@@ -1,17 +1,24 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { generateCombinations } from '@/components/atoms/ButtonCombinations/logicalDrawer';
+import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import { ISprint } from '@/interfaces/ISprint';
 import {
   checkIfArrayIsOdd,
   returnNumberOfCombinationPerSprintRoundeddown,
   returnNumberOfSprints,
 } from '@/utils/functions';
-import * as combinations from './combinations.json';
+import jsonCombinations from './combinations.json';
 
 export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprint[] => {
   const numberOfInputs = inputNamesInArray.length;
 
-  const findElementWithEqualNumberOfInputs = combinations.generateCombinations.find(
-    (combination) => combination.numberOfInputs == numberOfInputs
+  //@ts-ignore
+  const readJsonCombinations: ICombinationsJson[] = jsonCombinations.jsonCombinations;
+  const findElementWithEqualNumberOfInputs = readJsonCombinations.find(
+    (combination) => combination.numberOfInputs == `${numberOfInputs}`
   );
 
   if (findElementWithEqualNumberOfInputs) {
@@ -56,13 +63,11 @@ const downloadJson = (inputNamesInArray: string[], triedGenerateCombinations: IS
     numberOfCombinationsPerSprint: numberOfCombinationPerSprint,
     sprints: triedGenerateCombinations,
   };
-
-  const newValuesJson = combinations.generateCombinations;
+  const newValuesJson = jsonCombinations.jsonCombinations;
   newValuesJson.push(newCombination);
-  const newObjectJson = JSON.stringify({ generateCombinations: newValuesJson }, null, 2);
+  const newObjectJson = JSON.stringify({ jsonCombinations: newValuesJson }, null, 2);
 
   const blob = new Blob([newObjectJson], { type: 'application/json' });
-  blob;
   const url = window.URL.createObjectURL(blob);
 
   const a = document.createElement('a');
