@@ -1,6 +1,7 @@
+import { BasicText } from '@/components/atoms/BasicText';
 import { SimpleButton } from '@/components/atoms/Button';
 import { Cross1Icon } from '@radix-ui/react-icons';
-import { Box, Text } from '@radix-ui/themes';
+import { Box } from '@radix-ui/themes';
 
 interface NameProps {
   value: string;
@@ -21,9 +22,7 @@ export const Name = (props: NameProps): JSX.Element => {
         margin: '6px',
       }}
     >
-      <Text as="span" key={key}>
-        {value}
-      </Text>
+      <BasicText key={key}>{value}</BasicText>
       <SimpleButton onClick={(): void => onClick(value)}>
         <Cross1Icon />
       </SimpleButton>
