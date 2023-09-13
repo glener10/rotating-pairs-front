@@ -1,14 +1,11 @@
 import { Heading } from '@radix-ui/themes';
+import { HeadingProps } from '@radix-ui/themes/dist/cjs/components/heading';
 
-interface TitleProps {
-  title: string;
-}
-
-export const Title = (props: TitleProps): JSX.Element => {
-  const { title } = props;
+export const Title = (props: HeadingProps): JSX.Element => {
+  const { children } = props;
   return (
     <Heading style={{ margin: '8px' }} align="center">
-      {title}
+      {children}
     </Heading>
   );
 };
