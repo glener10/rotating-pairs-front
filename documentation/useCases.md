@@ -1,4 +1,6 @@
 - Fix logical, suggestion have pre processed index in positions
+- Take off eslint disables
+
 - EnteredNames display flex horizontal
 - Method to mount when know, for example with 19 inputs names (odd) and twnty is unknow, we know in the place of 'EMPTY' is just '20'.
 - Refactoring components (athomic architecture) Common inside components no
