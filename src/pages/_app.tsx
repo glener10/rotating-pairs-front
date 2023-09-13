@@ -1,4 +1,4 @@
-import { Layout } from '@/pages/common/Layout';
+import { Layout } from '@/pages/Layout';
 import '@/styles/globals.css';
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
