@@ -1,5 +1,5 @@
-import { SimpleButton } from '@/components/atoms/Button';
 import { Input } from '@/components/atoms/Input';
+import { SimpleButton } from '@/components/atoms/SimpleButton';
 import { Box } from '@radix-ui/themes';
 import { Dispatch, SetStateAction, useState } from 'react';
 

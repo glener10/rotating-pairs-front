@@ -1,9 +1,9 @@
 import { ICombination } from '@/interfaces/ICombination';
 import { Table } from '@radix-ui/themes';
+import { TableRootProps } from '@radix-ui/themes/dist/cjs/components/table';
 
-interface TableRowProps {
+interface TableRowProps extends TableRootProps {
   combination: ICombination;
-  key: number;
 }
 
 export const TableRow = (props: TableRowProps): JSX.Element => {

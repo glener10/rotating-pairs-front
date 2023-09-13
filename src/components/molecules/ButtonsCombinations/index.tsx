@@ -1,4 +1,4 @@
-import { SimpleButton } from '@/components/atoms/Button';
+import { SimpleButton } from '@/components/atoms/SimpleButton';
 import { staticLogicReadCombinations } from '@/components/molecules/ButtonsCombinations/staticLogicDrawerJSON';
 import { ISprint } from '@/interfaces/ISprint';
 import { Box } from '@radix-ui/themes';

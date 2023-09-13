@@ -1,11 +1,7 @@
 import { Text } from '@radix-ui/themes';
-import { ReactNode } from 'react';
+import { TextProps } from '@radix-ui/themes/dist/cjs/components/text';
 
-interface BasicTextProps {
-  children: ReactNode;
-}
-
-export const BasicText = (props: BasicTextProps): JSX.Element => {
+export const BasicText = (props: TextProps): JSX.Element => {
   const { children } = props;
 
   return <Text as="p">{children}</Text>;

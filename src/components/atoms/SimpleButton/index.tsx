@@ -1,12 +1,5 @@
 import { Button } from '@radix-ui/themes';
-import { ReactNode } from 'react';
-
-interface ButtonProps {
-  onClick?: () => void;
-  children?: ReactNode;
-  disabled?: boolean;
-  variant?: 'soft' | 'classic' | 'solid' | 'surface' | 'outline' | 'ghost';
-}
+import { ButtonProps } from '@radix-ui/themes/dist/cjs/components/button';
 
 export const SimpleButton = (props: ButtonProps): JSX.Element => {
   const { children, disabled, variant, ...rest } = props;

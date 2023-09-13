@@ -1,5 +1,5 @@
 import { BasicText } from '@/components/atoms/BasicText';
-import { SimpleButton } from '@/components/atoms/Button';
+import { SimpleButton } from '@/components/atoms/SimpleButton';
 import { Cross1Icon } from '@radix-ui/react-icons';
 import { Box } from '@radix-ui/themes';
 
