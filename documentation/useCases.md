@@ -1,5 +1,4 @@
 - Fix logical, suggestion have pre processed index in positions
-- Take off eslint disables
 - Put Console.log in operations
 
 Combinations don't know [21,22]

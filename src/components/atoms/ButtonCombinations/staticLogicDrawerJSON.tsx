@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { generateCombinations } from '@/components/atoms/ButtonCombinations/logicalDrawer';
 import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import { ISprint } from '@/interfaces/ISprint';
@@ -15,10 +11,9 @@ import jsonCombinations from '../../../data/combinations.json';
 export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprint[] => {
   const numberOfInputs = inputNamesInArray.length;
 
-  //@ts-ignore
   const readJsonCombinations: ICombinationsJson[] = jsonCombinations.jsonCombinations;
   const findElementWithEqualNumberOfInputs = readJsonCombinations.find(
-    (combination) => combination.numberOfInputs == `${numberOfInputs}`
+    (combination) => combination.numberOfInputs == numberOfInputs
   );
 
   if (findElementWithEqualNumberOfInputs) {

@@ -1,8 +1,8 @@
 import { ISprint } from '@/interfaces/ISprint';
 
 export interface ICombinationsJson {
-  numberOfInputs: string;
-  numberOfSprints: string;
-  numberOfCombinationsPerSprint: string;
+  numberOfInputs: number;
+  numberOfSprints: number;
+  numberOfCombinationsPerSprint: number;
   sprints: ISprint[];
 }
