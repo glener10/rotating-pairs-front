@@ -38,7 +38,7 @@ export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprin
     const indexInputs = returnIndexOfInputs(inputNamesInArray); //For save in JSON a new mapping of combinations, we need the index and not the names
 
     //console.log('Trying to generate combinations...\n');
-    const triedGenerateCombinations = generateCombinations(indexInputs);
+    const triedGenerateCombinations = generateCombinations(indexInputs, 50000, 10000);
 
     //console.log('Download new json with new combination mapping...\n');
     //TODO: This line is only to desenv, don't forget to comment there
