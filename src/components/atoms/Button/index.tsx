@@ -1,15 +1,16 @@
 import { Button } from '@radix-ui/themes';
+import { ReactNode } from 'react';
 
 interface ButtonProps {
-  title: string;
   onClick?: () => void;
+  children?: ReactNode;
 }
 
 export const SimpleButton = (props: ButtonProps): JSX.Element => {
-  const { title, ...rest } = props;
+  const { children, ...rest } = props;
   return (
     <Button variant="soft" {...rest}>
-      {title}
+      {children}
     </Button>
   );
 };

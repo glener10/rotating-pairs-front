@@ -1,5 +1,4 @@
-import { Cross1Icon } from '@radix-ui/react-icons';
-import { Box, Button, Text } from '@radix-ui/themes';
+import { Name } from '@/components/molecules/Name';
 
 interface ListEnteredNamesProps {
   valuesArray: string[];
@@ -18,26 +17,11 @@ export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
   };
 
   return (
-    <ul>
+    <>
       {valuesArray.map((value, index) => (
-        <Box
-          key={`div-${index}`}
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            margin: '6px',
-          }}
-        >
-          <Text as="span" key={index}>
-            {value}
-          </Text>
-          <Button variant="soft" onClick={(): void => removingOneInput(value)}>
-            <Cross1Icon />
-          </Button>
-        </Box>
+        <Name value={value} onClick={removingOneInput} key={index} />
       ))}
-    </ul>
+    </>
   );
 };
 

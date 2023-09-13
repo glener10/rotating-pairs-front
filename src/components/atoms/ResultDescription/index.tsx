@@ -1,10 +1,10 @@
 import { Text } from '@radix-ui/themes';
 
-interface ResultDescriptionProps {
+interface BasicTextProps {
   description: string;
 }
 
-export const ResultDescription = (props: ResultDescriptionProps): JSX.Element => {
+export const BasicText = (props: BasicTextProps): JSX.Element => {
   const { description } = props;
 
   const descriptionSepareted = description.split(':');
@@ -16,4 +16,4 @@ export const ResultDescription = (props: ResultDescriptionProps): JSX.Element =>
   );
 };
 
-export default ResultDescription;
+export default BasicText;

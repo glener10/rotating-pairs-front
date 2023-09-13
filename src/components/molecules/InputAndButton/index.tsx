@@ -63,8 +63,8 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
         placeholder="Enter values separated by a line break..."
       />
       <Box style={{ display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
-        <SimpleButton onClick={handleAddValues} title={'Save Inputs'} />
-        <SimpleButton onClick={clearAll} title={'Clear All'} />
+        <SimpleButton onClick={handleAddValues}>{'Save Inputs'}</SimpleButton>
+        <SimpleButton onClick={clearAll}>{'Clear All'}</SimpleButton>
       </Box>
     </Box>
   );

@@ -1,5 +1,5 @@
-import { ListEnteredNames } from '@/components/atoms/ListEnteredNames';
 import { Title } from '@/components/atoms/Title';
+import { ListEnteredNames } from '@/components/molecules/ListEnteredNames';
 import { Box } from '@radix-ui/themes';
 
 interface EnteredNamesProps {

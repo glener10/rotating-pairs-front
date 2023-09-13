@@ -1,8 +1,8 @@
 'use client';
 import { ButtonCombinations } from '@/components/atoms/ButtonCombinations';
-import { EnteredNames } from '@/components/molecules/EnteredNames';
 import { InputAndButton } from '@/components/molecules/InputAndButton';
 import { ResultOfCombinations } from '@/components/molecules/ResultOfCombinations';
+import { EnteredNames } from '@/components/organisms/EnteredNames';
 import { ISprint } from '@/interfaces/ISprint';
 import { Box } from '@radix-ui/themes';
 import { useState } from 'react';

@@ -1,5 +1,5 @@
 import { ListResultOfCombinations } from '@/components/atoms/ListResultOfCombinations';
-import { ResultDescription } from '@/components/atoms/ResultDescription';
+import { BasicText } from '@/components/atoms/ResultDescription';
 import { Title } from '@/components/atoms/Title';
 import { ISprint } from '@/interfaces/ISprint';
 import { Box } from '@radix-ui/themes';
@@ -35,8 +35,8 @@ export const ResultOfCombinations = (props: ResultOfCombinationsProps): JSX.Elem
       }}
     >
       <Title title={'Combinations'} />
-      <ResultDescription description={`Number of Sprints: ${numberOfSprints}`} />
-      <ResultDescription
+      <BasicText description={`Number of Sprints: ${numberOfSprints}`} />
+      <BasicText
         description={`Number of combinations per Sprint: ${numberOfCombinationPerSprint}`}
       />
       <ListResultOfCombinations sprints={sprints} />
