@@ -11,16 +11,20 @@ import jsonCombinations from '../../../data/combinations.json';
 export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprint[] => {
   const numberOfInputs = inputNamesInArray.length;
 
+  //console.log('Reading combinations of Json...\n');
   const readJsonCombinations: ICombinationsJson[] = jsonCombinations.jsonCombinations;
   const findElementWithEqualNumberOfInputs = readJsonCombinations.find(
     (combination) => combination.numberOfInputs == numberOfInputs
   );
 
   if (findElementWithEqualNumberOfInputs) {
+    //console.log('Element with the same number of inputs find.\n');
     const sprintsOfElementWithEqualNumberOfInputs = findElementWithEqualNumberOfInputs.sprints;
 
+    //console.log('Shuffling input...\n');
     const shuffledInput = shuffleInput(inputNamesInArray);
 
+    //console.log('Generate Combinations...\n');
     const combinationsConverted = convertCombinationsToInputNames(
       shuffledInput,
       sprintsOfElementWithEqualNumberOfInputs
@@ -28,13 +32,22 @@ export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprin
 
     return combinationsConverted;
   } else {
+    //console.log('Element with the same number of inputs not find.\n');
+
+    //console.log('Return array of indexs in the place of the input names...\n');
     const indexInputs = returnIndexOfInputs(inputNamesInArray); //For save in JSON a new mapping of combinations, we need the index and not the names
+
+    //console.log('Trying to generate combinations...\n');
     const triedGenerateCombinations = generateCombinations(indexInputs);
 
+    //console.log('Download new json with new combination mapping...\n');
+    //TODO: This line is only to desenv, don't forget to comment there
     downloadJson(inputNamesInArray, triedGenerateCombinations);
 
+    //console.log('Shuffling input...\n');
     const shuffledInput = shuffleInput(inputNamesInArray);
 
+    //console.log('Convert index combinations to input names...\n');
     const combinationsConverted = convertCombinationsToInputNames(
       shuffledInput,
       triedGenerateCombinations
