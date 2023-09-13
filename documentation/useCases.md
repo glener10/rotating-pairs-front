@@ -1,7 +1,8 @@
-- Não ser no comprido entered Names
-- método para montar quando conhece, por exemplo com 19 que tem o EMPTY é só adicionar o 20 no lugar do EMPTY
-
 - Fix logical, suggestion have pre processed index in positions
+- EnteredNames display flex horizontal
+- Method to mount when know, for example with 19 inputs names (odd) and twnty is unknow, we know in the place of 'EMPTY' is just '20'.
+- Refactoring components (athomic architecture)
+
 - Preparing local for ads
 - Revising responsiveness
 - Study about production, github action, pipelines and google ads
