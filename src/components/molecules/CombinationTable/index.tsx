@@ -4,18 +4,18 @@ import { Table } from '@radix-ui/themes';
 
 interface CombinationTableProps {
   combinations: ICombination[];
-  key: number;
+  sprintIndex: number;
 }
 
 export const CombinationTable = (props: CombinationTableProps): JSX.Element => {
-  const { combinations, key } = props;
+  const { combinations, sprintIndex } = props;
   return (
-    <Table.Root variant="surface" style={{ margin: '15px' }} key={key}>
+    <Table.Root variant="surface" style={{ margin: '15px' }} key={sprintIndex - 1}>
       <Table.Header>
         <Table.Row>
           <Table.ColumnHeaderCell>{'Sprint: '}</Table.ColumnHeaderCell>
           <Table.ColumnHeaderCell>
-            <strong>{key + 1}</strong>
+            <strong>{sprintIndex}</strong>
           </Table.ColumnHeaderCell>
         </Table.Row>
       </Table.Header>

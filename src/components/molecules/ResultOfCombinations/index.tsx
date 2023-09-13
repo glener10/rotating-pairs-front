@@ -1,28 +1,14 @@
 import { BasicText } from '@/components/atoms/BasicText';
 import { Title } from '@/components/atoms/Title';
-import { ListResultOfCombinations } from '@/components/molecules/ListResultOfCombinations';
-import { ISprint } from '@/interfaces/ISprint';
 import { Box } from '@radix-ui/themes';
-import { useEffect, useState } from 'react';
 
 interface ResultOfCombinationsProps {
-  sprints: ISprint[];
+  numberOfSprints: number;
+  numberOfCombinationPerSprint: number;
 }
 
 export const ResultOfCombinations = (props: ResultOfCombinationsProps): JSX.Element => {
-  const { sprints } = props;
-  const [numberOfSprints, setNumberOfSprints] = useState<number>();
-  const [numberOfCombinationPerSprint, setNumberOfCombinationPerSprint] = useState<number>();
-
-  useEffect(() => {
-    if (sprints && sprints.length > 0) {
-      const numberOfSprints = sprints.length;
-      const numberOfCombinationPerSprint = sprints[0].combinations.length;
-
-      setNumberOfCombinationPerSprint(numberOfCombinationPerSprint);
-      setNumberOfSprints(numberOfSprints);
-    }
-  }, [sprints]);
+  const { numberOfSprints, numberOfCombinationPerSprint } = props;
 
   return (
     <Box
@@ -42,8 +28,6 @@ export const ResultOfCombinations = (props: ResultOfCombinationsProps): JSX.Elem
       <BasicText>
         {`Number of combinations per Sprint: `} <strong>{numberOfCombinationPerSprint}</strong>
       </BasicText>
-
-      <ListResultOfCombinations sprints={sprints} />
     </Box>
   );
 };

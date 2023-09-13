@@ -2,11 +2,11 @@ import { CombinationTable } from '@/components/molecules/CombinationTable';
 import { ISprint } from '@/interfaces/ISprint';
 import { Grid } from '@radix-ui/themes';
 
-interface ListResultOfCombinationsProps {
+interface ListCombinationsProps {
   sprints: ISprint[];
 }
 
-export const ListResultOfCombinations = (props: ListResultOfCombinationsProps): JSX.Element => {
+export const ListCombinations = (props: ListCombinationsProps): JSX.Element => {
   const { sprints } = props;
   return (
     <Grid
@@ -20,10 +20,10 @@ export const ListResultOfCombinations = (props: ListResultOfCombinationsProps): 
       }}
     >
       {sprints.map((sprint: ISprint, index: number) => (
-        <CombinationTable key={index} combinations={sprint.combinations} />
+        <CombinationTable key={index} sprintIndex={index + 1} combinations={sprint.combinations} />
       ))}
     </Grid>
   );
 };
 
-export default ListResultOfCombinations;
+export default ListCombinations;
