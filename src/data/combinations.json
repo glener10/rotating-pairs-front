@@ -1014,6 +1014,2029 @@
           ]
         }
       ]
+    },
+    {
+      "numberOfInputs": 11,
+      "numberOfSprints": 11,
+      "numberOfCombinationsPerSprint": 6,
+      "sprints": [
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "1"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "10"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "9"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "8"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "7"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "6"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "2",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "5"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "3",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "4"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "2",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "3"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "3",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "2"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "3",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "1"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "1",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numberOfInputs": 12,
+      "numberOfSprints": 11,
+      "numberOfCombinationsPerSprint": 6,
+      "sprints": [
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "1"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "2",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "3",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "2",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "3",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "3",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "1",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numberOfInputs": 13,
+      "numberOfSprints": 13,
+      "numberOfCombinationsPerSprint": 7,
+      "sprints": [
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "1"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "12",
+              "pairTwo": "12"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "11",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "10"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "9"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "11",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "8"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "7"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "6"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "5"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "1",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "4"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "4",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "3"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "7",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "2"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "2",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "1"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "2",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numberOfInputs": 14,
+      "numberOfSprints": 13,
+      "numberOfCombinationsPerSprint": 7,
+      "sprints": [
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "1"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "12",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "11",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "11",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "1",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "4",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "7",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "2",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "2",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numberOfInputs": 15,
+      "numberOfSprints": 15,
+      "numberOfCombinationsPerSprint": 8,
+      "sprints": [
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "1"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "12",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "14",
+              "pairTwo": "14"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "12",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "13",
+              "pairTwo": "13"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "3"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "2"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "13",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "12",
+              "pairTwo": "12"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "11",
+              "pairTwo": "11"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "11",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "10"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "11",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "9"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "7"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "6"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "5"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "4"
+            },
+            {
+              "pairOne": "9",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "10",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "11",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "8",
+              "pairTwo": "8"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "7"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "6"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "5"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "4"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "3"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "2"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "0",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "1",
+              "pairTwo": "1"
+            }
+          ]
+        },
+        {
+          "combinations": [
+            {
+              "pairOne": "1",
+              "pairTwo": "14"
+            },
+            {
+              "pairOne": "2",
+              "pairTwo": "13"
+            },
+            {
+              "pairOne": "3",
+              "pairTwo": "12"
+            },
+            {
+              "pairOne": "4",
+              "pairTwo": "11"
+            },
+            {
+              "pairOne": "5",
+              "pairTwo": "10"
+            },
+            {
+              "pairOne": "6",
+              "pairTwo": "9"
+            },
+            {
+              "pairOne": "7",
+              "pairTwo": "8"
+            },
+            {
+              "pairOne": "0",
+              "pairTwo": "0"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
