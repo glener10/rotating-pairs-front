@@ -14,12 +14,12 @@ export const generateCombinations = (inputNamesInArray: string[]): ISprint[] => 
     inputNamesInArray
   );
 
-  const allInputsValues = copyInputNamesInArray(inputNamesInArray);
+  const allInputsValues: string[] = copyInputNamesInArray(inputNamesInArray);
 
   const sizeOfLoop =
     allInputsValues.length == 2 ? numberOfCombinationPerSprint : numberOfCombinationPerSprint - 1;
 
-  let lastInputValue = null;
+  let lastInputValue: string | null | undefined = null;
 
   if (!numberOfNamesIsOdd && allInputsValues.length > 2) {
     lastInputValue = allInputsValues.pop();
@@ -35,10 +35,9 @@ export const generateCombinations = (inputNamesInArray: string[]): ISprint[] => 
 
   searchCombinations(combinations, sizeOfLoop, allCombinationsPossible);
 
-  if (lastInputValue != null) {
-    combinations.map((combination) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-non-null-assertion
-      combination.combinations[numberOfCombinationPerSprint - 1].pairTwo = lastInputValue!;
+  if (lastInputValue != null && lastInputValue) {
+    combinations.map((combination: ISprint) => {
+      combination.combinations[numberOfCombinationPerSprint - 1].pairTwo = lastInputValue as string;
     });
   }
 
@@ -204,9 +203,10 @@ const constructEmptySprintsCombinations = (
     const comb: ICombination[] = [];
     for (let indexB = 0; indexB < Number(numberOfCombinationPerSprint); indexB++) {
       if (numberOfCombinationPerSprint > 1 && indexB == numberOfCombinationPerSprint - 1) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const lastCombination = allInputsValues.pop()!;
-        comb.push({ pairOne: lastCombination, pairTwo: lastCombination });
+        const lastCombination = allInputsValues.pop();
+        if (lastCombination) {
+          comb.push({ pairOne: lastCombination, pairTwo: lastCombination });
+        }
       } else {
         comb.push({ pairOne: '', pairTwo: '' });
       }
