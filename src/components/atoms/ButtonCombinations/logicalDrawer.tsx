@@ -205,7 +205,8 @@ const constructEmptySprintsCombinations = (
     for (let indexB = 0; indexB < Number(numberOfCombinationPerSprint); indexB++) {
       if (numberOfCombinationPerSprint > 1 && indexB == numberOfCombinationPerSprint - 1) {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        comb.push({ pairOne: allInputsValues.pop()!, pairTwo: 'EMPTY' });
+        const lastCombination = allInputsValues.pop()!;
+        comb.push({ pairOne: lastCombination, pairTwo: lastCombination });
       } else {
         comb.push({ pairOne: '', pairTwo: '' });
       }
