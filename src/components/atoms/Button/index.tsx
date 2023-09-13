@@ -4,12 +4,14 @@ import { ReactNode } from 'react';
 interface ButtonProps {
   onClick?: () => void;
   children?: ReactNode;
+  disabled?: boolean;
+  variant?: 'soft' | 'classic' | 'solid' | 'surface' | 'outline' | 'ghost';
 }
 
 export const SimpleButton = (props: ButtonProps): JSX.Element => {
-  const { children, ...rest } = props;
+  const { children, disabled, variant, ...rest } = props;
   return (
-    <Button variant="soft" {...rest}>
+    <Button disabled={disabled} variant={variant ? variant : 'soft'} {...rest}>
       {children}
     </Button>
   );

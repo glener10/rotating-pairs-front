@@ -1,13 +1,14 @@
-import { staticLogicReadCombinations } from '@/components/atoms/ButtonCombinations/staticLogicDrawerJSON';
+import { SimpleButton } from '@/components/atoms/Button';
+import { staticLogicReadCombinations } from '@/components/molecules/ButtonsCombinations/staticLogicDrawerJSON';
 import { ISprint } from '@/interfaces/ISprint';
-import { Box, Button } from '@radix-ui/themes';
+import { Box } from '@radix-ui/themes';
 
-interface ButtonCombinationsProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   inputNamesInArray: string[];
   setSprints: React.Dispatch<React.SetStateAction<ISprint[]>>;
 }
 
-export const ButtonCombinations = (props: ButtonCombinationsProps): JSX.Element => {
+export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Element => {
   const { inputNamesInArray, setSprints } = props;
   const generateCombinationsOfTheSprints = (): void => {
     const sprints = staticLogicReadCombinations(inputNamesInArray);
@@ -20,15 +21,18 @@ export const ButtonCombinations = (props: ButtonCombinationsProps): JSX.Element 
 
   return (
     <Box style={{ width: '60%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
-      <Button
+      <SimpleButton
         onClick={(): void => generateCombinationsOfTheSprints()}
         disabled={inputNamesInArray.length > 1 ? false : true}
+        variant="solid"
       >
         {'Generate Random Combinations'}
-      </Button>
-      <Button onClick={clearAllCombinations}>{'Clear All Combinations'}</Button>
+      </SimpleButton>
+      <SimpleButton variant="solid" onClick={clearAllCombinations}>
+        {'Clear All Combinations'}
+      </SimpleButton>
     </Box>
   );
 };
 
-export default ButtonCombinations;
+export default ButtonsCombinations;

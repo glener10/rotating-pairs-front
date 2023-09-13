@@ -2,12 +2,12 @@ import { BasicText } from '@/components/atoms/BasicText';
 import { Title } from '@/components/atoms/Title';
 import { Box } from '@radix-ui/themes';
 
-interface ResultOfCombinationsProps {
+interface TitleAndLogCombinationsprops {
   numberOfSprints: number;
   numberOfCombinationPerSprint: number;
 }
 
-export const ResultOfCombinations = (props: ResultOfCombinationsProps): JSX.Element => {
+export const TitleAndLogCombinations = (props: TitleAndLogCombinationsprops): JSX.Element => {
   const { numberOfSprints, numberOfCombinationPerSprint } = props;
 
   return (
@@ -32,4 +32,4 @@ export const ResultOfCombinations = (props: ResultOfCombinationsProps): JSX.Elem
   );
 };
 
-export default ResultOfCombinations;
+export default TitleAndLogCombinations;

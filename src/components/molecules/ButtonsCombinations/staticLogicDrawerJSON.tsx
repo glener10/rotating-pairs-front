@@ -1,4 +1,4 @@
-import { generateCombinations } from '@/components/atoms/ButtonCombinations/logicalDrawer';
+import { generateCombinations } from '@/components/molecules/ButtonsCombinations/logicalDrawer';
 import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import { ISprint } from '@/interfaces/ISprint';
 import {

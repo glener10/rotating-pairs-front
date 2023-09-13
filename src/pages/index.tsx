@@ -1,6 +1,6 @@
-import { ButtonCombinations } from '@/components/atoms/ButtonCombinations';
+import { ButtonsCombinations } from '@/components/molecules/ButtonsCombinations';
 import { InputAndButton } from '@/components/molecules/InputAndButton';
-import { ResultOfCombinations } from '@/components/molecules/ResultOfCombinations';
+import { TitleAndLogCombinations } from '@/components/molecules/TitleAndLogCombinations';
 import { ListCombinations } from '@/components/organisms/ListCombinations';
 import { ListEnteredNames } from '@/components/organisms/ListEnteredNames';
 import { ISprint } from '@/interfaces/ISprint';
@@ -49,14 +49,10 @@ export default function Home(): JSX.Element {
             />
           )}
 
-          <ButtonCombinations
-            title={'Generate Combinations'}
-            inputNamesInArray={inputNamesInArray}
-            setSprints={setSprints}
-          />
+          <ButtonsCombinations inputNamesInArray={inputNamesInArray} setSprints={setSprints} />
           {sprints && sprints.length > 0 && (
             <>
-              <ResultOfCombinations
+              <TitleAndLogCombinations
                 numberOfSprints={numberOfSprints ? numberOfSprints : 0}
                 numberOfCombinationPerSprint={
                   numberOfCombinationPerSprint ? numberOfCombinationPerSprint : 0
