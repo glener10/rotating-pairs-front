@@ -99,3 +99,51 @@ export const checkIfAllIndexesAreValid = (sprints: ISprint[], numberOfInputs: nu
   }
   return true;
 };
+
+export const checkIfAnyInputFromThePairIsRepeatedInTheCombinationsOfASprint = (
+  sprints: ISprint[]
+): boolean => {
+  for (let indexSprint = 0; indexSprint < sprints.length; indexSprint++) {
+    const sprint = sprints[indexSprint];
+    for (
+      let indexCombinations = 0;
+      indexCombinations < sprint.combinations.length;
+      indexCombinations++
+    ) {
+      const combination = sprint.combinations[indexCombinations];
+      if (
+        !checkAnyPairDontRepeatInTheCombinations(
+          combination,
+          indexCombinations,
+          sprint.combinations
+        )
+      ) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+const checkAnyPairDontRepeatInTheCombinations = (
+  combination: ICombination,
+  indexCombinationsYourself: number,
+  combinations: ICombination[]
+): boolean => {
+  for (let indexCombinations = 0; indexCombinations < combinations.length; indexCombinations++) {
+    const combinationForTesting = combinations[indexCombinations];
+
+    if (indexCombinations != indexCombinationsYourself) {
+      if (
+        combination.pairOne == combinationForTesting.pairOne ||
+        combination.pairOne == combinationForTesting.pairTwo ||
+        combination.pairTwo == combinationForTesting.pairOne ||
+        combination.pairTwo == combinationForTesting.pairTwo
+      ) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+};

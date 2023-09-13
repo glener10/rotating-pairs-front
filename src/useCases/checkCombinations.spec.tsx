@@ -2,6 +2,7 @@ import jsonCombinations from '@/data/combinations.json';
 import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import {
   checkIfAllIndexesAreValid,
+  checkIfAnyInputFromThePairIsRepeatedInTheCombinationsOfASprint,
   checkIfThereIsARepeatedCombination,
 } from '@/useCases/checkCombinations';
 
@@ -26,6 +27,19 @@ describe('[unit] checkCombinations.tsx - useCase', () => {
         const { sprints, numberOfInputs } = combination;
 
         expect(checkIfAllIndexesAreValid(sprints, numberOfInputs)).toBeTruthy();
+      }
+    );
+  });
+
+  describe('checkIfAnyInputFromThePairIsRepeatedInTheCombinationsOfASprint', () => {
+    it.each(readJsonCombinations)(
+      'Must check if there is a repeated combination in the JSON for the mapping of $numberOfInputs entries',
+      (combination) => {
+        const { sprints } = combination;
+
+        expect(
+          checkIfAnyInputFromThePairIsRepeatedInTheCombinationsOfASprint(sprints)
+        ).toBeTruthy();
       }
     );
   });
