@@ -1,7 +1,7 @@
 import jsonCombinations from '@/data/combinations.json';
 import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import { ISprint } from '@/interfaces/ISprint';
-import { downloadUpdatedJson } from '@/useCases/jsonOperations';
+import { Json } from '@/useCases/json';
 import { generateCombinations } from '@/useCases/logicalDrawer';
 
 export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprint[] => {
@@ -39,7 +39,7 @@ export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprin
     //console.log('Download new json with new combination mapping...\n');
     //TODO: This line is only to desenv, don't forget to comment there
     const readJsonCombinations: ICombinationsJson[] = jsonCombinations.jsonCombinations;
-    downloadUpdatedJson(inputNamesInArray, triedGenerateCombinations, readJsonCombinations);
+    Json.downloadUpdatedJson(inputNamesInArray, triedGenerateCombinations, readJsonCombinations);
 
     //console.log('Shuffling input...\n');
     const shuffledInput = shuffleInput(inputNamesInArray);
