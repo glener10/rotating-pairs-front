@@ -27,3 +27,11 @@ export const returnNumberOfCombinationPerSprintRoundeddown = (
 
   return Math.floor(numberOfCombinationPerSprint);
 };
+
+export function generateIndexArrayWithSizeOfNewEntry(numberOfInputs: number): string[] {
+  const arraySizeOfInput: string[] = [];
+  for (let index = 0; index < numberOfInputs; index++) {
+    arraySizeOfInput.push(`${index}`);
+  }
+  return arraySizeOfInput;
+}

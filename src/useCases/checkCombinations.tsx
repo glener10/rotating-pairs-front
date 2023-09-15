@@ -1,5 +1,11 @@
 import { ICombination } from '@/interfaces/ICombination';
 import { ISprint } from '@/interfaces/ISprint';
+import {
+  checkIfArrayIsOdd,
+  generateIndexArrayWithSizeOfNewEntry,
+  returnNumberOfCombinationPerSprintRoundeddown,
+  returnNumberOfSprints,
+} from '@/utils/functions';
 
 export const doAllChecksInSprint = (sprints: ISprint[], numberOfInputs: number): boolean => {
   if (!checkIfAllIndexesAreValid(sprints, numberOfInputs)) {
@@ -7,6 +13,27 @@ export const doAllChecksInSprint = (sprints: ISprint[], numberOfInputs: number):
   }
 
   if (!checkIfThereIsARepeatedCombination(sprints)) {
+    return false;
+  }
+
+  if (!checkIfAnyInputFromThePairIsRepeatedInTheCombinationsOfASprint(sprints)) {
+    return false;
+  }
+
+  const indexArrayWithNumberInputs = generateIndexArrayWithSizeOfNewEntry(numberOfInputs);
+  const numberOfInputsIsOdd = checkIfArrayIsOdd(indexArrayWithNumberInputs);
+  if (
+    !checkIfAllSprintsHaveAValidNumberOfCombinations(
+      sprints,
+      returnNumberOfCombinationPerSprintRoundeddown(numberOfInputsIsOdd, indexArrayWithNumberInputs)
+    )
+  ) {
+    return false;
+  }
+
+  const numberOfSprints = returnNumberOfSprints(numberOfInputsIsOdd, indexArrayWithNumberInputs);
+
+  if (!checkIfAllCombinationsHaveAValidNumberOfSprint(sprints, numberOfSprints)) {
     return false;
   }
 
@@ -143,6 +170,29 @@ const checkAnyPairDontRepeatInTheCombinations = (
         return false;
       }
     }
+  }
+
+  return true;
+};
+
+export const checkIfAllSprintsHaveAValidNumberOfCombinations = (
+  sprints: ISprint[],
+  numberOfCombinationPerSprint: number
+): boolean => {
+  for (let indexSprint = 0; indexSprint < sprints.length; indexSprint++) {
+    if (sprints[indexSprint].combinations.length != numberOfCombinationPerSprint) {
+      return false;
+    }
+  }
+  return true;
+};
+
+export const checkIfAllCombinationsHaveAValidNumberOfSprint = (
+  sprints: ISprint[],
+  numberOfSprints: number
+): boolean => {
+  if (sprints.length != numberOfSprints) {
+    return false;
   }
 
   return true;
