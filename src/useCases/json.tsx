@@ -1,9 +1,7 @@
-import jsonCombinations from '@/data/combinations.json';
 import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import { ISprint } from '@/interfaces/ISprint';
 import {
   checkIfArrayIsOdd,
-  generateIndexArrayWithSizeOfNewEntry,
   returnNumberOfCombinationPerSprintRoundeddown,
   returnNumberOfSprints,
 } from '@/utils/functions';
@@ -47,35 +45,4 @@ export class Json {
 
     window.URL.revokeObjectURL(url);
   }
-
-  static tryGenerateCombinationBasedInJson(numberOfInputs: number): boolean {
-    const readJsonCombinations: ICombinationsJson[] = jsonCombinations.jsonCombinations;
-
-    const findElementAfterInputNumber = readJsonCombinations.find(
-      (combination) => combination.numberOfInputs == numberOfInputs + 1
-    );
-    if (findElementAfterInputNumber) {
-      const newCombinations =
-        generateCombinationForNewEntryEvenIfThereIsAValidSubsequentCombination(
-          findElementAfterInputNumber
-        );
-      if (newCombinations) {
-        Json.downloadUpdatedJson(
-          generateIndexArrayWithSizeOfNewEntry(numberOfInputs),
-          newCombinations,
-          readJsonCombinations
-        );
-        return true;
-      }
-    }
-    return false;
-  }
-}
-
-function generateCombinationForNewEntryEvenIfThereIsAValidSubsequentCombination(
-  findElementAfterInputNumber: ICombinationsJson
-): ISprint[] {
-  const newCombinationJson = { ...findElementAfterInputNumber };
-
-  return newCombinationJson.sprints;
 }
