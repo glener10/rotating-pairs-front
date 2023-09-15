@@ -5,16 +5,18 @@ import { Box } from '@radix-ui/themes';
 
 interface NameProps {
   value: string;
-  key?: number;
   onClick: (value: string) => void;
 }
 
 export const Name = (props: NameProps): JSX.Element => {
-  const { onClick, key, value } = props;
+  const { onClick, value } = props;
+
+  const handleClick = (): void => {
+    onClick(value);
+  };
 
   return (
     <Box
-      key={`box-${key}`}
       style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -22,8 +24,8 @@ export const Name = (props: NameProps): JSX.Element => {
         margin: '6px',
       }}
     >
-      <BasicText key={key}>{value}</BasicText>
-      <SimpleButton onClick={(): void => onClick(value)}>
+      <BasicText>{value}</BasicText>
+      <SimpleButton onClick={handleClick}>
         <Cross1Icon />
       </SimpleButton>
     </Box>
