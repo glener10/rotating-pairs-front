@@ -3,6 +3,7 @@ import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import { ISprint } from '@/interfaces/ISprint';
 import {
   checkIfArrayIsOdd,
+  generateIndexArrayWithSizeOfNewEntry,
   returnNumberOfCombinationPerSprintRoundeddown,
   returnNumberOfSprints,
 } from '@/utils/functions';
@@ -71,15 +72,6 @@ export class Json {
   }
 }
 
-function generateIndexArrayWithSizeOfNewEntry(numberOfInputs: number): string[] {
-  const arraySizeOfInput: string[] = [];
-  for (let index = 0; index < numberOfInputs; index++) {
-    arraySizeOfInput.push(`${index}`);
-  }
-  return arraySizeOfInput;
-}
-
-//TODO: Check logic
 function generateCombinationForNewEntryEvenIfThereIsAValidSubsequentCombination(
   findElementAfterInputNumber: ICombinationsJson
 ): ISprint[] {

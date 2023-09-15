@@ -7,9 +7,23 @@ import {
   checkIfAnyInputFromThePairIsRepeatedInTheCombinationsOfASprint,
   checkIfThereIsARepeatedCombination,
 } from '@/useCases/checkCombinations';
+import {
+  checkIfArrayIsOdd,
+  generateIndexArrayWithSizeOfNewEntry,
+  returnNumberOfCombinationPerSprintRoundeddown,
+  returnNumberOfSprints,
+} from '@/utils/functions';
 
 describe('[unit] checkCombinations.tsx - useCase', () => {
   const readJsonCombinations: ICombinationsJson[] = jsonCombinations.jsonCombinations;
+
+  const returnArrayAndBolleanEvenOrOdd = (
+    numberOfInputs: number
+  ): { indexArrayWithNumberInputs: string[]; numberOfInputsIsOdd: boolean } => {
+    const indexArrayWithNumberInputs = generateIndexArrayWithSizeOfNewEntry(numberOfInputs);
+    const numberOfInputsIsOdd = checkIfArrayIsOdd(indexArrayWithNumberInputs);
+    return { indexArrayWithNumberInputs, numberOfInputsIsOdd };
+  };
 
   describe('checkIfThereIsARepeatedCombination', () => {
     it.each(readJsonCombinations)(
@@ -50,7 +64,17 @@ describe('[unit] checkCombinations.tsx - useCase', () => {
     it.each(readJsonCombinations)(
       'Must check if there is a valid number of combinations ($numberOfCombinationsPerSprint) per sprint in the JSON for the mapping of $numberOfInputs entries',
       (combination) => {
-        const { sprints, numberOfCombinationsPerSprint } = combination;
+        const { sprints, numberOfCombinationsPerSprint, numberOfInputs } = combination;
+
+        const { indexArrayWithNumberInputs, numberOfInputsIsOdd } =
+          returnArrayAndBolleanEvenOrOdd(numberOfInputs);
+
+        const generateNumberOfCombinationsPerSprint = returnNumberOfCombinationPerSprintRoundeddown(
+          numberOfInputsIsOdd,
+          indexArrayWithNumberInputs
+        );
+
+        expect(numberOfCombinationsPerSprint).toEqual(generateNumberOfCombinationsPerSprint);
 
         expect(
           checkIfAllSprintsHaveAValidNumberOfCombinations(sprints, numberOfCombinationsPerSprint)
@@ -61,9 +85,19 @@ describe('[unit] checkCombinations.tsx - useCase', () => {
 
   describe('checkIfAllCombinationsHaveAValidNumberOfSprint', () => {
     it.each(readJsonCombinations)(
-      'Must check if there is a valid number of sprints ($numberOfSprintst) in the JSON for the mapping of $numberOfInputs entries',
+      'Must check if there is a valid number of sprints $numberOfSprints in the JSON for the mapping of $numberOfInputs entries',
       (combination) => {
-        const { sprints, numberOfSprints } = combination;
+        const { sprints, numberOfSprints, numberOfInputs } = combination;
+
+        const { indexArrayWithNumberInputs, numberOfInputsIsOdd } =
+          returnArrayAndBolleanEvenOrOdd(numberOfInputs);
+
+        const generateNumberOfSprints = returnNumberOfSprints(
+          numberOfInputsIsOdd,
+          indexArrayWithNumberInputs
+        );
+
+        expect(generateNumberOfSprints).toEqual(numberOfSprints);
 
         expect(
           checkIfAllCombinationsHaveAValidNumberOfSprint(sprints, numberOfSprints)

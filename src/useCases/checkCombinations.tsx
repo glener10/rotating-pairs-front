@@ -86,6 +86,9 @@ const checkOneCombination = (
             combination.pairTwo === combinationForTesting.pairOne &&
             combination.pairTwo === combinationForTesting.pairTwo
           ) {
+            console.log(
+              `Sprint[${indexSprintYourself}]: ${combination.pairOne} - ${combination.pairTwo}   With  Sprint[${indexSprint}]: ${combinationForTesting.pairOne} - ${combinationForTesting.pairTwo}`
+            );
             return false;
           }
         } else {
@@ -95,6 +98,9 @@ const checkOneCombination = (
             (combination.pairTwo === combinationForTesting.pairOne ||
               combination.pairTwo === combinationForTesting.pairTwo)
           ) {
+            console.log(
+              `Sprint[${indexSprintYourself}]: ${combination.pairOne} - ${combination.pairTwo}   With  Sprint[${indexSprint}]: ${combinationForTesting.pairOne} - ${combinationForTesting.pairTwo}`
+            );
             return false;
           }
         }
