@@ -25,6 +25,7 @@ export const Name = (props: NameProps): JSX.Element => {
       }}
     >
       <BasicText>{value}</BasicText>
+      <div style={{ width: '15px' }} />
       <SimpleButton onClick={handleClick}>
         <Cross1Icon />
       </SimpleButton>
