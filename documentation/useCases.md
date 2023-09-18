@@ -1,7 +1,8 @@
-- Preparing local for ads
 - Revising responsiveness
+- Study about production
+- Study google ads
+
 - Implementing page 404
-- Study about production, github action, pipelines and google ads
 - Combinations don't know [21,22]
 - Méthod to populate JSonCombinations
 
