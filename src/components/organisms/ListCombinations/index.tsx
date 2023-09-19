@@ -13,7 +13,7 @@ export const ListCombinations = (props: ListCombinationsProps): JSX.Element => {
       style={{
         display: 'flex',
         flexWrap: 'wrap',
-        width: '60%',
+        width: '100%',
         gap: '3px',
         justifyContent: 'center',
         alignItems: 'center',

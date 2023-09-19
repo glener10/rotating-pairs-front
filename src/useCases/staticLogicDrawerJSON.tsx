@@ -1,12 +1,8 @@
-import { generateCombinations } from '@/components/molecules/ButtonsCombinations/logicalDrawer';
+import jsonCombinations from '@/data/combinations.json';
 import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import { ISprint } from '@/interfaces/ISprint';
-import {
-  checkIfArrayIsOdd,
-  returnNumberOfCombinationPerSprintRoundeddown,
-  returnNumberOfSprints,
-} from '@/utils/functions';
-import jsonCombinations from '../../../data/combinations.json';
+import { Json } from '@/useCases/json';
+import { generateCombinations } from '@/useCases/logicalDrawer';
 
 export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprint[] => {
   const numberOfInputs = inputNamesInArray.length;
@@ -38,11 +34,12 @@ export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprin
     const indexInputs = returnIndexOfInputs(inputNamesInArray); //For save in JSON a new mapping of combinations, we need the index and not the names
 
     //console.log('Trying to generate combinations...\n');
-    const triedGenerateCombinations = generateCombinations(indexInputs);
+    const triedGenerateCombinations = generateCombinations(indexInputs, 50000, 10000);
 
     //console.log('Download new json with new combination mapping...\n');
     //TODO: This line is only to desenv, don't forget to comment there
-    downloadJson(inputNamesInArray, triedGenerateCombinations);
+    const readJsonCombinations: ICombinationsJson[] = jsonCombinations.jsonCombinations;
+    Json.downloadUpdatedJson(inputNamesInArray, triedGenerateCombinations, readJsonCombinations);
 
     //console.log('Shuffling input...\n');
     const shuffledInput = shuffleInput(inputNamesInArray);
@@ -55,41 +52,6 @@ export const staticLogicReadCombinations = (inputNamesInArray: string[]): ISprin
 
     return combinationsConverted;
   }
-};
-
-const downloadJson = (inputNamesInArray: string[], triedGenerateCombinations: ISprint[]): void => {
-  const numberOfNamesIsOdd = checkIfArrayIsOdd(inputNamesInArray);
-  const numberOfSprint = returnNumberOfSprints(numberOfNamesIsOdd, inputNamesInArray);
-  const numberOfCombinationPerSprint = returnNumberOfCombinationPerSprintRoundeddown(
-    numberOfNamesIsOdd,
-    inputNamesInArray
-  );
-
-  const newCombination = {
-    numberOfInputs: inputNamesInArray.length,
-    numberOfSprints: numberOfSprint,
-    numberOfCombinationsPerSprint: numberOfCombinationPerSprint,
-    sprints: triedGenerateCombinations,
-  };
-  const newValuesJson = jsonCombinations.jsonCombinations;
-  newValuesJson.push(newCombination);
-  const newObjectJson = JSON.stringify({ jsonCombinations: newValuesJson }, null, 2);
-
-  const blob = new Blob([newObjectJson], { type: 'application/json' });
-  const url = window.URL.createObjectURL(blob);
-
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'combinations.json';
-
-  const clickEvent = new MouseEvent('click', {
-    view: window,
-    bubbles: true,
-    cancelable: false,
-  });
-  a.dispatchEvent(clickEvent);
-
-  window.URL.revokeObjectURL(url);
 };
 
 const convertCombinationsToInputNames = (

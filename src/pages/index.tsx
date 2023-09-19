@@ -3,10 +3,22 @@ import { InputAndButton } from '@/components/molecules/InputAndButton';
 import { TitleAndLogCombinations } from '@/components/molecules/TitleAndLogCombinations';
 import { ListCombinations } from '@/components/organisms/ListCombinations';
 import { ListEnteredNames } from '@/components/organisms/ListEnteredNames';
+import useResponsive from '@/hooks/useResponsive';
 import { ISprint } from '@/interfaces/ISprint';
+import { TBreakpoint } from '@/interfaces/TBreakpoint';
 import { Box } from '@radix-ui/themes';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+
+const mappingPaddingMainBox = (breakpoint: TBreakpoint): number => {
+  const mapping = {
+    desktop: 40,
+    tablet: 30,
+    mobile: 15,
+  };
+
+  return mapping[breakpoint] || 30;
+};
 
 export default function Home(): JSX.Element {
   const [inputNamesInArray, setInputNamesInArray] = useState<string[]>([]);
@@ -14,6 +26,10 @@ export default function Home(): JSX.Element {
 
   const [numberOfSprints, setNumberOfSprints] = useState<number>();
   const [numberOfCombinationPerSprint, setNumberOfCombinationPerSprint] = useState<number>();
+
+  const breakpoint = useResponsive();
+
+  const paddingMainBox = mappingPaddingMainBox(breakpoint);
 
   useEffect(() => {
     if (sprints && sprints.length > 0) {
@@ -28,8 +44,8 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Drawer of Pair Programming</title>
-        <meta name="description" content="Drawer of Pair Programming" />
+        <title>Rotating Pairs</title>
+        <meta name="description" content="Pair combination generator for pair programming" />
         <link rel="icon" href="/iconDrawPairProgramming.svg" />
       </Head>
       <main>
@@ -38,7 +54,7 @@ export default function Home(): JSX.Element {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            padding: '40px',
+            padding: paddingMainBox,
           }}
         >
           <InputAndButton setInputNamesInArray={setInputNamesInArray} />

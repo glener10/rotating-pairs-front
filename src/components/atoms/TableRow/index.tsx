@@ -7,10 +7,10 @@ interface TableRowProps extends TableRootProps {
 }
 
 export const TableRow = (props: TableRowProps): JSX.Element => {
-  const { combination, key } = props;
+  const { combination } = props;
   return (
-    <Table.Row key={key}>
-      <Table.Cell>{combination.pairOne}</Table.Cell>
+    <Table.Row>
+      <Table.Cell style={{ fontSize: 'var(--size-text)' }}>{combination.pairOne}</Table.Cell>
       {combination.pairTwo == combination.pairOne ? (
         <Table.Cell></Table.Cell>
       ) : (

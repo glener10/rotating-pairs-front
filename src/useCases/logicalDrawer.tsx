@@ -6,7 +6,11 @@ import {
   returnNumberOfSprints,
 } from '@/utils/functions';
 
-export const generateCombinations = (inputNamesInArray: string[]): ISprint[] => {
+export const generateCombinations = (
+  inputNamesInArray: string[],
+  MAX_NUMBER_OF_SHRUFFING_ARRAY_OF_POSSIBLE_COMBINATIONS_BEFORE_ALTERNING_SHUFFLE_METHOD: number,
+  MAX_NUMBER_OF_ALTERNING_SHUFFLE_METHOD: number
+): ISprint[] => {
   //console.log('Create structure of the combination...\n');
   const numberOfNamesIsOdd = checkIfArrayIsOdd(inputNamesInArray);
   const numberOfSprint = returnNumberOfSprints(numberOfNamesIsOdd, inputNamesInArray);
@@ -35,7 +39,13 @@ export const generateCombinations = (inputNamesInArray: string[]): ISprint[] => 
 
   const allCombinationsPossible = generateAllCombinationsPossible(inputNamesInArray);
 
-  searchCombinations(combinations, sizeOfLoop, allCombinationsPossible);
+  searchCombinations(
+    combinations,
+    sizeOfLoop,
+    allCombinationsPossible,
+    MAX_NUMBER_OF_SHRUFFING_ARRAY_OF_POSSIBLE_COMBINATIONS_BEFORE_ALTERNING_SHUFFLE_METHOD,
+    MAX_NUMBER_OF_ALTERNING_SHUFFLE_METHOD
+  );
 
   if (lastInputValue != null && lastInputValue) {
     //console.log('If the entry was even and greater than 2 elements, it means that we removed its last element and now it is necessary to attach it again to the one that is alone in each sprint combination.\n');
@@ -50,17 +60,19 @@ export const generateCombinations = (inputNamesInArray: string[]): ISprint[] => 
 const searchCombinations = (
   combinations: ISprint[],
   sizeOfLoop: number,
-  allCombinationsPossible: ICombination[]
+  allCombinationsPossible: ICombination[],
+  MAX_NUMBER_OF_SHRUFFING_ARRAY_OF_POSSIBLE_COMBINATIONS_BEFORE_ALTERNING_SHUFFLE_METHOD: number,
+  MAX_NUMBER_OF_ALTERNING_SHUFFLE_METHOD: number
 ): void => {
   //console.log('Searching combinations...\n');
-  let maxTry = 0;
+  let maxNumberOfAlterningShuffleMethod = 0;
   combinations.map((combination) => {
-    let maxTryChangingResorting = 0;
+    let maxNumberOfShruffingArrayOfPossibleCombinationsBeforeAlterningShuffleMethod = 0;
     let changingSorting = false;
 
     for (let indexA = 0; indexA < sizeOfLoop; indexA++) {
-      if (maxTry == 10000) {
-        throw 'Max try of ressorting exceded (1.000).';
+      if (maxNumberOfAlterningShuffleMethod >= MAX_NUMBER_OF_ALTERNING_SHUFFLE_METHOD) {
+        throw `Max try of ressorting exceded (${MAX_NUMBER_OF_ALTERNING_SHUFFLE_METHOD}).`;
       }
       let fix = false;
       let indexAllCombinationsPossible = 0;
@@ -84,11 +96,14 @@ const searchCombinations = (
       }
 
       if (fix == false) {
-        maxTryChangingResorting += 1;
-        if (maxTryChangingResorting >= 30000) {
-          maxTry += 1;
+        maxNumberOfShruffingArrayOfPossibleCombinationsBeforeAlterningShuffleMethod += 1;
+        if (
+          maxNumberOfShruffingArrayOfPossibleCombinationsBeforeAlterningShuffleMethod >=
+          MAX_NUMBER_OF_SHRUFFING_ARRAY_OF_POSSIBLE_COMBINATIONS_BEFORE_ALTERNING_SHUFFLE_METHOD
+        ) {
+          maxNumberOfAlterningShuffleMethod += 1;
           changingSorting = true;
-          console.log('Ressorting...\n');
+          console.log('Shuffling...\n');
         }
         reSortingCombinationsOfTheSprint(
           combination,

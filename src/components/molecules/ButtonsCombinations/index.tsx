@@ -1,6 +1,6 @@
 import { SimpleButton } from '@/components/atoms/SimpleButton';
-import { staticLogicReadCombinations } from '@/components/molecules/ButtonsCombinations/staticLogicDrawerJSON';
 import { ISprint } from '@/interfaces/ISprint';
+import { staticLogicReadCombinations } from '@/useCases/staticLogicDrawerJSON';
 import { Box } from '@radix-ui/themes';
 
 interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,11 +19,21 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
     setSprints([]);
   };
 
+  const disableButtonGenerateRandomCombination = (): boolean => {
+    const haveMoreThanTwoInputs = inputNamesInArray.length > 1 ? true : false;
+    const haveLessThanTwoTwentyInputs = inputNamesInArray.length <= 20 ? true : false;
+
+    if (haveMoreThanTwoInputs && haveLessThanTwoTwentyInputs) {
+      return false;
+    }
+    return true;
+  };
+
   return (
-    <Box style={{ width: '60%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
+    <Box style={{ width: '100%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
       <SimpleButton
         onClick={(): void => generateCombinationsOfTheSprints()}
-        disabled={inputNamesInArray.length > 1 ? false : true}
+        disabled={disableButtonGenerateRandomCombination()}
         variant="solid"
       >
         {'Generate Random Combinations'}

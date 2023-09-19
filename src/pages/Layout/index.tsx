@@ -1,3 +1,5 @@
+import { Ad } from '@/components/atoms/Ad';
+import useResponsive from '@/hooks/useResponsive';
 import { Header } from '@/pages/Layout/Header';
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 
@@ -6,14 +8,30 @@ type LayoutProps = {
   setTheme: Dispatch<SetStateAction<string>>;
   children: ReactNode;
 };
+
 export const Layout = (props: LayoutProps): JSX.Element => {
   const { theme, setTheme, children } = props;
 
+  const breakpoint = useResponsive();
+
   return (
-    <div>
+    <>
       <Header theme={theme} setTheme={setTheme} />
-      {children}
-    </div>
+
+      {breakpoint && breakpoint == 'desktop' ? (
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: '10%' }}>
+            <Ad>{}</Ad>
+          </div>
+          <div style={{ flex: '80%' }}>{children}</div>
+          <div style={{ flex: '10%' }}>
+            <Ad>{}</Ad>
+          </div>
+        </div>
+      ) : (
+        children
+      )}
+    </>
   );
 };
 
