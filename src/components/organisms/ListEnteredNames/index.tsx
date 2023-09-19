@@ -1,5 +1,6 @@
 import { Title } from '@/components/atoms/Title';
 import { Name } from '@/components/molecules/Name';
+import useResponsive from '@/hooks/useResponsive';
 import { Box } from '@radix-ui/themes';
 
 interface ListEnteredNamesProps {
@@ -7,10 +8,24 @@ interface ListEnteredNamesProps {
   setInputNamesInArray: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
+type IBreakpoint = 'desktop' | 'tablet' | 'mobile';
+
+const mappingNumberOfColumnsEnteredNames = (breakpoint: IBreakpoint): number => {
+  const mapping = {
+    desktop: 350,
+    tablet: 200,
+    mobile: 100,
+  };
+
+  return mapping[breakpoint] || 250;
+};
+
 export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
   const { valuesArray, setInputNamesInArray } = props;
 
-  const minWidthPerColumn = 300;
+  const breakpoint = useResponsive();
+
+  const minWidthPerColumn = mappingNumberOfColumnsEnteredNames(breakpoint);
   const numColumns = Math.floor(window.innerWidth / minWidthPerColumn);
 
   const columns = [];
