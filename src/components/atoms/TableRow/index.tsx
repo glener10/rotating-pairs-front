@@ -10,7 +10,7 @@ export const TableRow = (props: TableRowProps): JSX.Element => {
   const { combination } = props;
   return (
     <Table.Row>
-      <Table.Cell>{combination.pairOne}</Table.Cell>
+      <Table.Cell style={{ fontSize: 'var(--size-text)' }}>{combination.pairOne}</Table.Cell>
       {combination.pairTwo == combination.pairOne ? (
         <Table.Cell></Table.Cell>
       ) : (

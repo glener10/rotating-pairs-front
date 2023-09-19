@@ -1,3 +1,25 @@
+:root {
+  --size-title: 24px;
+  --size-text: 16px;
+  --size-button: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --size-title: 20px;
+    --size-text: 14px;
+    --size-button: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --size-title: 18px;
+    --size-text: 12px;
+    --size-button: 14px;
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
