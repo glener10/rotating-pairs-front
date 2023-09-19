@@ -30,7 +30,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
   };
 
   return (
-    <Box style={{ width: '60%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
+    <Box style={{ width: '100%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
       <SimpleButton
         onClick={(): void => generateCombinationsOfTheSprints()}
         disabled={disableButtonGenerateRandomCombination()}

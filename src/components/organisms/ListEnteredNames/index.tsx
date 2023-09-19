@@ -10,7 +10,7 @@ interface ListEnteredNamesProps {
 export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
   const { valuesArray, setInputNamesInArray } = props;
 
-  const minWidthPerColumn = 200;
+  const minWidthPerColumn = 300;
   const numColumns = Math.floor(window.innerWidth / minWidthPerColumn);
 
   const columns = [];
@@ -28,7 +28,7 @@ export const ListEnteredNames = (props: ListEnteredNamesProps): JSX.Element => {
   };
 
   return (
-    <Box style={{ width: '60%', display: 'flex', flexDirection: 'column', margin: '8px' }}>
+    <Box style={{ width: '100%', display: 'flex', flexDirection: 'column', margin: '8px' }}>
       <Title>
         {'Entered Names ['}
         <strong>{valuesArray.length}</strong>

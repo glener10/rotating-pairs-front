@@ -63,7 +63,7 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   };
 
   return (
-    <Box style={{ width: '60%' }}>
+    <Box style={{ width: '100%' }}>
       <Input
         value={boxInputNames}
         onChange={handleInputChange}
@@ -71,7 +71,7 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
       />
       <Box style={{ display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
         <SimpleButton onClick={handleAddValues}>{'Save Inputs'}</SimpleButton>
-        <SimpleButton onClick={clearAll}>{'Clear All'}</SimpleButton>
+        <SimpleButton onClick={clearAll}>{'Clear All Inputs'}</SimpleButton>
       </Box>
     </Box>
   );
