@@ -6,9 +6,9 @@
 
 @media screen and (max-width: 768px) {
   :root {
-    --size-title: 20px;
-    --size-text: 14px;
-    --size-button: 16px;
+    --size-title: 18px;
+    --size-text: 12px;
+    --size-button: 13px;
   }
 }
 
