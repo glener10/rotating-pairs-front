@@ -17,7 +17,7 @@ const mappingPaddingMainBox = (breakpoint: TBreakpoint): number => {
     mobile: 15,
   };
 
-  return mapping[breakpoint] || 250;
+  return mapping[breakpoint] || 30;
 };
 
 export default function Home(): JSX.Element {
