@@ -14,9 +14,9 @@
 
 @media screen and (max-width: 480px) {
   :root {
-    --size-title: 18px;
+    --size-title: 22px;
     --size-text: 12px;
-    --size-button: 14px;
+    --size-button: 12px;
   }
 }
 
