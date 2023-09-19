@@ -1,6 +1,7 @@
 import { Title } from '@/components/atoms/Title';
 import { Name } from '@/components/molecules/Name';
 import useResponsive from '@/hooks/useResponsive';
+import { TBreakpoint } from '@/interfaces/TBreakpoint';
 import { Box } from '@radix-ui/themes';
 
 interface ListEnteredNamesProps {
@@ -8,9 +9,7 @@ interface ListEnteredNamesProps {
   setInputNamesInArray: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-type IBreakpoint = 'desktop' | 'tablet' | 'mobile';
-
-const mappingNumberOfColumnsEnteredNames = (breakpoint: IBreakpoint): number => {
+const mappingNumberOfColumnsEnteredNames = (breakpoint: TBreakpoint): number => {
   const mapping = {
     desktop: 350,
     tablet: 200,

@@ -1,3 +1,4 @@
+import { TBreakpoint } from '@/interfaces/TBreakpoint';
 import { useEffect, useState } from 'react';
 
 const breakpoints = {
@@ -6,8 +7,8 @@ const breakpoints = {
   desktop: 1024,
 };
 
-const useResponsive = (): string => {
-  const [responsiveSize, setResponsiveSize] = useState('desktop');
+const useResponsive = (): TBreakpoint => {
+  const [responsiveSize, setResponsiveSize] = useState<TBreakpoint>('desktop');
 
   useEffect(() => {
     const handleResize = (): void => {
