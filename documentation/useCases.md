@@ -1,5 +1,3 @@
-- Revising responsiveness
-
 - Study about production
 - Study google ads
 
