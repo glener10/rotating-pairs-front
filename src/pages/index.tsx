@@ -47,6 +47,11 @@ export default function Home(): JSX.Element {
         <title>Rotating Pairs</title>
         <meta name="description" content="Pair combination generator for pair programming" />
         <link rel="icon" href="/iconDrawPairProgramming.svg" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658859242471574"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <main>
         <Box
