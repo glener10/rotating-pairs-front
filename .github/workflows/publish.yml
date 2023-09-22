@@ -1,4 +1,4 @@
-name: Build on Merge to main
+name: Generate a build and push to another branch
 
 on:
   push:
@@ -8,28 +8,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    name: Build and Push
     steps:
-      - name: Checkout code
+      - name: git-checkout
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18.16.0
-
-      - name: Install dependencies
+      - name: Install all dependencies
         run: npm install
 
-      - name: Build the React app
+      - name: Build
         run: npm run build
 
-      - name: Deploy to Hostinger via FTP
-        run: |
-          echo "Uploading files to Hostinger via FTP..."
-          apt-get -y install lftp
-          lftp -e "open -u ${{ secrets.HOSTINGER_FTP_USER }},${{ secrets.HOSTINGER_FTP_PASSWORD }} -p ${{ secrets.HOSTINGER_FTP_PORT }} ftp://rotatingpairs.com; mirror -R -e -x .git/ -x .github/ build/ /path/to/your/remote/directory; bye"
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
         env:
-          HOSTINGER_FTP_USER: ${{ secrets.HOSTINGER_FTP_USER }}
-          HOSTINGER_FTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          HOSTINGER_FTP_PORT: ${{ secrets.HOSTINGER_FTP_PORT }}
+          REPO: self
+          BRANCH: main
+          FOLDER: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: 'Build: ({sha}) {msg}'
