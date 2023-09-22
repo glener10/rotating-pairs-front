@@ -9,9 +9,8 @@ on:
       - main
 
 jobs:
-  deploy:
+  checkout_and_setup:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -21,11 +20,28 @@ jobs:
         with:
           node-version: '18.16'
 
+  install_dependencies:
+    runs-on: ubuntu-latest
+    steps:
       - name: Install dependencies
         run: npm install
 
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
       - name: Run Tests
         run: npm run test
 
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - name: Build
         run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Deploy to hosting server
+        run: |
+          echo "Deploy..."
