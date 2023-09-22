@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-head-element */
 import { Ad } from '@/components/atoms/Ad';
 import useResponsive from '@/hooks/useResponsive';
 import { Header } from '@/pages/Layout/Header';
@@ -17,13 +16,6 @@ export const Layout = (props: LayoutProps): JSX.Element => {
 
   return (
     <>
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658859242471574"
-          crossOrigin="anonymous"
-        ></script>
-      </head>
       <Header theme={theme} setTheme={setTheme} />
 
       {breakpoint && breakpoint == 'desktop' ? (
