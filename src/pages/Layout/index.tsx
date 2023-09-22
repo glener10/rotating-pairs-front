@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-head-element */
-import Ad from '@/components/atoms/Ad';
+import { Ad } from '@/components/atoms/Ad';
 import useResponsive from '@/hooks/useResponsive';
 import { Header } from '@/pages/Layout/Header';
 import { Dispatch, ReactNode, SetStateAction } from 'react';
@@ -29,11 +29,11 @@ export const Layout = (props: LayoutProps): JSX.Element => {
       {breakpoint && breakpoint == 'desktop' ? (
         <div style={{ display: 'flex' }}>
           <div style={{ flex: '10%' }}>
-            <Ad />
+            <Ad>{}</Ad>
           </div>
           <div style={{ flex: '80%' }}>{children}</div>
           <div style={{ flex: '10%' }}>
-            <Ad />
+            <Ad>{}</Ad>
           </div>
         </div>
       ) : (
