@@ -4,7 +4,11 @@ export default function Document(): JSX.Element {
   return (
     <Html lang="en">
       <Head>
-        <meta name="google-adsense-account" content="ca-pub-4658859242471574" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658859242471574"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <body>
         <Main />
