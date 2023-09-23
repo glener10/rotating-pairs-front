@@ -1,5 +1,6 @@
 import { Layout } from '@/pages/Layout';
 import '@/styles/globals.css';
+import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import type { AppProps } from 'next/app';
@@ -10,9 +11,11 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
   return (
     <Theme appearance={theme == 'light' ? 'light' : 'dark'}>
-      <Layout theme={theme} setTheme={setTheme}>
-        <Component {...pageProps} />
-      </Layout>
+      <TooltipProvider>
+        <Layout theme={theme} setTheme={setTheme}>
+          <Component {...pageProps} />
+        </Layout>
+      </TooltipProvider>
     </Theme>
   );
 }
