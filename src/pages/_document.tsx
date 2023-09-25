@@ -4,7 +4,7 @@ export default function Document(): JSX.Element {
   return (
     <Html lang="en">
       <Head>
-        <script
+        {/* <script
           async
           src="https://fundingchoicesmessages.google.com/i/pub-4658859242471574?ers=1"
           nonce="h0dwYseAKPUX5I_hDiyRfQ"
@@ -26,7 +26,7 @@ export default function Document(): JSX.Element {
             }
             signalGooglefcPresent();
           })();`}
-        </script>
+        </script> */}
       </Head>
       <body>
         <Main />
