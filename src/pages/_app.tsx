@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
+import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
 
@@ -13,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     <Theme appearance={theme == 'light' ? 'light' : 'dark'}>
       <TooltipProvider>
         <Layout theme={theme} setTheme={setTheme}>
+          <Analytics />
           <Component {...pageProps} />
         </Layout>
       </TooltipProvider>
