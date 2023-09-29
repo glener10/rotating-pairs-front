@@ -8,6 +8,7 @@
 - Implementing donate with paypal or pix.
 - Make the project internacional, so many languages.
 - Log of records of clicks on generate Combinations (how many entries, how many sprints, how many combinations, dth, localRequisition).
+- Implementing the 'i' explaning how site works and what is Pair Programming and Rotating Pairs
 
 - Combinations don't know [21,22] and Méthod to populate JSonCombinations
 
