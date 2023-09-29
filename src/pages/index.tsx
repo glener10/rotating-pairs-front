@@ -44,8 +44,8 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Rotating Pairs</title>
-        <meta name="description" content="Pair combination generator for pair programming" />
+        <title>Rotating Pairs Generator</title>
+        <meta name="description" content="Random Rotating Pair Generator for Pair Programming" />
         <link rel="icon" href="/iconDrawPairProgramming.svg" />
       </Head>
       <main>

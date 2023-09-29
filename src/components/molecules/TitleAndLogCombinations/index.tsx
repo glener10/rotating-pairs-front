@@ -20,7 +20,7 @@ export const TitleAndLogCombinations = (props: TitleAndLogCombinationsprops): JS
         justifyContent: 'center',
       }}
     >
-      <Title>{'Combinations'}</Title>
+      <Title>{'Generated Random Combinations'}</Title>
       <BasicText>
         {`Number of Sprints: `} <strong>{numberOfSprints}</strong>
       </BasicText>
