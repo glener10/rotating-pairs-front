@@ -56,12 +56,12 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
               padding: '10px',
               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               animation: 'fade-in 0.2s ease',
-              display: 'flex', // Usar flexbox para colocar o texto e o ícone na mesma linha
-              alignItems: 'center', // Alinhar verticalmente ao centro
-              justifyContent: 'space-between', // Espaço igual entre o texto e o ícone
-              flexDirection: 'row', // Colocar o texto e o ícone na mesma linha
-              position: 'relative', // Para controlar a posição vertical
-              top: '-20px', // Ajustar a posição vertical para cima
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              position: 'relative',
+              top: '-20px',
             }}
           >
             <p>Please add between 2 and 20 entries</p>
