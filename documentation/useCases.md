@@ -1,8 +1,9 @@
 ## New Features
 
 - Take de preference of the user about white and dark mode
+- Fix responsive button in the phone
 - Implementing page 404
-- Implementing exportation in CSV or TXT.
+- Implementing exportation in copy to clipboard, CSV or TXT.
 - Implementing any forms to see the result of the combinations (tabs, tables, list)
 - Implementing 'About' https://www.invertexto.com/sobre
 - Implementing donate with paypal or pix.

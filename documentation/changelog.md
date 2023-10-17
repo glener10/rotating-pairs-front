@@ -1,3 +1,3 @@
-# [vX.X.X] - XX/XX/XXXX
+# [v1.0.0] - 17/10/2023
 
-- Implementing component X.
+- Upload v1 version of rotating pairs.
