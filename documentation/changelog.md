@@ -1,6 +1,7 @@
-# [v1.2.0] - 18/10/2023
+# [v1.2.0] - XX/XX/XXXX
 
 - Take first theme color with user prefer.
+  Implementing toast component and put in buttons .
 
 # [v1.1.1] - 18/10/2023
 
