@@ -7,7 +7,6 @@ interface SimpleToastProps {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
-//TODO: Deprecated Component
 export const SimpleToast = (props: SimpleToastProps): JSX.Element | null => {
   const { open, setOpen, description, title } = props;
 
