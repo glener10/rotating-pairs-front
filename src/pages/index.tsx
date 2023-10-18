@@ -57,7 +57,10 @@ export default function Home(): JSX.Element {
             padding: paddingMainBox,
           }}
         >
-          <InputAndButton setInputNamesInArray={setInputNamesInArray} />
+          <InputAndButton
+            inputNamesInArray={inputNamesInArray}
+            setInputNamesInArray={setInputNamesInArray}
+          />
           {inputNamesInArray && inputNamesInArray.length > 0 && (
             <ListEnteredNames
               setInputNamesInArray={setInputNamesInArray}

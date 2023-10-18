@@ -5,13 +5,17 @@ import { Box } from '@radix-ui/themes';
 import { Dispatch, SetStateAction, useState } from 'react';
 
 interface InputAndButtonProps {
+  inputNamesInArray: string[];
   setInputNamesInArray: Dispatch<SetStateAction<string[]>>;
 }
 
 export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
-  const { setInputNamesInArray } = props;
+  const { inputNamesInArray, setInputNamesInArray } = props;
   const [boxInputNames, setBoxInputNames] = useState('');
   const [warningToastOpen, setWarningToastOpen] = useState(false);
+
+  const [toastTitle, setToastTitle] = useState('');
+  const [toastDescription, setToastDescription] = useState('');
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string> } }): void => {
     setBoxInputNames(event.target.value);
@@ -19,6 +23,8 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
 
   const handleAddValues = (): void | JSX.Element => {
     if (boxInputNames == '') {
+      setToastTitle('Ops!');
+      setToastDescription('You need to enter at least one value in the input field.');
       setWarningToastOpen(true);
       return;
     }
@@ -65,6 +71,12 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   };
 
   const clearAll = (): void => {
+    if (inputNamesInArray.length == 0) {
+      setToastTitle('Ops!');
+      setToastDescription('There are no saved entries to remove.');
+      setWarningToastOpen(true);
+      return;
+    }
     setInputNamesInArray([]);
   };
 
@@ -74,8 +86,8 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
         <SimpleToast
           setOpen={setWarningToastOpen}
           open={warningToastOpen}
-          title="Ops!"
-          description="You need to enter at least one value in the input field."
+          title={toastTitle}
+          description={toastDescription}
         />
       )}
       <Input
