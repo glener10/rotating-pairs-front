@@ -1,6 +1,8 @@
 import { SimpleButton } from '@/components/atoms/SimpleButton';
+import { AboutDialog } from '@/components/molecules/AboutDialog';
 import useResponsive from '@/hooks/useResponsive';
 import { TBreakpoint } from '@/interfaces/TBreakpoint';
+import * as Dialog from '@radix-ui/react-dialog';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { Flex, Link, Text } from '@radix-ui/themes';
 import { Dispatch, SetStateAction } from 'react';
@@ -43,7 +45,13 @@ export const Header = (props: HeaderProps): JSX.Element => {
             justifyContent: 'space-between',
           }}
         >
-          <Link>About</Link>
+          <Dialog.Root>
+            <Dialog.Trigger style={{ background: 'none', border: 'none', padding: '0' }}>
+              <Link>About</Link>
+            </Dialog.Trigger>
+            <AboutDialog />
+          </Dialog.Root>
+
           <SimpleButton
             style={{ display: 'flex' }}
             variant="outline"
