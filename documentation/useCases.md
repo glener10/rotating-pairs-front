@@ -4,6 +4,7 @@
 - Implementing exportation in copy to clipboard, CSV or TXT.
 - Implementing any forms to see the result of the combinations (tabs, tables, list)
 - Implementing donate with paypal or pix.
+- Implementing toast to warning messages
 - Implementing contact method
 - Make the project internacional, so many languages.
 - Implementing the foot with de Copyright
