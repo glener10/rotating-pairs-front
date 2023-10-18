@@ -8,6 +8,7 @@ import { Box } from '@radix-ui/themes';
 interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   inputNamesInArray: string[];
   setSprints: React.Dispatch<React.SetStateAction<ISprint[]>>;
+  sprints: ISprint[];
 }
 
 export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Element => {
@@ -69,7 +70,11 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
           </Tooltip.Content>
         )}
       </Tooltip.Root>
-      <SimpleButton variant="solid" onClick={clearAllCombinations}>
+      <SimpleButton
+        disabled={props.sprints.length == 0 ? true : false}
+        variant="solid"
+        onClick={clearAllCombinations}
+      >
         {'Clear All Combinations'}
       </SimpleButton>
     </Box>

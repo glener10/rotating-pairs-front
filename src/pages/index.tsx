@@ -68,7 +68,11 @@ export default function Home(): JSX.Element {
             />
           )}
 
-          <ButtonsCombinations inputNamesInArray={inputNamesInArray} setSprints={setSprints} />
+          <ButtonsCombinations
+            inputNamesInArray={inputNamesInArray}
+            sprints={sprints}
+            setSprints={setSprints}
+          />
           {sprints && sprints.length > 0 && (
             <>
               <TitleAndLogCombinations
