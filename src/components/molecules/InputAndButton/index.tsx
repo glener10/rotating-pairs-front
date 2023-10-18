@@ -1,5 +1,6 @@
 import { Input } from '@/components/atoms/Input';
 import { SimpleButton } from '@/components/atoms/SimpleButton';
+import { WarningToast } from '@/components/atoms/WarningToast';
 import { Box } from '@radix-ui/themes';
 import { Dispatch, SetStateAction, useState } from 'react';
 
@@ -10,12 +11,17 @@ interface InputAndButtonProps {
 export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   const { setInputNamesInArray } = props;
   const [boxInputNames, setBoxInputNames] = useState('');
+  const [warningToastOpen, setWarningToastOpen] = useState(false);
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string> } }): void => {
     setBoxInputNames(event.target.value);
   };
 
-  const handleAddValues = (): void => {
+  const handleAddValues = (): void | JSX.Element => {
+    if (boxInputNames == '') {
+      setWarningToastOpen(true);
+      return;
+    }
     const newValues = boxInputNames.split('\n').map((value) => value.trim());
     const nonEmptyValues = newValues.filter((value) => value !== '');
 
@@ -64,6 +70,14 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
 
   return (
     <Box style={{ width: '100%' }}>
+      {warningToastOpen && (
+        <WarningToast
+          setOpen={setWarningToastOpen}
+          open={warningToastOpen}
+          title="Ops!"
+          description="You need to enter at least one value in the input field."
+        />
+      )}
       <Input
         value={boxInputNames}
         onChange={handleInputChange}
