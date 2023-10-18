@@ -12,7 +12,7 @@ interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButton
 }
 
 export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Element => {
-  const { inputNamesInArray, setSprints } = props;
+  const { inputNamesInArray, setSprints, sprints } = props;
   const generateCombinationsOfTheSprints = (): void => {
     const sprints = staticLogicReadCombinations(inputNamesInArray);
     setSprints(sprints);
@@ -70,13 +70,42 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
           </Tooltip.Content>
         )}
       </Tooltip.Root>
-      <SimpleButton
-        disabled={props.sprints.length == 0 ? true : false}
-        variant="solid"
-        onClick={clearAllCombinations}
-      >
-        {'Clear All Combinations'}
-      </SimpleButton>
+
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild>
+          <span tabIndex={0}>
+            <SimpleButton
+              disabled={props.sprints.length == 0 ? true : false}
+              variant="solid"
+              onClick={clearAllCombinations}
+            >
+              {'Clear All Combinations'}
+            </SimpleButton>
+          </span>
+        </Tooltip.Trigger>
+        {sprints.length == 0 && (
+          <Tooltip.Content
+            style={{
+              background: '#333',
+              color: '#fff',
+              border: '1px solid #555',
+              borderRadius: '4px',
+              padding: '10px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+              animation: 'fade-in 0.2s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              position: 'relative',
+              top: '-20px',
+            }}
+          >
+            <p>There is no combination to be cleared</p>
+            <InfoCircledIcon style={{ marginLeft: '6px' }} />
+          </Tooltip.Content>
+        )}
+      </Tooltip.Root>
     </Box>
   );
 };
