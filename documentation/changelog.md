@@ -1,3 +1,8 @@
+# [v1.1.1] - 18/10/2023
+
+- fix color of the content modal of the 'about' header component in dark mode.
+- fix color of exit button in about modal component
+
 # [v1.1.0] - 18/10/2023
 
 - Implementing 'About' feature in the Header.
