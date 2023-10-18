@@ -2,6 +2,9 @@
   --size-title: 24px;
   --size-text: 16px;
   --size-button: 16px;
+
+  --size-toast-title: 15px;
+  --size-toast-description: 13px;
 }
 
 @media screen and (max-width: 768px) {
@@ -9,6 +12,9 @@
     --size-title: 18px;
     --size-text: 12px;
     --size-button: 13px;
+
+    --size-toast-title: 13px;
+    --size-toast-description: 12px;
   }
 }
 
@@ -17,6 +23,9 @@
     --size-title: 22px;
     --size-text: 12px;
     --size-button: 12px;
+
+    --size-toast-title: 12px;
+    --size-toast-description: 12px;
   }
 }
 
