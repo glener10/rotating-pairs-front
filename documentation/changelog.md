@@ -1,3 +1,7 @@
+# [v1.2.0] - 18/10/2023
+
+- Take first theme color with user prefer.
+
 # [v1.1.1] - 18/10/2023
 
 - fix color of the content modal of the 'about' header component in dark mode.
