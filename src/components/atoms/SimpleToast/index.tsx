@@ -1,14 +1,14 @@
 import * as Toast from '@radix-ui/react-toast';
 import { Dispatch, SetStateAction, useEffect } from 'react';
 
-interface WarningToastProps {
+interface SimpleToastProps {
   description: string;
   title: string;
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export const WarningToast = (props: WarningToastProps): JSX.Element | null => {
+export const SimpleToast = (props: SimpleToastProps): JSX.Element | null => {
   const { open, setOpen, description, title } = props;
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const WarningToast = (props: WarningToastProps): JSX.Element | null => {
     <Toast.Provider>
       <Toast.Root className="ToastRoot" open={open}>
         <Toast.Title className="ToastTitle">{title}</Toast.Title>
-        <Toast.Description className="ToastDescription">{description}</Toast.Description>
+        <Toast.Description>{description}</Toast.Description>
         <Toast.Action className="ToastAction" altText="Close" onClick={(): void => setOpen(false)}>
           x
         </Toast.Action>
@@ -31,4 +31,4 @@ export const WarningToast = (props: WarningToastProps): JSX.Element | null => {
   ) : null;
 };
 
-export default WarningToast;
+export default SimpleToast;

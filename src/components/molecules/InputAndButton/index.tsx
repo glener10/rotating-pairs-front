@@ -1,6 +1,6 @@
 import { Input } from '@/components/atoms/Input';
 import { SimpleButton } from '@/components/atoms/SimpleButton';
-import { WarningToast } from '@/components/atoms/WarningToast';
+import { SimpleToast } from '@/components/atoms/SimpleToast';
 import { Box } from '@radix-ui/themes';
 import { Dispatch, SetStateAction, useState } from 'react';
 
@@ -71,7 +71,7 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   return (
     <Box style={{ width: '100%' }}>
       {warningToastOpen && (
-        <WarningToast
+        <SimpleToast
           setOpen={setWarningToastOpen}
           open={warningToastOpen}
           title="Ops!"
