@@ -1,7 +1,9 @@
 @import '@radix-ui/colors/black-alpha.css';
 @import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/violet.css';
 
 button,
+fieldset,
 input {
   all: unset;
 }
@@ -36,13 +38,13 @@ input {
 .DialogTitle {
   margin: 0;
   font-weight: 500;
-  color: var(--mauve-12);
+  color: black;
   font-size: var(--size-title);
 }
 
 .DialogDescription {
   margin: 10px 0 20px;
-  color: var(--mauve-11);
+  color: var(--mauve-10);
   font-size: var(--size-text);
   line-height: 1.5;
 }
