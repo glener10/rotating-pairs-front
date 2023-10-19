@@ -1,7 +1,8 @@
 import { Layout } from '@/pages/Layout';
 import '@/styles/AboutDialog.css';
-import '@/styles/globals.css';
+import '@/styles/Footer.css';
 import '@/styles/WarningToast.css';
+import '@/styles/globals.css';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
