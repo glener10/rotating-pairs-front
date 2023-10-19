@@ -5,6 +5,8 @@
 
   --size-toast-title: 15px;
   --size-toast-description: 13px;
+
+  --size-footer-text: 13px;
 }
 
 @media screen and (max-width: 768px) {
@@ -15,6 +17,8 @@
 
     --size-toast-title: 13px;
     --size-toast-description: 12px;
+
+    --size-footer-text: 12px;
   }
 }
 
@@ -26,6 +30,8 @@
 
     --size-toast-title: 12px;
     --size-toast-description: 12px;
+
+    --size-footer-text: 11px;
   }
 }
 
