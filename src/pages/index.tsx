@@ -57,7 +57,10 @@ export default function Home(): JSX.Element {
             padding: paddingMainBox,
           }}
         >
-          <InputAndButton setInputNamesInArray={setInputNamesInArray} />
+          <InputAndButton
+            inputNamesInArray={inputNamesInArray}
+            setInputNamesInArray={setInputNamesInArray}
+          />
           {inputNamesInArray && inputNamesInArray.length > 0 && (
             <ListEnteredNames
               setInputNamesInArray={setInputNamesInArray}
@@ -65,7 +68,11 @@ export default function Home(): JSX.Element {
             />
           )}
 
-          <ButtonsCombinations inputNamesInArray={inputNamesInArray} setSprints={setSprints} />
+          <ButtonsCombinations
+            inputNamesInArray={inputNamesInArray}
+            sprints={sprints}
+            setSprints={setSprints}
+          />
           {sprints && sprints.length > 0 && (
             <>
               <TitleAndLogCombinations
