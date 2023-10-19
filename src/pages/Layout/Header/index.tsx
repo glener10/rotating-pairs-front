@@ -8,6 +8,8 @@ import { Flex, Link, Text } from '@radix-ui/themes';
 import { Dispatch, SetStateAction } from 'react';
 
 type HeaderProps = {
+  isAboutModalOpen: boolean;
+  setIsAboutModalOpen: Dispatch<SetStateAction<boolean>>;
   theme: string;
   setTheme: Dispatch<SetStateAction<string>>;
 };
@@ -23,7 +25,7 @@ const mappingWidthHeader = (breakpoint: TBreakpoint): number => {
 };
 
 export const Header = (props: HeaderProps): JSX.Element => {
-  const { theme, setTheme } = props;
+  const { theme, setTheme, isAboutModalOpen, setIsAboutModalOpen } = props;
   const breakpoint = useResponsive();
   const widthHeader = mappingWidthHeader(breakpoint);
 
@@ -45,7 +47,10 @@ export const Header = (props: HeaderProps): JSX.Element => {
             justifyContent: 'space-between',
           }}
         >
-          <Dialog.Root>
+          <Dialog.Root
+            open={isAboutModalOpen}
+            onOpenChange={(open): void => setIsAboutModalOpen(open)}
+          >
             <Dialog.Trigger style={{ background: 'none', border: 'none', padding: '0' }}>
               <Link>About</Link>
             </Dialog.Trigger>

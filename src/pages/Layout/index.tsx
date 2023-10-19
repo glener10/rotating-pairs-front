@@ -1,7 +1,8 @@
 import { Ad } from '@/components/atoms/Ad';
 import useResponsive from '@/hooks/useResponsive';
+import { Footer } from '@/pages/Layout/Footer';
 import { Header } from '@/pages/Layout/Header';
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { Dispatch, ReactNode, SetStateAction, useState } from 'react';
 
 type LayoutProps = {
   theme: string;
@@ -11,12 +12,18 @@ type LayoutProps = {
 
 export const Layout = (props: LayoutProps): JSX.Element => {
   const { theme, setTheme, children } = props;
+  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
 
   const breakpoint = useResponsive();
 
   return (
     <>
-      <Header theme={theme} setTheme={setTheme} />
+      <Header
+        theme={theme}
+        setTheme={setTheme}
+        isAboutModalOpen={isAboutModalOpen}
+        setIsAboutModalOpen={setIsAboutModalOpen}
+      />
 
       {breakpoint && breakpoint == 'desktop' ? (
         <div style={{ display: 'flex' }}>
@@ -31,6 +38,8 @@ export const Layout = (props: LayoutProps): JSX.Element => {
       ) : (
         children
       )}
+
+      <Footer setIsAboutModalOpen={setIsAboutModalOpen} />
     </>
   );
 };
