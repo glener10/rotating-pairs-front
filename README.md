@@ -1,6 +1,6 @@
 # **Draw Pair-Programming**
 
-<p align="center"> 🚀 Project created to draw pairs to work on sprints. </p>
+<p align="center"> 🚀 Project created to draw pairs without repetitions, for those who work with pair programming and rotating pairs. </p>
 
 🏁 Table of Contents
 
@@ -21,6 +21,8 @@
 <!--te-->
 
 ===================
+
+You can access the deployed application via the link [Rotating Pair](https://rotatingpairs.online)
 
 <div id="dependenciesandenvironment"></div>
 
@@ -48,8 +50,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 **Warning**: The Project uses error checking ([ESLint](https://eslint.org/)) and testing checks at every commit. See more at [Husky](https://github.com/typicode/husky).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
 <div id="learnmore"></div>
 
 ## **Learn More**
@@ -61,12 +61,6 @@ To learn more about technologies used in the application:
 - [Radix UI](https://www.radix-ui.com/) - An open source component library optimized for fast development, easy maintenance, and accessibility.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-#### **Deploy on Vercel**
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 <div id="license"></div>
 
