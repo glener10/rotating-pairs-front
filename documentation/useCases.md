@@ -1,5 +1,6 @@
 ## New Features
 
+- Implement title and description on top of the input box
 - Implementing donate with paypal/pagseguro or pix
 - Implementing contact method
 - Implementing exportation in copy to clipboard, CSV, TXT and others if needed
