@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { SimpleButton } from '@/components/atoms/SimpleButton';
-import Title from '@/components/atoms/Title';
+import { Title } from '@/components/atoms/Title';
 import useResponsive from '@/hooks/useResponsive';
 import { TBreakpoint } from '@/interfaces/TBreakpoint';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
