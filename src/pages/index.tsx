@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { BasicText } from '@/components/atoms/BasicText';
+import { SimpleButton } from '@/components/atoms/SimpleButton';
+import { SimpleToast } from '@/components/atoms/SimpleToast';
 import { Title } from '@/components/atoms/Title';
 import { ButtonsCombinations } from '@/components/molecules/ButtonsCombinations';
 import { InputAndButton } from '@/components/molecules/InputAndButton';
@@ -9,6 +12,7 @@ import useResponsive from '@/hooks/useResponsive';
 import { ISprint } from '@/interfaces/ISprint';
 import { TBreakpoint } from '@/interfaces/TBreakpoint';
 import { Box } from '@radix-ui/themes';
+import copy from 'clipboard-copy';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
@@ -29,6 +33,8 @@ export default function Home(): JSX.Element {
   const [numberOfSprints, setNumberOfSprints] = useState<number>();
   const [numberOfCombinationPerSprint, setNumberOfCombinationPerSprint] = useState<number>();
 
+  const [openToast, setOpenToast] = useState(false);
+
   const breakpoint = useResponsive();
 
   const paddingMainBox = mappingPaddingMainBox(breakpoint);
@@ -43,6 +49,25 @@ export default function Home(): JSX.Element {
     }
   }, [sprints]);
 
+  async function copyToClipboard(): Promise<void> {
+    let output = '';
+    for (
+      let combinationIndex = 0;
+      combinationIndex < sprints[0].combinations.length;
+      combinationIndex++
+    ) {
+      for (let sprintIndex = 0; sprintIndex < sprints.length; sprintIndex++) {
+        output = `${output}${sprints[sprintIndex].combinations[combinationIndex].pairOne} - ${sprints[sprintIndex].combinations[combinationIndex].pairTwo}`;
+        if (sprintIndex != sprints.length - 1) {
+          output = `${output}	`;
+        }
+      }
+      output = `${output}\n`;
+    }
+    await copy(output);
+    setOpenToast(true);
+  }
+
   return (
     <>
       <Head>
@@ -51,6 +76,14 @@ export default function Home(): JSX.Element {
         <link rel="icon" href="/iconDrawPairProgramming.svg" />
       </Head>
       <main>
+        {openToast && (
+          <SimpleToast
+            setOpen={setOpenToast}
+            open={openToast}
+            title={'Well Done!!'}
+            description={'Your combinations have been copied'}
+          />
+        )}
         <Box
           style={{
             display: 'flex',
@@ -91,6 +124,9 @@ export default function Home(): JSX.Element {
                   numberOfCombinationPerSprint ? numberOfCombinationPerSprint : 0
                 }
               />
+              <SimpleButton onClick={copyToClipboard}>
+                Copy results to Clipboard in Sheet format
+              </SimpleButton>
               <ListCombinations sprints={sprints} />
             </>
           )}
