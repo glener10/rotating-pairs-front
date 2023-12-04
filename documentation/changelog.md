@@ -1,3 +1,9 @@
+# [v1.2.0] - 04/12/2023
+
+- Changing icon of the Rotating Pairs website
+- Created a page 'About' to website information and deleted the modal
+- Create a link to home page in Hedaer component
+
 # [v1.2.0] - 19/10/2023
 
 - Implementing Footer component
