@@ -1,18 +1,12 @@
 import { Link } from '@radix-ui/themes';
-import { Dispatch, SetStateAction } from 'react';
 
-type FooterProps = {
-  setIsAboutModalOpen: Dispatch<SetStateAction<boolean>>;
-};
-
-export const Footer = (props: FooterProps): JSX.Element => {
-  const { setIsAboutModalOpen } = props;
+export const Footer = (): JSX.Element => {
   return (
     <footer className="footer">
       <div>
         <p>&copy; 2023-2025 Rotating Pairs. All rights reserved.</p>
         <div>
-          <Link onClick={(): void => setIsAboutModalOpen(true)}>Open Website Informations</Link>
+          <Link onClick={(): void => console.log('Going to About Page')}>About</Link>
         </div>
       </div>
     </footer>

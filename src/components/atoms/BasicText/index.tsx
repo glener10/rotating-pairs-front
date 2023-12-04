@@ -5,7 +5,7 @@ export const BasicText = (props: TextProps): JSX.Element => {
   const { children } = props;
 
   return (
-    <Text as="p" style={{ fontSize: 'var(--size-text)' }}>
+    <Text as="p" style={{ fontSize: 'var(--size-text)', margin: '8px' }}>
       {children}
     </Text>
   );
