@@ -4,6 +4,7 @@
 
 - Implementing donate with paypal/pagseguro or pix
 - Implementing contact method
+- Protect combination json
 - Log of records of clicks on generate Combinations (how many entries, how many sprints, how many combinations, dth, localRequisition)
 
 - Implementing any forms to see the result of the combinations (tabs, list)
