@@ -1,6 +1,5 @@
 ## New Features
 
-- Put in Header link to Main Page
 - Implementing exportation in copy to clipboard, CSV, TXT and others if needed
 
 - Implementing donate with paypal/pagseguro or pix
