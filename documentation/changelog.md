@@ -1,4 +1,8 @@
-# [v1.2.0] - 04/12/2023
+# [v1.3.1] - 04/12/2023
+
+- Functionality to copy to clipboard to paste into spreadsheet
+
+# [v1.3.0] - 04/12/2023
 
 - Changing icon of the Rotating Pairs website
 - Created a page 'About' to website information and deleted the modal
