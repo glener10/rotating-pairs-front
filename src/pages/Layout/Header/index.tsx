@@ -1,15 +1,15 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { SimpleButton } from '@/components/atoms/SimpleButton';
-import { AboutDialog } from '@/components/molecules/AboutDialog';
+import { Title } from '@/components/atoms/Title';
 import useResponsive from '@/hooks/useResponsive';
 import { TBreakpoint } from '@/interfaces/TBreakpoint';
-import * as Dialog from '@radix-ui/react-dialog';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
-import { Flex, Link, Text } from '@radix-ui/themes';
+import { Flex, Text } from '@radix-ui/themes';
+import Image from 'next/image';
+import router from 'next/router';
 import { Dispatch, SetStateAction } from 'react';
 
 type HeaderProps = {
-  isAboutModalOpen: boolean;
-  setIsAboutModalOpen: Dispatch<SetStateAction<boolean>>;
   theme: string;
   setTheme: Dispatch<SetStateAction<string>>;
 };
@@ -25,9 +25,17 @@ const mappingWidthHeader = (breakpoint: TBreakpoint): number => {
 };
 
 export const Header = (props: HeaderProps): JSX.Element => {
-  const { theme, setTheme, isAboutModalOpen, setIsAboutModalOpen } = props;
+  const { theme, setTheme } = props;
   const breakpoint = useResponsive();
   const widthHeader = mappingWidthHeader(breakpoint);
+
+  async function goToHomePage(): Promise<void> {
+    await router.push('/');
+  }
+
+  const Logo = (): JSX.Element => (
+    <Image src="/iconDrawPairProgramming.svg" alt="Logo do seu site" width={40} height={40} />
+  );
 
   return (
     <header>
@@ -35,10 +43,18 @@ export const Header = (props: HeaderProps): JSX.Element => {
         style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'flex-end',
+          justifyContent: 'space-between',
           padding: '24px',
         }}
       >
+        <Flex
+          style={{ display: 'flex', cursor: 'pointer' }}
+          onClick={async (): Promise<void> => goToHomePage()}
+        >
+          <Logo />
+          <Title>Rotating Pairs</Title>
+        </Flex>
+
         <Flex
           style={{
             display: 'flex',
@@ -47,16 +63,6 @@ export const Header = (props: HeaderProps): JSX.Element => {
             justifyContent: 'space-between',
           }}
         >
-          <Dialog.Root
-            open={isAboutModalOpen}
-            onOpenChange={(open): void => setIsAboutModalOpen(open)}
-          >
-            <Dialog.Trigger style={{ background: 'none', border: 'none', padding: '0' }}>
-              <Link>About</Link>
-            </Dialog.Trigger>
-            <AboutDialog />
-          </Dialog.Root>
-
           <SimpleButton
             style={{ display: 'flex' }}
             variant="outline"

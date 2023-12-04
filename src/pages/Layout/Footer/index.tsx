@@ -1,18 +1,20 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Link } from '@radix-ui/themes';
-import { Dispatch, SetStateAction } from 'react';
+import { useRouter } from 'next/router';
 
-type FooterProps = {
-  setIsAboutModalOpen: Dispatch<SetStateAction<boolean>>;
-};
+export const Footer = (): JSX.Element => {
+  const router = useRouter();
 
-export const Footer = (props: FooterProps): JSX.Element => {
-  const { setIsAboutModalOpen } = props;
+  async function goToAboutPage(): Promise<void> {
+    await router.push('about');
+  }
+
   return (
     <footer className="footer">
       <div>
         <p>&copy; 2023-2025 Rotating Pairs. All rights reserved.</p>
         <div>
-          <Link onClick={(): void => setIsAboutModalOpen(true)}>Open Website Informations</Link>
+          <Link onClick={async (): Promise<void> => goToAboutPage()}>About</Link>
         </div>
       </div>
     </footer>
