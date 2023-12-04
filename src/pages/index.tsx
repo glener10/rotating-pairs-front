@@ -1,3 +1,5 @@
+import { BasicText } from '@/components/atoms/BasicText';
+import { Title } from '@/components/atoms/Title';
 import { ButtonsCombinations } from '@/components/molecules/ButtonsCombinations';
 import { InputAndButton } from '@/components/molecules/InputAndButton';
 import { TitleAndLogCombinations } from '@/components/molecules/TitleAndLogCombinations';
@@ -57,6 +59,14 @@ export default function Home(): JSX.Element {
             padding: paddingMainBox,
           }}
         >
+          <Box>
+            <Title>Rotating Pairs</Title>
+            <BasicText>
+              Tool to generate pair combinations without repetition for those who work with Pair
+              Programming
+            </BasicText>
+            <br />
+          </Box>
           <InputAndButton
             inputNamesInArray={inputNamesInArray}
             setInputNamesInArray={setInputNamesInArray}
