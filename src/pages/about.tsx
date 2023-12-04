@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             padding: paddingMainBox,
           }}
         >
