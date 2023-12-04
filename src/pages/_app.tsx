@@ -7,7 +7,7 @@ import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
-import { useEffect, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 
 export const getThemePreference = (): string => {
   if (typeof window !== 'undefined') {

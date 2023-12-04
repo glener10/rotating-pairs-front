@@ -15,7 +15,7 @@ const mappingPaddingMainBox = (breakpoint: TBreakpoint): number => {
   return mapping[breakpoint] || 30;
 };
 
-export default function Home(): JSX.Element {
+export default function About(): JSX.Element {
   const breakpoint = useResponsive();
 
   const paddingMainBox = mappingPaddingMainBox(breakpoint);
