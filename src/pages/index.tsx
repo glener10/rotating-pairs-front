@@ -71,7 +71,7 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Rotating Pairs Generator</title>
+        <title>Rotating Pairs</title>
         <meta name="description" content="Random Rotating Pair Generator for Pair Programming" />
         <link rel="icon" href="/iconDrawPairProgramming.svg" />
       </Head>
