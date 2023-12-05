@@ -1,6 +1,6 @@
 ## New Features
 
-- Implementing contact method
+- Implementing contact method <https://www.youtube.com/watch?v=Zbg1BHOVzRg&ab_channel=Sujeitoprogramador>
 - Implementing donate with paypal/pagseguro or pix
 
 - Log of records of clicks on generate Combinations (how many entries, how many sprints, how many combinations, dth, localRequisition)
