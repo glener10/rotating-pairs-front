@@ -18,15 +18,15 @@ const mappingPaddingMainBox = (breakpoint: TBreakpoint): number => {
 };
 
 export default function Contact(): JSX.Element {
-  const [formulario, setFormulario] = useState({
-    nome: '',
+  const [form, setform] = useState({
+    name: '',
     email: '',
-    mensagem: '',
+    message: '',
   });
 
   const handleChange = (campo: string, valor: string): void => {
-    setFormulario({
-      ...formulario,
+    setform({
+      ...form,
       [campo]: valor,
     });
   };
@@ -34,12 +34,12 @@ export default function Contact(): JSX.Element {
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
-    console.log('Enviando e-mail:', formulario);
+    console.log('Enviando e-mail:', form);
 
-    setFormulario({
-      nome: '',
+    setform({
+      name: '',
       email: '',
-      mensagem: '',
+      message: '',
     });
   };
   const [openToast, setOpenToast] = useState(false);
@@ -87,16 +87,16 @@ export default function Contact(): JSX.Element {
                 margin: '10px',
               }}
             >
-              <Label.Root className="LabelRoot" htmlFor="nome">
-                Nome:
+              <Label.Root className="LabelRoot" htmlFor="name">
+                Name:
               </Label.Root>
               <input
                 className="Input"
                 type="text"
-                id="nome"
-                name="nome"
-                value={formulario.nome}
-                onChange={(e): void => handleChange('nome', e.target.value)}
+                id="name"
+                name="name"
+                value={form.name}
+                onChange={(e): void => handleChange('name', e.target.value)}
                 required
               />
             </div>
@@ -119,7 +119,7 @@ export default function Contact(): JSX.Element {
                 type="email"
                 id="email"
                 name="email"
-                value={formulario.email}
+                value={form.email}
                 onChange={(e): void => handleChange('email', e.target.value)}
                 required
               />
@@ -134,15 +134,16 @@ export default function Contact(): JSX.Element {
                 alignItems: 'center',
               }}
             >
-              <Label.Root className="LabelRoot" htmlFor="mensagem">
-                Mensagem:
+              <Label.Root className="LabelRoot" htmlFor="message">
+                Message:
               </Label.Root>
               <textarea
                 className="Input"
-                id="mensagem"
-                name="mensagem"
-                value={formulario.mensagem}
-                onChange={(e): void => handleChange('mensagem', e.target.value)}
+                id="message"
+                name="message"
+                style={{ minHeight: '200px' }}
+                value={form.message}
+                onChange={(e): void => handleChange('message', e.target.value)}
                 required
               />
             </div>
