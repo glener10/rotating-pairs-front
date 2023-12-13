@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { SimpleButton } from '@/components/atoms/SimpleButton';
 import { SimpleToast } from '@/components/atoms/SimpleToast';
 import useResponsive from '@/hooks/useResponsive';
@@ -98,6 +101,15 @@ export default function Contact(): JSX.Element {
                 value={form.name}
                 onChange={(e): void => handleChange('name', e.target.value)}
                 required
+                onInvalid={(e): void => {
+                  //@ts-ignore
+                  e.target.setCustomValidity('');
+                  //@ts-ignore
+                  if (!e.target.validity.valid) {
+                    //@ts-ignore
+                    e.target.setCustomValidity('This field cannot be left blank');
+                  }
+                }}
               />
             </div>
 
@@ -122,6 +134,17 @@ export default function Contact(): JSX.Element {
                 value={form.email}
                 onChange={(e): void => handleChange('email', e.target.value)}
                 required
+                onInvalid={(e): void => {
+                  //@ts-ignore
+                  e.target.setCustomValidity('');
+                  //@ts-ignore
+                  if (!e.target.validity.valid) {
+                    //@ts-ignore
+                    e.target.setCustomValidity(
+                      'Please enter a valid email address, which must be in the following format: "example@example.com"'
+                    );
+                  }
+                }}
               />
             </div>
 
@@ -145,6 +168,15 @@ export default function Contact(): JSX.Element {
                 value={form.message}
                 onChange={(e): void => handleChange('message', e.target.value)}
                 required
+                onInvalid={(e): void => {
+                  //@ts-ignore
+                  e.target.setCustomValidity('');
+                  //@ts-ignore
+                  if (!e.target.validity.valid) {
+                    //@ts-ignore
+                    e.target.setCustomValidity('This field cannot be left blank');
+                  }
+                }}
               />
             </div>
 
