@@ -118,6 +118,7 @@ export default function Contact(): JSX.Element {
             onSubmit={(e): void => {
               handleSubmit(e);
             }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           >
             <div
               style={{
@@ -218,8 +219,8 @@ export default function Contact(): JSX.Element {
                 }}
               />
             </div>
-
-            <SimpleButton type="submit">Enviar</SimpleButton>
+            <br />
+            <SimpleButton type="submit">Send E-mail</SimpleButton>
           </form>
         </Box>
       </main>
