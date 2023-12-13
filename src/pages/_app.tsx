@@ -1,4 +1,5 @@
 import { Layout } from '@/pages/Layout';
+import '@/styles/Contact.css';
 import '@/styles/Footer.css';
 import '@/styles/WarningToast.css';
 import '@/styles/globals.css';
