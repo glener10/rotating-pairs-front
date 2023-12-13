@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
@@ -5,6 +6,7 @@ import { SimpleButton } from '@/components/atoms/SimpleButton';
 import { SimpleToast } from '@/components/atoms/SimpleToast';
 import useResponsive from '@/hooks/useResponsive';
 import { TBreakpoint } from '@/interfaces/TBreakpoint';
+import { send } from '@emailjs/browser';
 import * as Label from '@radix-ui/react-label';
 import { Box } from '@radix-ui/themes';
 import Head from 'next/head';
@@ -37,13 +39,31 @@ export default function Contact(): JSX.Element {
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
-    console.log('Enviando e-mail:', form);
+    const templateParams = {
+      name: form.name,
+      email: form.email,
+      message: form.message,
+    };
 
-    setform({
-      name: '',
-      email: '',
-      message: '',
-    });
+    send(
+      //@ts-ignore
+      process.env.EMAILJS_SERVICE_ID,
+      process.env.EMAILJS_TEMPLATE_ID,
+      templateParams,
+      process.env.EMAILJS_PUBLIC_KEY
+    ).then(
+      (response) => {
+        console.log('Email enviado!', response.status);
+        setform({
+          name: '',
+          email: '',
+          message: '',
+        });
+      },
+      (err) => {
+        console.log('Error!', err);
+      }
+    );
   };
   const [openToast, setOpenToast] = useState(false);
 
