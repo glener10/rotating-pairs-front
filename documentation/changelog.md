@@ -1,3 +1,7 @@
+# [v1.4.0] - 13/12/2023
+
+- Created contact page using emailjs
+
 # [v1.3.1] - 04/12/2023
 
 - Functionality to copy to clipboard to paste into spreadsheet

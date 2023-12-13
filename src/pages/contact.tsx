@@ -10,6 +10,7 @@ import { send } from '@emailjs/browser';
 import * as Label from '@radix-ui/react-label';
 import { Box } from '@radix-ui/themes';
 import Head from 'next/head';
+import router from 'next/router';
 import { FormEvent, useState } from 'react';
 
 const mappingPaddingMainBox = (breakpoint: TBreakpoint): number => {
@@ -53,7 +54,16 @@ export default function Contact(): JSX.Element {
       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
     ).then(
       (response) => {
-        console.log('Email enviado!', response.status);
+        response;
+        setTitleAndDescriptionToast({
+          title: 'Everything is fine with your contact!',
+          description: 'We will then contact you about your message',
+        });
+        setOpenToast(true);
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
+        setTimeout(async (): Promise<void> => {
+          await router.push('/');
+        }, 2000);
         setform({
           name: '',
           email: '',
@@ -61,11 +71,20 @@ export default function Contact(): JSX.Element {
         });
       },
       (err) => {
-        console.log('Error!', err);
+        setTitleAndDescriptionToast({
+          title: 'Something went wrong with sending your email. 🙁',
+          description: 'Please try again in a few moments',
+        });
+        console.log('Error in email sending', err);
+        setOpenToast(true);
       }
     );
   };
   const [openToast, setOpenToast] = useState(false);
+  const [titleAndDescriptionToast, setTitleAndDescriptionToast] = useState({
+    title: '',
+    description: '',
+  });
 
   const breakpoint = useResponsive();
 
@@ -83,8 +102,8 @@ export default function Contact(): JSX.Element {
           <SimpleToast
             setOpen={setOpenToast}
             open={openToast}
-            title={'Well Done!!'}
-            description={'Your combinations have been copied'}
+            title={titleAndDescriptionToast.title}
+            description={titleAndDescriptionToast.description}
           />
         )}
         <Box
@@ -99,6 +118,7 @@ export default function Contact(): JSX.Element {
             onSubmit={(e): void => {
               handleSubmit(e);
             }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           >
             <div
               style={{
@@ -199,8 +219,8 @@ export default function Contact(): JSX.Element {
                 }}
               />
             </div>
-
-            <SimpleButton type="submit">Enviar</SimpleButton>
+            <br />
+            <SimpleButton type="submit">Send E-mail</SimpleButton>
           </form>
         </Box>
       </main>
