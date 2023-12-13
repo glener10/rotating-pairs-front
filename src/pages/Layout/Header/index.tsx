@@ -4,7 +4,7 @@ import { Title } from '@/components/atoms/Title';
 import useResponsive from '@/hooks/useResponsive';
 import { TBreakpoint } from '@/interfaces/TBreakpoint';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
-import { Flex, Text } from '@radix-ui/themes';
+import { Flex, Link, Text } from '@radix-ui/themes';
 import Image from 'next/image';
 import router from 'next/router';
 import { Dispatch, SetStateAction } from 'react';
@@ -37,6 +37,10 @@ export const Header = (props: HeaderProps): JSX.Element => {
     <Image src="/iconDrawPairProgramming.svg" alt="Logo do seu site" width={40} height={40} />
   );
 
+  async function goToContactPage(): Promise<void> {
+    await router.push('contact');
+  }
+
   return (
     <header>
       <Flex
@@ -60,9 +64,18 @@ export const Header = (props: HeaderProps): JSX.Element => {
             display: 'flex',
             width: widthHeader,
             alignItems: 'center',
-            justifyContent: 'space-between',
+            margin: '20px',
           }}
         >
+          <Link
+            style={{
+              marginRight: '20px',
+            }}
+            onClick={async (): Promise<void> => goToContactPage()}
+          >
+            Contact
+          </Link>
+
           <SimpleButton
             style={{ display: 'flex' }}
             variant="outline"
