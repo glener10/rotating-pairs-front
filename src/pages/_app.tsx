@@ -7,6 +7,7 @@ import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { AppProps } from 'next/app';
 import { JSX, useEffect, useState } from 'react';
 
@@ -40,6 +41,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       <TooltipProvider>
         <Layout theme={theme} setTheme={setTheme}>
           <Analytics />
+          <SpeedInsights />
           <Component {...pageProps} />
         </Layout>
       </TooltipProvider>
