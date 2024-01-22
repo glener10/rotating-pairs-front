@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
+import { DonateButton } from '@/components/atoms/DonateButton';
 import { Link } from '@radix-ui/themes';
 import { useRouter } from 'next/router';
 
@@ -10,12 +11,16 @@ export const Footer = (): JSX.Element => {
   }
 
   return (
-    <footer className="footer">
-      <div>
+    <footer style={{ display: 'flex', justifyContent: 'space-between' }} className="footer">
+      <div style={{ display: 'flex' }}>
         <p>&copy; 2023-2025 Rotating Pairs. All rights reserved.</p>
         <div>
           <Link onClick={async (): Promise<void> => goToAboutPage()}>About</Link>
         </div>
+      </div>
+
+      <div style={{ display: 'flex' }}>
+        <DonateButton />
       </div>
     </footer>
   );

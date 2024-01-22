@@ -1,3 +1,7 @@
+# [v1.5.0] - 22/01/2024
+
+- Created donation button component in Footer
+
 # [v1.4.0] - 13/12/2023
 
 - Created contact page using emailjs
