@@ -1,6 +1,7 @@
 # [v1.5.0] - 22/01/2024
 
 - Created donation button component in Footer
+- Add vercel Speed ​​Insights for monitoring
 
 # [v1.4.0] - 13/12/2023
 
