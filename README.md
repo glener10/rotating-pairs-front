@@ -48,7 +48,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-**Warning**: The Project uses error checking ([ESLint](https://eslint.org/)) and testing checks at every commit. See more at [Husky](https://github.com/typicode/husky).
+**Warning**: Its recommended execute **npm run lint** ([ESLint](https://eslint.org/)) every commit.
 
 <div id="learnmore"></div>
 
