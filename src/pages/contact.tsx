@@ -106,6 +106,8 @@ export default function Contact(): JSX.Element {
             description={titleAndDescriptionToast.description}
           />
         )}
+        <p>{process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID}</p>
+        <p>{process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID}</p>
         <Box
           style={{
             display: 'flex',
