@@ -8,7 +8,7 @@ import useResponsive from '@/hooks/useResponsive';
 import { TBreakpoint } from '@/interfaces/TBreakpoint';
 import { send } from '@emailjs/browser';
 import * as Label from '@radix-ui/react-label';
-import { Box } from '@radix-ui/themes';
+import { Box, TextArea, TextField } from '@radix-ui/themes';
 import Head from 'next/head';
 import router from 'next/router';
 import { FormEvent, useState } from 'react';
@@ -130,10 +130,8 @@ export default function Contact(): JSX.Element {
                 margin: '10px',
               }}
             >
-              <Label.Root className="LabelRoot" htmlFor="name">
-                Name:
-              </Label.Root>
-              <input
+              <Label.Root htmlFor="name">Name:</Label.Root>
+              <TextField.Input
                 className="Input"
                 type="text"
                 id="name"
@@ -163,10 +161,8 @@ export default function Contact(): JSX.Element {
                 margin: '10px',
               }}
             >
-              <Label.Root className="LabelRoot" htmlFor="email">
-                E-mail:
-              </Label.Root>
-              <input
+              <Label.Root htmlFor="email">E-mail:</Label.Root>
+              <TextField.Input
                 className="Input"
                 type="email"
                 id="email"
@@ -195,12 +191,12 @@ export default function Contact(): JSX.Element {
                 flexWrap: 'wrap',
                 gap: 15,
                 alignItems: 'center',
+                //@ts-ignore
+                flexWrap: 'nowrap',
               }}
             >
-              <Label.Root className="LabelRoot" htmlFor="message">
-                Message:
-              </Label.Root>
-              <textarea
+              <Label.Root htmlFor="message">Message:</Label.Root>
+              <TextArea
                 className="Input"
                 id="message"
                 name="message"
