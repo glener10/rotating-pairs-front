@@ -18,7 +18,6 @@ export const Layout = (props: LayoutProps): JSX.Element => {
   return (
     <>
       <Header theme={theme} setTheme={setTheme} />
-
       {breakpoint && breakpoint == 'desktop' ? (
         <div style={{ display: 'flex' }}>
           <div style={{ flex: '10%' }}>
@@ -32,7 +31,6 @@ export const Layout = (props: LayoutProps): JSX.Element => {
       ) : (
         children
       )}
-
       <Footer />
     </>
   );
