@@ -6,7 +6,12 @@ export const SimpleButton = (props: ButtonProps): JSX.Element => {
   return (
     <Button
       {...rest}
-      style={{ fontSize: 'var(--size-button)', padding: '15px' }}
+      style={{
+        fontSize: 'var(--size-button)',
+        padding: '15px 20px',
+        margin: '10px',
+        pointerEvents: 'auto',
+      }}
       disabled={disabled}
       variant={variant ? variant : 'soft'}
     >
