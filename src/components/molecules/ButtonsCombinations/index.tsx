@@ -36,16 +36,15 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
     <Box style={{ width: '100%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <span tabIndex={0}>
+          <div tabIndex={0}>
             <SimpleButton
               onClick={(): void => generateCombinationsOfTheSprints()}
               disabled={disableButtonGenerateRandomCombination()}
               variant="solid"
-              style={{ pointerEvents: 'auto' }}
             >
               {'Generate Random Combinations'}
             </SimpleButton>
-          </span>
+          </div>
         </Tooltip.Trigger>
         {disableButtonGenerateRandomCombination() && (
           <Tooltip.Content
@@ -73,7 +72,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
 
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <span tabIndex={0}>
+          <div tabIndex={0}>
             <SimpleButton
               disabled={props.sprints.length == 0 ? true : false}
               variant="solid"
@@ -81,7 +80,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
             >
               {'Clear All Combinations'}
             </SimpleButton>
-          </span>
+          </div>
         </Tooltip.Trigger>
         {sprints.length == 0 && (
           <Tooltip.Content
