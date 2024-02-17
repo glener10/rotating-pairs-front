@@ -12,7 +12,7 @@ export const Footer = (): JSX.Element => {
 
   return (
     <footer
-      style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}
+      style={{ display: 'flex', justifyContent: 'space-between', zIndex: '-1' }}
       className="footer"
     >
       <div style={{ display: 'flex', flexDirection: 'column' }}>
