@@ -33,7 +33,7 @@ export const Layout = (props: LayoutProps): JSX.Element => {
         children
       )}
 
-      <Footer style={{ marginTop: '20px' }} />
+      <Footer />
     </>
   );
 };
