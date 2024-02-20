@@ -5,6 +5,7 @@
 - Implementing integration with back-end tests
 - Save combinations.json backup in SSD and remove it
 - Transfer to back-end logical of generated random combinations without repetitions
+- Update Readme
 
 ## Tests
 
