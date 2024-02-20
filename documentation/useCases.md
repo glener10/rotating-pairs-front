@@ -1,11 +1,13 @@
 ## New Features
 
 - Log of records of clicks on generate Combinations (how many entries, how many sprints, how many combinations, dth, localRequisition)
-- Protect combination json, send requisition to back-end and remove logical implementation of front-end and yours tests
+- Send requisition to back-end and remove logical implementation of front-end and yours tests
+- Implementing integration with back-end tests
+- Save combinations.json backup in SSD and remove it
+- Transfer to back-end logical of generated random combinations without repetitions
 
 ## Tests
 
-- Implementing integration with back-end tests
 - Implementing atoms tests
 - Implementing molecules tests
 - Implementing organism tests
