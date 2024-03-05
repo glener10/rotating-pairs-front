@@ -1,5 +1,3 @@
-## New Features
-
 - CI/CD process
 - Implementing atoms tests
 - Implementing molecules tests
