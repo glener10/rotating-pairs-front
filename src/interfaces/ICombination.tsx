@@ -1,4 +1,4 @@
 export interface ICombination {
-  pairOne: string;
-  pairTwo: string;
+  PairOne: string;
+  PairTwo: string;
 }

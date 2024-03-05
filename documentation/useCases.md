@@ -1,8 +1,8 @@
 ## New Features
 
-- Implementing donate with paypal/pagseguro or pix
-- Log of records of clicks on generate Combinations (how many entries, how many sprints, how many combinations, dth, localRequisition)
-- Protect combination json
+- Update Readme
+- Test in production
+- CI/CD process?
 
 ## Tests
 

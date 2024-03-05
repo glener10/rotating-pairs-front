@@ -42,7 +42,7 @@ export default function Home(): JSX.Element {
   useEffect(() => {
     if (sprints && sprints.length > 0) {
       const numberOfSprints = sprints.length;
-      const numberOfCombinationPerSprint = sprints[0].combinations.length;
+      const numberOfCombinationPerSprint = sprints[0].Combinations.length;
 
       setNumberOfCombinationPerSprint(numberOfCombinationPerSprint);
       setNumberOfSprints(numberOfSprints);
@@ -53,11 +53,11 @@ export default function Home(): JSX.Element {
     let output = '';
     for (
       let combinationIndex = 0;
-      combinationIndex < sprints[0].combinations.length;
+      combinationIndex < sprints[0].Combinations.length;
       combinationIndex++
     ) {
       for (let sprintIndex = 0; sprintIndex < sprints.length; sprintIndex++) {
-        output = `${output}${sprints[sprintIndex].combinations[combinationIndex].pairOne} - ${sprints[sprintIndex].combinations[combinationIndex].pairTwo}`;
+        output = `${output}${sprints[sprintIndex].Combinations[combinationIndex].PairOne} - ${sprints[sprintIndex].Combinations[combinationIndex].PairTwo}`;
         if (sprintIndex != sprints.length - 1) {
           output = `${output}	`;
         }
@@ -131,7 +131,6 @@ export default function Home(): JSX.Element {
             </>
           )}
         </Box>
-        <div style={{ marginBottom: '20px' }}></div>
       </main>
     </>
   );

@@ -1,6 +1,6 @@
 import { SimpleButton } from '@/components/atoms/SimpleButton';
+import CombinationsGateway from '@/gateways/CombinationsGateway';
 import { ISprint } from '@/interfaces/ISprint';
-import { staticLogicReadCombinations } from '@/useCases/staticLogicDrawerJSON';
 import { InfoCircledIcon } from '@radix-ui/react-icons';
 import * as Tooltip from '@radix-ui/react-tooltip';
 import { Box } from '@radix-ui/themes';
@@ -13,9 +13,41 @@ interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButton
 
 export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Element => {
   const { inputNamesInArray, setSprints, sprints } = props;
-  const generateCombinationsOfTheSprints = (): void => {
-    const sprints = staticLogicReadCombinations(inputNamesInArray);
-    setSprints(sprints);
+
+  const generateCombinationsOfTheSprints = async (): Promise<void> => {
+    const combinations = await CombinationsGateway(inputNamesInArray.length);
+    const shuffledInput = shuffleInput(inputNamesInArray);
+
+    const combinationsConverted = convertCombinationsToInputNames(
+      shuffledInput,
+      combinations.Sprints
+    );
+    setSprints(combinationsConverted);
+  };
+
+  const convertCombinationsToInputNames = (
+    inputNamesInArray: string[],
+    combinationsSprints: ISprint[]
+  ): ISprint[] => {
+    const convertedInput: ISprint[] = combinationsSprints.map((combination) => {
+      return {
+        Combinations: combination.Combinations.map((comb) => {
+          return {
+            PairOne: inputNamesInArray[Number(comb.PairOne)],
+            PairTwo: inputNamesInArray[Number(comb.PairTwo)],
+          };
+        }),
+      };
+    });
+
+    return convertedInput;
+  };
+
+  const shuffleInput = (inputNamesInArray: string[]): string[] => {
+    const allInputsValues = inputNamesInArray.map((input) => {
+      return input;
+    });
+    return allInputsValues.sort(() => Math.random() - 0.5);
   };
 
   const clearAllCombinations = (): void => {
@@ -33,11 +65,12 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
   };
 
   return (
-    <Box style={{ width: '100%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
+    <Box style={{ width: '80%', display: 'flex', justifyContent: 'space-evenly' }}>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
           <SimpleButton
-            onClick={(): void => generateCombinationsOfTheSprints()}
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
+            onClick={async () => generateCombinationsOfTheSprints()}
             disabled={disableButtonGenerateRandomCombination()}
             variant="solid"
           >
