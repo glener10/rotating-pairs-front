@@ -1,4 +1,5 @@
 import { SimpleButton } from '@/components/atoms/SimpleButton';
+import { staticLogicReadCombinations } from '@/components/molecules/ButtonsCombinations/staticLogicDrawerJSON';
 import CombinationsGateway from '@/gateways/CombinationsGateway';
 import { ISprint } from '@/interfaces/ISprint';
 import { InfoCircledIcon } from '@radix-ui/react-icons';
@@ -15,13 +16,22 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
   const { inputNamesInArray, setSprints, sprints } = props;
 
   const generateCombinationsOfTheSprints = async (): Promise<void> => {
-    const combinations = await CombinationsGateway(inputNamesInArray.length);
+    let sprints: ISprint[] = [];
+    if (process.env.NEXT_PUBLIC_SECRET && process.env.NEXT_PUBLIC_URL_BACK) {
+      const combinations = await CombinationsGateway(inputNamesInArray.length);
+      sprints = combinations.Sprints;
+    } else {
+      const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
+      if (staticSprints == null) {
+        setSprints([]);
+        return;
+      }
+      sprints = staticSprints;
+    }
+
     const shuffledInput = shuffleInput(inputNamesInArray);
 
-    const combinationsConverted = convertCombinationsToInputNames(
-      shuffledInput,
-      combinations.Sprints
-    );
+    const combinationsConverted = convertCombinationsToInputNames(shuffledInput, sprints);
     setSprints(combinationsConverted);
   };
 

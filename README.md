@@ -1,4 +1,4 @@
-# **Draw Pair-Programming**
+# **Rotating Pairs - Front**
 
 <p align="center"> 🚀 Project created to draw pairs without repetitions, for those who work with pair programming and rotating pairs. </p>
 
@@ -10,7 +10,7 @@
 
 👉 [Dependencies and Environment](#dependenciesandenvironment)
 
-👉 [Getting Started](#gettingstarted)
+👉 [Installing](#installing)
 
 👉 [Learn More](#learnmore)
 
@@ -26,21 +26,36 @@ You can access the deployed application via the link [Rotating Pair](https://rot
 
 <div id="dependenciesandenvironment"></div>
 
-## **Dependencies and Environment**
+## **💻 Dependencies and Environment**
 
 - Node (Utilizado v18.16.0)
 - npm (Utilizado v9.7.2)
+
+<div id="installing"></div>
+
+## 🚀 **Installing**
+
+**1-** You will need installing the dependencies of the project:
 
 ```bash
 # installing the dependencies
 $ npm install
 ```
 
-<div id="gettingstarted"></div>
+**2-** After that, you have two choices to exec the application:
 
-## **Getting Started**
+**2.1-** Reading data from a [static json](./src/components/molecules/ButtonsCombinations/combinations.json) present in the project. To do this, simply run the application with the command:
 
-First, run the development server:
+**2.2-** Using the application's own back-end, to do this, you will need to clone the [back-end repository](https://github.com/glener10/rotating-pairs-back) and install and run the server (follow the documentation), the process should be quick and should not take more than 5 minutes.
+
+After that, in this project you will need create a _.env_ file in root folder with the following content:
+
+```
+NEXT_PUBLIC_SECRET=banana
+NEXT_PUBLIC_URL_BACK=http://localhost:8080
+```
+
+**3-** So just run Front with the command:
 
 ```bash
 npm run dev
@@ -48,11 +63,11 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-**Warning**: Its recommended execute **npm run lint** ([ESLint](https://eslint.org/)) every commit.
+**NOTE: Both options have limited test values ​​(only combinations with 2 or 3 inputs can be generated)**. The other combinations are private only for production application
 
 <div id="learnmore"></div>
 
-## **Learn More**
+## **📖 Learn More**
 
 To learn more about technologies used in the application:
 
@@ -64,7 +79,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 <div id="license"></div>
 
-## **License**
+## **🔒 License**
 
 Project has [MIT license](LICENSE).
 
