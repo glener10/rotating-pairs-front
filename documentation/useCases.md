@@ -1,6 +1,5 @@
 ## New Features
 
-- Shuffle array of combinations
 - Update Readme
 
 ## Tests
