@@ -2,6 +2,7 @@
 
 - Update Readme
 - Test in production
+- CI/CD process?
 
 ## Tests
 
