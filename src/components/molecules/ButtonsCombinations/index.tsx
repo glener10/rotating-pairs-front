@@ -16,8 +16,38 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
 
   const generateCombinationsOfTheSprints = async (): Promise<void> => {
     const combinations = await CombinationsGateway(inputNamesInArray.length);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    setSprints(combinations.Sprints);
+    const shuffledInput = shuffleInput(inputNamesInArray);
+
+    const combinationsConverted = convertCombinationsToInputNames(
+      shuffledInput,
+      combinations.Sprints
+    );
+    setSprints(combinationsConverted);
+  };
+
+  const convertCombinationsToInputNames = (
+    inputNamesInArray: string[],
+    combinationsSprints: ISprint[]
+  ): ISprint[] => {
+    const convertedInput: ISprint[] = combinationsSprints.map((combination) => {
+      return {
+        Combinations: combination.Combinations.map((comb) => {
+          return {
+            PairOne: inputNamesInArray[Number(comb.PairOne)],
+            PairTwo: inputNamesInArray[Number(comb.PairTwo)],
+          };
+        }),
+      };
+    });
+
+    return convertedInput;
+  };
+
+  const shuffleInput = (inputNamesInArray: string[]): string[] => {
+    const allInputsValues = inputNamesInArray.map((input) => {
+      return input;
+    });
+    return allInputsValues.sort(() => Math.random() - 0.5);
   };
 
   const clearAllCombinations = (): void => {
