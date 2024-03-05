@@ -1,6 +1,7 @@
 # [v2.0.0] - 04/03/2024
 
 - Created gateway that makes requests to the backend to save logs and return the positions of combinations
+- Updated documentation
 
 # [v1.5.1] - 04/03/2024
 
