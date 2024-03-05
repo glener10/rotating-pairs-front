@@ -33,7 +33,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
   };
 
   return (
-    <Box style={{ width: '100%', display: 'flex', justifyContent: 'space-evenly', margin: '15px' }}>
+    <Box style={{ width: '80%', display: 'flex', justifyContent: 'space-evenly' }}>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
           <SimpleButton

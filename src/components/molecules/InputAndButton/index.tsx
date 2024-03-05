@@ -81,7 +81,7 @@ export const InputAndButton = (props: InputAndButtonProps): JSX.Element => {
   };
 
   return (
-    <Box style={{ width: '100%' }}>
+    <Box style={{ width: '80%' }}>
       {warningToastOpen && (
         <SimpleToast
           setOpen={setWarningToastOpen}

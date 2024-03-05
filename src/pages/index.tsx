@@ -131,7 +131,6 @@ export default function Home(): JSX.Element {
             </>
           )}
         </Box>
-        <div style={{ marginBottom: '20px' }}></div>
       </main>
     </>
   );

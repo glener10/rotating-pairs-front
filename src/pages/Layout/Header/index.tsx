@@ -9,10 +9,10 @@ import Image from 'next/image';
 import router from 'next/router';
 import { Dispatch, SetStateAction } from 'react';
 
-type HeaderProps = {
+interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
   theme: string;
   setTheme: Dispatch<SetStateAction<string>>;
-};
+}
 
 const mappingWidthHeader = (breakpoint: TBreakpoint): number => {
   const mapping = {
@@ -25,7 +25,7 @@ const mappingWidthHeader = (breakpoint: TBreakpoint): number => {
 };
 
 export const Header = (props: HeaderProps): JSX.Element => {
-  const { theme, setTheme } = props;
+  const { theme, setTheme, ...rest } = props;
   const breakpoint = useResponsive();
   const widthHeader = mappingWidthHeader(breakpoint);
 
@@ -42,7 +42,7 @@ export const Header = (props: HeaderProps): JSX.Element => {
   }
 
   return (
-    <header>
+    <header {...rest}>
       <Flex
         style={{
           display: 'flex',

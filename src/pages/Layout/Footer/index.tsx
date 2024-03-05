@@ -3,7 +3,8 @@ import { DonateButton } from '@/components/atoms/DonateButton';
 import { Link } from '@radix-ui/themes';
 import { useRouter } from 'next/router';
 
-export const Footer = (): JSX.Element => {
+export const Footer = (props: React.HTMLAttributes<HTMLElement>): JSX.Element => {
+  const { ...rest } = props;
   const router = useRouter();
 
   async function goToAboutPage(): Promise<void> {
@@ -12,7 +13,8 @@ export const Footer = (): JSX.Element => {
 
   return (
     <footer
-      style={{ display: 'flex', justifyContent: 'space-between', zIndex: '-1' }}
+      {...rest}
+      style={{ display: 'flex', justifyContent: 'space-between' }}
       className="footer"
     >
       <div style={{ display: 'flex', flexDirection: 'column' }}>
