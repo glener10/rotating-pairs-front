@@ -20,7 +20,7 @@ export const ListCombinations = (props: ListCombinationsProps): JSX.Element => {
       }}
     >
       {sprints.map((sprint: ISprint, index: number) => (
-        <CombinationTable key={index} sprintIndex={index + 1} combinations={sprint.combinations} />
+        <CombinationTable key={index} sprintIndex={index + 1} combinations={sprint.Combinations} />
       ))}
     </Grid>
   );

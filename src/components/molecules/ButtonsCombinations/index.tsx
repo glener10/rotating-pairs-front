@@ -1,6 +1,6 @@
 import { SimpleButton } from '@/components/atoms/SimpleButton';
+import CombinationsGateway from '@/gateways/CombinationsGateway';
 import { ISprint } from '@/interfaces/ISprint';
-import { staticLogicReadCombinations } from '@/useCases/staticLogicDrawerJSON';
 import { InfoCircledIcon } from '@radix-ui/react-icons';
 import * as Tooltip from '@radix-ui/react-tooltip';
 import { Box } from '@radix-ui/themes';
@@ -13,9 +13,11 @@ interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButton
 
 export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Element => {
   const { inputNamesInArray, setSprints, sprints } = props;
-  const generateCombinationsOfTheSprints = (): void => {
-    const sprints = staticLogicReadCombinations(inputNamesInArray);
-    setSprints(sprints);
+
+  const generateCombinationsOfTheSprints = async (): Promise<void> => {
+    const combinations = await CombinationsGateway(inputNamesInArray.length);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    setSprints(combinations.Sprints);
   };
 
   const clearAllCombinations = (): void => {
@@ -37,7 +39,8 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
           <SimpleButton
-            onClick={(): void => generateCombinationsOfTheSprints()}
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
+            onClick={async () => generateCombinationsOfTheSprints()}
             disabled={disableButtonGenerateRandomCombination()}
             variant="solid"
           >

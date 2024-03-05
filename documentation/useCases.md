@@ -1,6 +1,5 @@
 ## New Features
 
-- Fix button in footer because z-index div
 - Homolog server in versel?
 - Log of records of clicks on generate Combinations (how many entries, how many sprints, how many combinations, dth, localRequisition)
 - Send requisition to back-end and remove logical implementation of front-end and yours tests

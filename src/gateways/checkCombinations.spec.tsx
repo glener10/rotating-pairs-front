@@ -29,7 +29,7 @@ describe('[unit] checkCombinations.tsx - useCase', () => {
     it.each(readJsonCombinations)(
       'Must check if there is a repeated combination in the JSON for the mapping of $numberOfInputs entries',
       (combination) => {
-        const { sprints } = combination;
+        const { Sprints: sprints } = combination;
 
         expect(checkIfThereIsARepeatedCombination(sprints)).toBeTruthy();
       }
@@ -40,7 +40,7 @@ describe('[unit] checkCombinations.tsx - useCase', () => {
     it.each(readJsonCombinations)(
       'Must Check If All Indexes Are Valid for the mapping for the $numberOfInputs entries',
       (combination) => {
-        const { sprints, numberOfInputs } = combination;
+        const { Sprints: sprints, NumberOfInputs: numberOfInputs } = combination;
 
         expect(checkIfAllIndexesAreValid(sprints, numberOfInputs)).toBeTruthy();
       }
@@ -51,7 +51,7 @@ describe('[unit] checkCombinations.tsx - useCase', () => {
     it.each(readJsonCombinations)(
       'Must check if there is a repeated combination in the JSON for the mapping of $numberOfInputs entries',
       (combination) => {
-        const { sprints } = combination;
+        const { Sprints: sprints } = combination;
 
         expect(
           checkIfAnyInputFromThePairIsRepeatedInTheCombinationsOfASprint(sprints)
@@ -64,7 +64,11 @@ describe('[unit] checkCombinations.tsx - useCase', () => {
     it.each(readJsonCombinations)(
       'Must check if there is a valid number of combinations ($numberOfCombinationsPerSprint) per sprint in the JSON for the mapping of $numberOfInputs entries',
       (combination) => {
-        const { sprints, numberOfCombinationsPerSprint, numberOfInputs } = combination;
+        const {
+          Sprints: sprints,
+          NumberOfCombinationsPerSprint: numberOfCombinationsPerSprint,
+          NumberOfInputs: numberOfInputs,
+        } = combination;
 
         const { indexArrayWithNumberInputs, numberOfInputsIsOdd } =
           returnArrayAndBolleanEvenOrOdd(numberOfInputs);
@@ -87,7 +91,11 @@ describe('[unit] checkCombinations.tsx - useCase', () => {
     it.each(readJsonCombinations)(
       'Must check if there is a valid number of sprints $numberOfSprints in the JSON for the mapping of $numberOfInputs entries',
       (combination) => {
-        const { sprints, numberOfSprints, numberOfInputs } = combination;
+        const {
+          Sprints: sprints,
+          NumberOfSprints: numberOfSprints,
+          NumberOfInputs: numberOfInputs,
+        } = combination;
 
         const { indexArrayWithNumberInputs, numberOfInputsIsOdd } =
           returnArrayAndBolleanEvenOrOdd(numberOfInputs);
