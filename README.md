@@ -63,7 +63,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-**NOTE: Both options have limited test values ​​(only combinations with 2 or 3 inputs can be generated)**. The other combinations are private only for production application
+**NOTE: Both options have limited test values ​​(only combinations with 2 or 10 inputs can be generated)**. The other combinations are private only for production application
 
 <div id="learnmore"></div>
 
