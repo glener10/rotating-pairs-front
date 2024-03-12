@@ -15,11 +15,27 @@ interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButton
 export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Element => {
   const { inputNamesInArray, setSprints, sprints } = props;
 
+  function checkIfBackEndIsConnected(): boolean {
+    if (process.env.NEXT_PUBLIC_SECRET && process.env.NEXT_PUBLIC_URL_BACK) {
+      return true;
+    }
+    return false;
+  }
+
   const generateCombinationsOfTheSprints = async (): Promise<void> => {
     let sprints: ISprint[] = [];
-    if (process.env.NEXT_PUBLIC_SECRET && process.env.NEXT_PUBLIC_URL_BACK) {
+    if (checkIfBackEndIsConnected()) {
       const combinations = await CombinationsGateway(inputNamesInArray.length);
-      sprints = combinations.Sprints;
+      if (!combinations) {
+        const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
+        if (staticSprints == null) {
+          setSprints([]);
+          return;
+        }
+        sprints = staticSprints;
+      } else {
+        sprints = combinations.Sprints;
+      }
     } else {
       const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
       if (staticSprints == null) {
@@ -30,7 +46,6 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
     }
 
     const shuffledInput = shuffleInput(inputNamesInArray);
-
     const combinationsConverted = convertCombinationsToInputNames(shuffledInput, sprints);
     setSprints(combinationsConverted);
   };
@@ -65,8 +80,12 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
   };
 
   const disableButtonGenerateRandomCombination = (): boolean => {
+    let maxInputs = 10;
+    if (checkIfBackEndIsConnected()) {
+      maxInputs = 20;
+    }
     const haveMoreThanTwoInputs = inputNamesInArray.length > 1 ? true : false;
-    const haveLessThanTwoTwentyInputs = inputNamesInArray.length <= 20 ? true : false;
+    const haveLessThanTwoTwentyInputs = inputNamesInArray.length <= maxInputs ? true : false;
 
     if (haveMoreThanTwoInputs && haveLessThanTwoTwentyInputs) {
       return false;
@@ -105,7 +124,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
               top: '-20px',
             }}
           >
-            <p>Please add between 2 and 20 entries</p>
+            <p>Please add between 2 and {checkIfBackEndIsConnected() ? '20' : '10'} entries</p>
             <InfoCircledIcon style={{ marginLeft: '6px' }} />
           </Tooltip.Content>
         )}
