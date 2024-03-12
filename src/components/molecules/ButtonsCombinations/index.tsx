@@ -15,7 +15,7 @@ interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButton
 export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Element => {
   const { inputNamesInArray, setSprints, sprints } = props;
 
-  function checkIfBackEndIsConnected(): boolean {
+  function checkIfBackEndIsConfigured(): boolean {
     if (process.env.NEXT_PUBLIC_SECRET && process.env.NEXT_PUBLIC_URL_BACK) {
       return true;
     }
@@ -24,7 +24,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
 
   const generateCombinationsOfTheSprints = async (): Promise<void> => {
     let sprints: ISprint[] = [];
-    if (checkIfBackEndIsConnected()) {
+    if (checkIfBackEndIsConfigured()) {
       const combinations = await CombinationsGateway(inputNamesInArray.length);
       if (!combinations) {
         const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
@@ -81,7 +81,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
 
   const disableButtonGenerateRandomCombination = (): boolean => {
     let maxInputs = 10;
-    if (checkIfBackEndIsConnected()) {
+    if (checkIfBackEndIsConfigured()) {
       maxInputs = 20;
     }
     const haveMoreThanTwoInputs = inputNamesInArray.length > 1 ? true : false;
@@ -124,7 +124,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
               top: '-20px',
             }}
           >
-            <p>Please add between 2 and {checkIfBackEndIsConnected() ? '20' : '10'} entries</p>
+            <p>Please add between 2 and {checkIfBackEndIsConfigured() ? '20' : '10'} entries</p>
             <InfoCircledIcon style={{ marginLeft: '6px' }} />
           </Tooltip.Content>
         )}

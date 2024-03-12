@@ -1,7 +1,7 @@
 import { ICombinationsJson } from '@/interfaces/ICombinationsJson';
 import axios from 'axios';
 
-const CombinationsGateway = async (numberOfInputs: number): Promise<ICombinationsJson> => {
+const CombinationsGateway = async (numberOfInputs: number): Promise<ICombinationsJson | null> => {
   try {
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_URL_BACK}/combination`,
@@ -15,8 +15,9 @@ const CombinationsGateway = async (numberOfInputs: number): Promise<ICombination
     );
     return response.data as ICombinationsJson;
   } catch (error) {
-    console.error('Error in Request to back-end:', error);
-    throw error;
+    return null;
+    /* console.error('Error in Request to back-end:', error);
+    throw error; */
   }
 };
 

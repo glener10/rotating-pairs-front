@@ -22,8 +22,6 @@
 
 ===================
 
-You can access the deployed application via the link [Rotating Pair](https://rotatingpairs.online)
-
 <div id="dependenciesandenvironment"></div>
 
 ## **💻 Dependencies and Environment**
