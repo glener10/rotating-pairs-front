@@ -26,7 +26,16 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
     let sprints: ISprint[] = [];
     if (checkIfBackEndIsConnected()) {
       const combinations = await CombinationsGateway(inputNamesInArray.length);
-      sprints = combinations.Sprints;
+      if (!combinations) {
+        const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
+        if (staticSprints == null) {
+          setSprints([]);
+          return;
+        }
+        sprints = staticSprints;
+      } else {
+        sprints = combinations.Sprints;
+      }
     } else {
       const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
       if (staticSprints == null) {
@@ -37,7 +46,6 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
     }
 
     const shuffledInput = shuffleInput(inputNamesInArray);
-
     const combinationsConverted = convertCombinationsToInputNames(shuffledInput, sprints);
     setSprints(combinationsConverted);
   };
