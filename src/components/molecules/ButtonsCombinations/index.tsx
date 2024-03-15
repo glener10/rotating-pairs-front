@@ -1,6 +1,5 @@
 import { SimpleButton } from '@/components/atoms/SimpleButton';
 import { staticLogicReadCombinations } from '@/components/molecules/ButtonsCombinations/staticLogicDrawerJSON';
-import CombinationsGateway from '@/gateways/CombinationsGateway';
 import { ISprint } from '@/interfaces/ISprint';
 import { InfoCircledIcon } from '@radix-ui/react-icons';
 import * as Tooltip from '@radix-ui/react-tooltip';
@@ -22,9 +21,9 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
     return false;
   }
 
-  const generateCombinationsOfTheSprints = async (): Promise<void> => {
+  const generateCombinationsOfTheSprints = (): void => {
     let sprints: ISprint[] = [];
-    if (checkIfBackEndIsConfigured()) {
+    /* if (checkIfBackEndIsConfigured()) {
       const combinations = await CombinationsGateway(inputNamesInArray.length);
       if (!combinations) {
         const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
@@ -36,14 +35,14 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
       } else {
         sprints = combinations.Sprints;
       }
-    } else {
-      const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
-      if (staticSprints == null) {
-        setSprints([]);
-        return;
-      }
-      sprints = staticSprints;
+    } else { */
+    const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
+    if (staticSprints == null) {
+      setSprints([]);
+      return;
     }
+    sprints = staticSprints;
+    //}
 
     const shuffledInput = shuffleInput(inputNamesInArray);
     const combinationsConverted = convertCombinationsToInputNames(shuffledInput, sprints);
@@ -99,7 +98,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
         <Tooltip.Trigger asChild>
           <SimpleButton
             // eslint-disable-next-line @typescript-eslint/no-misused-promises
-            onClick={async () => generateCombinationsOfTheSprints()}
+            onClick={() => generateCombinationsOfTheSprints()}
             disabled={disableButtonGenerateRandomCombination()}
             variant="solid"
           >
