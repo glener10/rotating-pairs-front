@@ -14,12 +14,12 @@ interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButton
 export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Element => {
   const { inputNamesInArray, setSprints, sprints } = props;
 
-  function checkIfBackEndIsConfigured(): boolean {
+  /* function checkIfBackEndIsConfigured(): boolean {
     if (process.env.NEXT_PUBLIC_SECRET && process.env.NEXT_PUBLIC_URL_BACK) {
       return true;
     }
     return false;
-  }
+  } */
 
   const generateCombinationsOfTheSprints = (): void => {
     let sprints: ISprint[] = [];
@@ -79,10 +79,10 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
   };
 
   const disableButtonGenerateRandomCombination = (): boolean => {
-    let maxInputs = 10;
-    if (checkIfBackEndIsConfigured()) {
+    const maxInputs = 10;
+    /* if (checkIfBackEndIsConfigured()) {
       maxInputs = 20;
-    }
+    } */
     const haveMoreThanTwoInputs = inputNamesInArray.length > 1 ? true : false;
     const haveLessThanTwoTwentyInputs = inputNamesInArray.length <= maxInputs ? true : false;
 
@@ -123,7 +123,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
               top: '-20px',
             }}
           >
-            <p>Please add between 2 and {checkIfBackEndIsConfigured() ? '20' : '10'} entries</p>
+            <p>Please add between 2 and 10 entries</p>
             <InfoCircledIcon style={{ marginLeft: '6px' }} />
           </Tooltip.Content>
         )}
