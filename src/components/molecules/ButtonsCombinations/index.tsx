@@ -14,35 +14,32 @@ interface ButtonsCombinationsProps extends React.ButtonHTMLAttributes<HTMLButton
 export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Element => {
   const { inputNamesInArray, setSprints, sprints } = props;
 
-  /* function checkIfBackEndIsConfigured(): boolean {
-    if (process.env.NEXT_PUBLIC_SECRET && process.env.NEXT_PUBLIC_URL_BACK) {
-      return true;
-    }
-    return false;
-  } */
-
   const generateCombinationsOfTheSprints = (): void => {
     let sprints: ISprint[] = [];
-    /* if (checkIfBackEndIsConfigured()) {
-      const combinations = await CombinationsGateway(inputNamesInArray.length);
-      if (!combinations) {
-        const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
-        if (staticSprints == null) {
-          setSprints([]);
-          return;
-        }
-        sprints = staticSprints;
-      } else {
-        sprints = combinations.Sprints;
+    //TODO: To call backend and not read from static json uncomment code below
+    /*const combinations = await CombinationsGateway(inputNamesInArray.length);
+    if (!combinations) {
+      const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
+      if (staticSprints == null) {
+        setSprints([]);
+        return;
       }
-    } else { */
+      sprints = staticSprints;
+    } else {
+      sprints = combinations.Sprints;
+    }
+    const shuffledInput = shuffleInput(inputNamesInArray);
+    const combinationsConverted = convertCombinationsToInputNames(shuffledInput, sprints);
+    setSprints(combinationsConverted);
+    return;*/
+
+    //TODO: To call backend and not read from static json, uncomment code above and remove until the end of the method
     const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
     if (staticSprints == null) {
       setSprints([]);
       return;
     }
     sprints = staticSprints;
-    //}
 
     const shuffledInput = shuffleInput(inputNamesInArray);
     const combinationsConverted = convertCombinationsToInputNames(shuffledInput, sprints);
@@ -80,9 +77,6 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
 
   const disableButtonGenerateRandomCombination = (): boolean => {
     const maxInputs = 10;
-    /* if (checkIfBackEndIsConfigured()) {
-      maxInputs = 20;
-    } */
     const haveMoreThanTwoInputs = inputNamesInArray.length > 1 ? true : false;
     const haveLessThanTwoTwentyInputs = inputNamesInArray.length <= maxInputs ? true : false;
 

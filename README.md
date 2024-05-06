@@ -40,18 +40,17 @@
 $ npm install
 ```
 
-**2-** After that, you have two choices to exec the application:
-
-**2.1-** Reading data from a [static json](./src/components/molecules/ButtonsCombinations/combinations.json) present in the project. To do this, simply run the application with the command:
-
-**2.2-** Using the application's own back-end, to do this, you will need to clone the [back-end repository](https://github.com/glener10/rotating-pairs-back) and install and run the server (follow the documentation), the process should be quick and should not take more than 5 minutes.
-
 After that, in this project you will need create a _.env_ file in root folder with the following content:
 
 ```
-NEXT_PUBLIC_SECRET=banana
 NEXT_PUBLIC_URL_BACK=http://localhost:8080
 ```
+
+**2-** After that, you have two choices to exec the application:
+
+**2.1-** Using the application's own back-end, to do this, you will need to clone the [back-end repository](https://github.com/glener10/rotating-pairs-back) and install and run the server (follow the documentation), the process should be quick and should not take more than 5 minutes. You will need to uncomment the ButtonsCombinations component (molecule) code in src/components/molecules/ButtonsCombinations/index.tsx on line 20
+
+**2.2-** Reading data from a [static json](./src/components/molecules/ButtonsCombinations/combinations.json) present in the project. To do this, simply run the application with the command:
 
 **3-** So just run Front with the command:
 
