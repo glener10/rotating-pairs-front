@@ -16,7 +16,7 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
 
   const generateCombinationsOfTheSprints = (): void => {
     let sprints: ISprint[] = [];
-    //TODO: To call backend and not read from static json
+    //TODO: To call backend and not read from static json uncomment code below
     /*const combinations = await CombinationsGateway(inputNamesInArray.length);
     if (!combinations) {
       const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
@@ -27,7 +27,13 @@ export const ButtonsCombinations = (props: ButtonsCombinationsProps): JSX.Elemen
       sprints = staticSprints;
     } else {
       sprints = combinations.Sprints;
-    }*/
+    }
+    const shuffledInput = shuffleInput(inputNamesInArray);
+    const combinationsConverted = convertCombinationsToInputNames(shuffledInput, sprints);
+    setSprints(combinationsConverted);
+    return;*/
+
+    //TODO: To call backend and not read from static json, uncomment code above and remove until the end of the method
     const staticSprints = staticLogicReadCombinations(inputNamesInArray.length);
     if (staticSprints == null) {
       setSprints([]);
