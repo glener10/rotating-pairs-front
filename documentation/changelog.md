@@ -1,4 +1,4 @@
-# [v2.0.1] - 06/05/2024
+# [v2.0.3] - 06/05/2024
 
 - Removing gateway call authentication
 
