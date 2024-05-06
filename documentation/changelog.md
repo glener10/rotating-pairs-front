@@ -1,3 +1,7 @@
+# [v2.0.1] - 06/05/2024
+
+- Removing gateway call authentication
+
 # [v2.0.0] - 05/03/2024
 
 - Created gateway that makes requests to the backend to save logs and return the positions of combinations
