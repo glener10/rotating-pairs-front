@@ -2,6 +2,8 @@
 
 <p align="center"> 🚀 Project created to draw pairs without repetitions, for those who work with pair programming and rotating pairs. </p>
 
+You can see the app in production by versel [here](https://rotating-pairs.vercel.app)
+
 🏁 Table of Contents
 
 ===================
@@ -71,8 +73,6 @@ To learn more about technologies used in the application:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [Radix UI](https://www.radix-ui.com/) - An open source component library optimized for fast development, easy maintenance, and accessibility.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 <div id="license"></div>
 
